@@ -1,10 +1,10 @@
 {
   "schemaVersion": "mimosa-hook-status/v1",
-  "recordedAt": "2026-10-02T06:06:56.177Z",
+  "recordedAt": "2026-10-02T06:22:57.354Z",
   "sessionId": "sess_84d546c5-6b9b-4dd9-8206-edd2d2c5fce1",
   "event": "PostToolUse",
-  "toolName": "Write",
-  "file": "deploy/cloudflare/README-OPERATOR.md",
+  "toolName": "Edit",
+  "file": "deploy/cloudflare/beta/wrangler.jsonc",
   "outcome": "clear",
   "coverage": "complete",
   "findingCount": 0,

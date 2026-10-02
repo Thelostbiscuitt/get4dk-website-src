@@ -16,7 +16,8 @@
   "name": "get4dk-site",
   "compatibility_date": "2026-09-30",
   "assets": {
-    "directory": "../../dist-held"
+    "not_found_handling": "404-page",
+    "directory": "../../../dist-held"
   },
   "routes": [
     { "pattern": "get4dk.com", "custom_domain": true }

@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "mimosa-hook-status/v1",
+  "recordedAt": "2026-10-02T06:30:20.255Z",
+  "sessionId": "sess_84d546c5-6b9b-4dd9-8206-edd2d2c5fce1",
+  "event": "PostToolUse",
+  "toolName": "Write",
+  "file": "/tmp/w9r3-mobile-smoke.mjs",
+  "outcome": "clear",
+  "coverage": "complete",
+  "findingCount": 0,
+  "durationMs": 2,
+  "hostState": "hook_complete",
+  "reportHint": ".mimosa/reports/"
+}

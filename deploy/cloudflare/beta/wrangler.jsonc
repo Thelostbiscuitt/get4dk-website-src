@@ -9,8 +9,10 @@
   "compatibility_date": "2026-09-30",
   "main": "worker.js",
   "assets": {
-    "directory": "../../dist-held",
-    "binding": "ASSETS"
+    "not_found_handling": "404-page",
+    "directory": "../../../dist-held",
+    "binding": "ASSETS",
+    "run_worker_first": true
   },
   "routes": [
     { "pattern": "beta.get4dk.com", "custom_domain": true }
