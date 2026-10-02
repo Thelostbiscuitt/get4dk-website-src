@@ -1,0 +1,25 @@
+// W9-R3 — get4dk.com public website on Cloudflare Workers Static Assets.
+// Owner-approved architecture (final): static Astro output, no Worker logic.
+//
+// Deploy (from this directory):  npx wrangler deploy
+// Prerequisite: `npx wrangler login` or CLOUDFLARE_API_TOKEN with
+//   Workers Scripts:Edit + Zone DNS:Edit on get4dk.com (custom-domain
+//   attachment creates the DNS record + certificate automatically).
+//
+// W9-R2 HOLD: this deploys the HELD build (dist-held = production content,
+// noindex meta, Disallow-all robots.txt, no sitemap, _headers X-Robots-Tag).
+// After W9-R2 asset/rights closure clears, redeploy the production build:
+//   change assets.directory to "../../dist" and remove dist-held/_headers
+//   from the copy, then `npx wrangler deploy` again.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "get4dk-site",
+  "compatibility_date": "2026-09-30",
+  "assets": {
+    "directory": "../../dist-held"
+  },
+  "routes": [
+    { "pattern": "get4dk.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": false }
+}

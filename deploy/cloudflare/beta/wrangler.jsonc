@@ -1,0 +1,19 @@
+// W9-R3 — beta.get4dk.com test website candidate (access-gated, non-indexable).
+// Deploy (from this directory):
+//   npx wrangler deploy
+//   npx wrangler secret put BETA_PASS     # then enter the beta password
+// Credential reference for the owner lives in Oracle: /root/get4dk-beta-credentials.txt
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "get4dk-beta",
+  "compatibility_date": "2026-09-30",
+  "main": "worker.js",
+  "assets": {
+    "directory": "../../dist-held",
+    "binding": "ASSETS"
+  },
+  "routes": [
+    { "pattern": "beta.get4dk.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": false }
+}

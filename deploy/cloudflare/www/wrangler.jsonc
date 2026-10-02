@@ -1,0 +1,12 @@
+// W9-R3 — www.get4dk.com permanent redirect worker.
+// Deploy (from this directory):  npx wrangler deploy
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "get4dk-www-redirect",
+  "compatibility_date": "2026-09-30",
+  "main": "worker.js",
+  "routes": [
+    { "pattern": "www.get4dk.com", "custom_domain": true }
+  ],
+  "observability": { "enabled": false }
+}
