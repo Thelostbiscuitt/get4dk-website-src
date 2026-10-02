@@ -1,0 +1,29 @@
+---
+// /features/ — Features Hub (Stage 3).
+// REFERENCE: 4DK_Features_Hub_v3_CokeDustTransition (v3 — latest).
+// Verbatim port via lib/port.ts. The 8 product detail states (pantry,
+// freshness, ask, steal, house, plan, shop, memory) remain hub-integrated
+// exactly as approved; standalone /features/* routes are shell-registered
+// and receive their exploded implementations in a later stage.
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/features.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/features',
+  // W9-R1: locked five-item primary nav (adds Food Atlas; Features anchor
+  // becomes the hub route itself).
+  rawReplaces: [lockedNavReplace('features.html', '/features/')],
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.betaAccess.href },
+});
+---
+
+<Base routeKey="features">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

@@ -1,0 +1,32 @@
+---
+// /how-long-does-cooked-jollof-rice-last-in-the-fridge/ — Evergreen food
+// intelligence (Stage 9). REFERENCE: 4DK_Stage9_Evergreen_Food_Intelligence_v1
+// evergreen-jollof-storage.html (verbatim port).
+// Answer-first contract: the storage answer block is static, crawlable HTML.
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/evergreen-jollof-storage.html?raw';
+import { portArtifact } from '../lib/port';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { CTA } from '../lib/cta';
+import { insertNavAfterBrand, LOGO_ONLY_NAV_CSS } from '../lib/feature-pages';
+
+// W9-R1: locked five-item primary nav inserted into the approved logo-only
+// header (composition preserved; nav hidden < 900px). The artifact's only
+// dead link is the topbar logo stub — wire it home.
+const withNav = insertNavAfterBrand(raw);
+
+const ported = portArtifact(withNav, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/evergreen',
+  appendCss: LOGO_ONLY_NAV_CSS,
+  rawReplaces: [['href="#"', 'href="/"']],
+  // W6: "Let 4DK track freshness →" → the Pantry (freshness records live there).
+  ctaHrefs: { 'https://get4dk.com/': CTA.appPantry.href },
+});
+---
+
+<Base routeKey="evergreen-jollof-storage" artifactSchema={ported.headJsonLd}>
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

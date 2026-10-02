@@ -1,0 +1,28 @@
+---
+// /pricing/ — Pricing / Beta / Get 4DK (Stage 12, v2 "Soul" — latest).
+// REFERENCE: 4DK_Stage12_Pricing_Beta_Get4DK_v2_Soul/pricing-beta-get4dk.html.
+// Verbatim port via lib/port.ts. Locked commercial rules intact: Guest → Free
+// → Individual → House; cadences are billing toggles, not tiers. The header
+// "Get 4DK" CTA routes through the central CTA config (destination: W6).
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/pricing.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/pricing',
+  // W9-R1: locked five-item primary nav (replaces the in-page section nav;
+  // in-page sections remain reachable by scroll exactly as approved).
+  rawReplaces: [lockedNavReplace('pricing.html', '/pricing/')],
+  ctaHrefs: { 'https://get4dk.com/': CTA.get4dk.href },
+});
+---
+
+<Base routeKey="pricing">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

@@ -1,0 +1,11 @@
+node_modules/
+dist/
+dist-held/
+dist-beta/
+.astro/
+.w2-shots/
+.w9/
+.w9r3-backup/
+.w4/
+.w5/
+.vercel/

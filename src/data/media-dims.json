@@ -1,0 +1,158 @@
+{
+  "/assets/icons/icon1.png": {
+    "w": 60,
+    "h": 60,
+    "from": "landing pool",
+    "bytes": 4522
+  },
+  "/assets/app-screens/4dk-ask.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture ask",
+    "bytes": 90756
+  },
+  "/assets/app-screens/4dk-home.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture home",
+    "bytes": 87326
+  },
+  "/assets/app-screens/4dk-plan.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture plan",
+    "bytes": 91520
+  },
+  "/assets/app-screens/4dk-pantry.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture pantry",
+    "bytes": 100538
+  },
+  "/assets/app-screens/4dk-profile.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture profile",
+    "bytes": 75274
+  },
+  "/assets/app-screens/4dk-tools.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture tools",
+    "bytes": 71762
+  },
+  "/assets/app-screens/4dk-shop.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture shop",
+    "bytes": 104212
+  },
+  "/assets/photo/hero-food.webp": {
+    "w": 315,
+    "h": 555,
+    "from": "approved artifact pixels",
+    "bytes": 66512
+  },
+  "/assets/photo/food-card-pasta.webp": {
+    "w": 1520,
+    "h": 860,
+    "from": "Wikimedia Commons: A Pasta dish with meatballs and tomato sauce.jpg (CC-BY-SA-4.0)",
+    "bytes": 194726
+  },
+  "/assets/photo/food-card-jollof.webp": {
+    "w": 1274,
+    "h": 721,
+    "from": "Wikimedia Commons: Jollof Rice.jpg (CC-BY-SA-4.0)",
+    "bytes": 68458
+  },
+  "/assets/app-screens/4dk-recipe.webp": {
+    "w": 941,
+    "h": 1672,
+    "from": "app capture recipe",
+    "bytes": 215514
+  },
+  "/assets/photo/food-card-tacos.webp": {
+    "w": 1520,
+    "h": 860,
+    "from": "Wikimedia Commons: 001 Tacos de carnitas, carne asada y al pastor.jpg (CC-BY-SA-2.0)",
+    "bytes": 319850
+  },
+  "/assets/photo/food-jollof-wide.webp": {
+    "w": 2400,
+    "h": 1033,
+    "from": "Wikimedia Commons: Jollof (Jollof- Rice).jpg (CC-BY-SA-4.0)",
+    "bytes": 756196
+  },
+  "/assets/photo/food-jollof-poster.webp": {
+    "w": 1875,
+    "h": 1500,
+    "from": "Wikimedia Commons: Jollof Rice and Meat.jpg (CC-BY-SA-4.0)",
+    "bytes": 260858
+  },
+  "/assets/photo/food-meal-strip.webp": {
+    "w": 650,
+    "h": 1388,
+    "from": "approved artifact pixels",
+    "bytes": 112532
+  },
+  "/assets/photo/food-jollof-clean.webp": {
+    "w": 2432,
+    "h": 1237,
+    "from": "Wikimedia Commons: Jollof rice 20th April 2025.jpg (CC-BY-SA-4.0)",
+    "bytes": 904978
+  },
+  "/assets/banner/footer-left.webp": {
+    "w": 350,
+    "h": 141,
+    "from": "locked banner pixels",
+    "bytes": 28748
+  },
+  "/assets/banner/note-left.webp": {
+    "w": 120,
+    "h": 130,
+    "from": "locked banner pixels",
+    "bytes": 6114
+  },
+  "/assets/icons/icon2.png": {
+    "w": 60,
+    "h": 60,
+    "from": "landing pool",
+    "bytes": 4840
+  },
+  "/assets/icons/icon3.png": {
+    "w": 60,
+    "h": 60,
+    "from": "landing pool",
+    "bytes": 4706
+  },
+  "/assets/icons/icon4.png": {
+    "w": 60,
+    "h": 60,
+    "from": "landing pool",
+    "bytes": 5096
+  },
+  "/assets/icons/icon5.png": {
+    "w": 65,
+    "h": 65,
+    "from": "landing pool",
+    "bytes": 5809
+  },
+  "/assets/banner/footer-right.webp": {
+    "w": 442,
+    "h": 141,
+    "from": "locked banner pixels",
+    "bytes": 29942
+  },
+  "/assets/banner/rail-right.webp": {
+    "w": 372,
+    "h": 176,
+    "from": "locked banner pixels",
+    "bytes": 15430
+  },
+  "/assets/photo/food-plan-grid.webp": {
+    "w": 1000,
+    "h": 770,
+    "from": "approved artifact pixels",
+    "bytes": 96162
+  }
+}

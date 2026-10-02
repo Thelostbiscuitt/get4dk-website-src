@@ -1,0 +1,38 @@
+---
+// /the-pass/ — The Pass hub (Stage 4).
+// REFERENCE: 4DK_The_Pass_v3_ClearArticleBoundaries (v3 — latest).
+// Verbatim port via lib/port.ts; prototype filename links mapped to routes.
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/the-pass.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/the-pass',
+  linkRewrites: {
+    'index.html': '/',
+    'how-it-works.html': '/how-it-works/',
+    'features.html': '/features/',
+    'the-pass.html': '/the-pass/',
+  },
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.betaAccess.href },
+  // W9-R1: locked five-item primary nav first (its Pricing entry replaces the
+  // old dead stub); then the W3 contextual wiring for the two approved stubs.
+  rawReplaces: [
+    lockedNavReplace('the-pass.html', '/the-pass/'),
+    [
+      '<a class="read-link" href="#">Read the story →</a>',
+      '<a class="read-link" href="/the-pass/nigerian-jollof-rice/">Read the story →</a>',
+    ],
+  ],
+});
+---
+
+<Base routeKey="the-pass">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

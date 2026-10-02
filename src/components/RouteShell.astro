@@ -1,0 +1,42 @@
+---
+/**
+ * RouteShell — W1 placeholder shell for every registered route.
+ *
+ * INFRASTRUCTURE ONLY: this renders scaffolding chrome (nav + placeholder
+ * card + footer) so routes resolve, links crawl, metadata/schema emit and
+ * direct URL loads work. It deliberately does NOT express any approved page
+ * composition. In W2+ each page file replaces its <RouteShell> usage with
+ * the approved page implementation — pages stay visually distinct.
+ */
+import SiteNav from './SiteNav.astro';
+import SiteFooter from './SiteFooter.astro';
+import { getRoute } from '../lib/routes';
+
+interface Props {
+  routeKey: string;
+}
+
+const { routeKey } = Astro.props;
+const route = getRoute(routeKey);
+---
+
+<div class="w1-shell">
+  <a class="w1-skip-link" href="#main">Skip to content</a>
+  <SiteNav />
+  <main id="main" class="w1-shell__main">
+    <div class="w1-shell__card">
+      <p class="w1-shell__kicker">Stage {String(route.stage).padStart(2, '0')} · {route.family} · {route.manifest_section}</p>
+      <h1 class="w1-shell__title">{route.name}</h1>
+      <p class="w1-shell__meta">
+        route <code>{route.path}</code><br />
+        canonical title: {route.title}<br />
+        schema: {route.schema.join(' · ')}<br />
+        indexable: {route.indexable ? 'yes' : 'no'}
+      </p>
+      <p class="w1-shell__note">
+        W1 shell — approved page implementation pending (W2). Zero-design-change rule in force.
+      </p>
+    </div>
+  </main>
+  <SiteFooter />
+</div>

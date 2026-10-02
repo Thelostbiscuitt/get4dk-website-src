@@ -1,0 +1,95 @@
+---
+/**
+ * SiteFooter — locked footer hub columns (GLOBAL_NAV.json) + canonical banner.
+ *
+ * Column membership is locked config (W0 G-3 records that the Product column
+ * carries 6 of 8 feature routes by design). Zero-design-change rule: do not
+ * "fix" the column list here without an approved config change.
+ */
+import { footerColumns, getRouteByPath } from '../lib/routes';
+import AcidBanner from './AcidBanner.astro';
+
+const columns = Object.entries(footerColumns).map(([label, hrefs]) => ({
+  label,
+  links: hrefs.map((href) => ({ href, name: getRouteByPath(href)?.name ?? href })),
+}));
+const year = new Date().getFullYear();
+---
+
+<AcidBanner />
+<footer class="w1-footer">
+  <div class="w1-footer__cols">
+    {columns.map((col) => (
+      <nav class="w1-footer__col" aria-label={col.label}>
+        <h2 class="w1-footer__label">{col.label}</h2>
+        <ul>
+          {col.links.map((link) => (
+            <li><a href={link.href}>{link.name}</a></li>
+          ))}
+        </ul>
+      </nav>
+    ))}
+  </div>
+  <div class="w1-footer__legal">
+    <span>© {year} 4DK — For D Kitchen.</span>
+    <span class="w1-footer__host">get4dk.com</span>
+  </div>
+</footer>
+
+<style>
+  .w1-footer {
+    background: var(--ink);
+    color: var(--cream-dim);
+    border-top: 1px solid var(--rule);
+    padding: 34px var(--space-gutter) 26px;
+  }
+  .w1-footer__cols {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+  }
+  .w1-footer__label {
+    color: var(--acid);
+    font: 900 9px/1.4 var(--mono);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+  }
+  .w1-footer__col ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .w1-footer__col a {
+    display: inline-block;
+    padding: 3px 0;
+    color: var(--cream-dim);
+    font: 600 11px/1.5 var(--mono);
+    text-decoration: none;
+  }
+  .w1-footer__col a:hover {
+    color: var(--cream);
+  }
+  .w1-footer__legal {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 26px;
+    padding-top: 14px;
+    border-top: 1px solid var(--rule-soft);
+    font: 600 9px/1.5 var(--mono);
+    color: var(--cream-mute);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  @media (max-width: 900px) {
+    .w1-footer__cols {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  @media (max-width: 600px) {
+    .w1-footer__cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

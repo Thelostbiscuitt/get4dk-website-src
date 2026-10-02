@@ -1,0 +1,87 @@
+---
+/**
+ * SiteNav — the locked 5-item primary navigation.
+ * Structure/content locked by GLOBAL_NAV.json (Stage14). Visual styling is
+ * W1 scaffolding chrome only; the approved per-page header treatments land
+ * with each page in W2+ and may restyle this markup via slots/classes.
+ */
+import { primaryNav } from '../lib/routes';
+import { identityAssets } from '../lib/assets';
+
+const current = Astro.url.pathname;
+---
+
+<nav class="w1-nav" aria-label="Primary">
+  <a class="w1-nav__brand" href="/" aria-label="4DK home">
+    <img src={identityAssets.primaryWordmarkDark} alt="4DK" width="92" height="28" loading="eager" fetchpriority="high" decoding="async" />
+  </a>
+  <ul class="w1-nav__list">
+    {primaryNav.map((item) => (
+      <li>
+        <a
+          href={item.href}
+          aria-current={current === item.href ? 'page' : undefined}
+          class:list={['w1-nav__link', { 'is-active': current === item.href }]}
+        >
+          {item.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  .w1-nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    min-height: 64px;
+    padding: 0 var(--space-gutter);
+    border-bottom: 1px solid var(--rule);
+    background: rgba(3, 3, 3, 0.96);
+    position: sticky;
+    top: 0;
+    z-index: 30;
+  }
+  .w1-nav__brand img {
+    display: block;
+    width: 88px;
+    height: auto;
+  }
+  .w1-nav__list {
+    display: flex;
+    gap: 4px;
+    list-style: none;
+    margin: 0 0 0 auto;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .w1-nav__link {
+    display: inline-block;
+    padding: 9px 11px;
+    color: var(--cream-dim);
+    font: 900 10px/1.2 var(--mono);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid transparent;
+  }
+  .w1-nav__link:hover {
+    color: var(--cream);
+  }
+  .w1-nav__link.is-active {
+    background: var(--acid);
+    color: var(--ink);
+    border-color: var(--acid);
+  }
+  @media (max-width: 600px) {
+    .w1-nav {
+      flex-wrap: wrap;
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
+    .w1-nav__list {
+      margin-left: 0;
+    }
+  }
+</style>

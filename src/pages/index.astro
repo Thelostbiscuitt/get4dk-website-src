@@ -1,0 +1,37 @@
+---
+// / — Home / Landing (Stage 1).
+// REFERENCE: 4DK_Approved_Stages_1-8_MASTER_SINGLE_FILE_v4.html → embedded key
+// `landing` (latest on-disk source; decoded verbatim into page-artifacts).
+// Port: verbatim via lib/port.ts. Review-only machinery removed (master
+// iframe bridge script, R-key debug overlay — invisible in approved state).
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/landing.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/landing',
+  // W9-R1: locked five-item primary nav (replaces the section-anchor nav).
+  rawReplaces: [lockedNavReplace('landing.html')],
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.betaAccess.href },
+  removePatterns: [
+    /<img class="reference"[^>]*>/g,
+    /<img class="mobile-reference"[^>]*>/g,
+  ],
+  removeCssPatterns: [
+    /\.show-ref \.reference\{[^}]*\}/g,
+    /\.show-ref \.mobile-reference\{[^}]*\}/g,
+    /\.reference\{[^}]*\}/g,
+    /\.mobile-reference\{[^}]*\}/g,
+  ],
+});
+---
+
+<Base routeKey="home">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

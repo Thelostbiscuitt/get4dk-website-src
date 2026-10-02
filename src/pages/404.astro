@@ -1,0 +1,60 @@
+---
+/**
+ * 404 — required by LAUNCH_CHECKLIST ("404 page exists").
+ * W1 scaffolding chrome; styled to the shared token floor only.
+ */
+import Base from '../layouts/Base.astro';
+import SiteNav from '../components/SiteNav.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { primaryNav } from '../lib/routes';
+import { getHostConfig } from '../lib/hosts';
+
+const host = getHostConfig();
+---
+
+<Base notFound>
+  <div class="w1-shell">
+    <a class="w1-skip-link" href="#main">Skip to content</a>
+    <SiteNav />
+    <main id="main" class="w1-shell__main">
+      <div class="w1-shell__card">
+        <p class="w1-shell__kicker">404 · Not found</p>
+        <h1 class="w1-shell__title">This route isn't on the pass.</h1>
+        <p class="w1-shell__meta">The page you requested does not exist on {host.canonicalOrigin}.</p>
+        <p class="w1-shell__note">Try one of the locked routes:</p>
+        <ul class="w1-404__list">
+          <li><a href="/">Home</a></li>
+          {primaryNav.map((item) => (
+            <li><a href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+    </main>
+    <SiteFooter />
+  </div>
+</Base>
+
+<style>
+  .w1-404__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 16px 0 0;
+    padding: 0;
+  }
+  .w1-404__list a {
+    display: inline-block;
+    padding: 8px 11px;
+    border: 1px solid var(--rule);
+    color: var(--cream-dim);
+    font: 900 9px/1.2 var(--mono);
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .w1-404__list a:hover {
+    border-color: var(--acid);
+    color: var(--acid);
+  }
+</style>

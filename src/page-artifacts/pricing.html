@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4DK Pricing — Free, Individual & House Plans</title>
+<meta name="description" content="Start 4DK free, then choose Individual or House for higher fair-use limits, deeper kitchen memory and household coordination.">
+<link rel="canonical" href="https://get4dk.com/pricing/">
+<link rel="icon" href="assets/4DK_favicon.svg">
+<style>
+:root{
+  --ink:#050505;
+  --cream:#f4f1e8;
+  --acid:#d9ff16;
+  --acid2:#eaff63;
+  --hot:#ff5f2d;
+  --blue:#72d8ff;
+  --rule:rgba(244,241,232,.22);
+  --mono:'Courier New',monospace;
+  --sans:Arial,Helvetica,sans-serif;
+  --serif:Georgia,'Times New Roman',serif;
+}
+*{box-sizing:border-box}
+html{background:var(--ink);scroll-behavior:smooth}
+body{
+  margin:0;background:#030303;color:var(--cream);font-family:var(--sans);
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+body:before{
+  content:'';
+  position:fixed;inset:0;z-index:400;pointer-events:none;
+  background:
+    repeating-linear-gradient(180deg,rgba(255,255,255,.026) 0 1px,transparent 1px 4px),
+    radial-gradient(circle,#fff .48px,transparent .7px) 0 0/6px 6px;
+  mix-blend-mode:screen;opacity:.46;
+}
+body:after{
+  content:'';
+  position:fixed;inset:0;z-index:399;pointer-events:none;
+  background:
+    radial-gradient(circle at 10% 10%,rgba(217,255,22,.07),transparent 22%),
+    radial-gradient(circle at 88% 16%,rgba(114,216,255,.055),transparent 21%),
+    radial-gradient(circle at 76% 83%,rgba(255,95,45,.045),transparent 24%);
+}
+
+.top{
+  height:72px;position:sticky;top:0;z-index:120;
+  display:flex;align-items:center;padding:0 4vw;
+  background:rgba(3,3,3,.94);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(244,241,232,.22);
+}
+.top img{width:92px}
+.nav{display:flex;gap:2.35vw;margin-left:38px;font:800 10px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.nav a{position:relative}.nav a:after{content:'';position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--acid);transition:right .2s ease}.nav a:hover{color:var(--acid)}.nav a:hover:after{right:0}
+.stat{margin-left:auto;font:800 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#d0cbc2}
+.stat i{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--acid);margin-right:8px;box-shadow:0 0 12px rgba(217,255,22,.7)}
+
+.ticker{
+  overflow:hidden;background:var(--acid);color:#050505;border-bottom:1px solid #050505;
+  white-space:nowrap
+}
+.ticker-track{
+  display:inline-flex;gap:42px;padding:8px 0;
+  min-width:max-content;
+  animation:ticker 22s linear infinite;
+  font:900 9px var(--mono);letter-spacing:.12em;text-transform:uppercase
+}
+.ticker-track span:before{content:'●';margin-right:10px}
+@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.hero{
+  min-height:820px;
+  display:grid;
+  grid-template-columns:1.07fr .93fr;
+  border-bottom:1px solid var(--rule);
+  position:relative;overflow:hidden;isolation:isolate;
+}
+.hero:before{
+  content:'';
+  position:absolute;inset:0;z-index:0;
+  background:
+    linear-gradient(90deg,rgba(217,255,22,.05),transparent 28%),
+    repeating-linear-gradient(115deg,rgba(255,255,255,.025) 0 2px,transparent 2px 26px);
+}
+.hero:after{
+  content:'';
+  position:absolute;right:-16vw;top:-20vw;width:56vw;height:56vw;border-radius:50%;
+  border:1px solid rgba(217,255,22,.16);
+  box-shadow:0 0 0 70px rgba(217,255,22,.025),0 0 0 140px rgba(217,255,22,.015);
+  z-index:0;
+}
+.hero-copy{padding:72px 4vw 56px;position:relative;z-index:3}
+.kicker{font:900 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}
+.hero h1{
+  margin:22px 0 22px;
+  font-size:clamp(74px,8.4vw,148px);
+  line-height:.74;letter-spacing:-.08em;text-transform:uppercase;
+}
+.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:700}
+.hero-lede{
+  max-width:720px;margin:0;
+  font:600 14px/1.68 var(--mono);color:#d0cbc2;
+}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}
+.primary,.ghost{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:14px 17px;border:1px solid var(--acid);
+  font:900 9px var(--mono);letter-spacing:.11em;text-transform:uppercase;
+  cursor:pointer;position:relative;overflow:hidden
+}
+.primary{background:var(--acid);color:#050505}
+.ghost{background:transparent;color:var(--acid)}
+.primary:after,.ghost:after{
+  content:'';position:absolute;inset:-20% auto -20% -35%;width:22%;
+  transform:skewX(-18deg);background:rgba(255,255,255,.32);
+  transition:left .45s ease
+}
+.primary:hover:after,.ghost:hover:after{left:118%}
+
+.hero-manifesto{
+  display:grid;grid-template-columns:1fr 1fr;gap:1px;
+  width:min(720px,100%);margin-top:32px;background:rgba(244,241,232,.18)
+}
+.hero-manifesto div{background:rgba(5,5,5,.85);padding:14px 16px}
+.hero-manifesto b{display:block;color:var(--acid);font:900 8px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}
+.hero-manifesto span{font:650 10px/1.45 var(--mono);color:#bdb8af}
+
+.hero-ui{
+  position:relative;z-index:2;display:grid;place-items:center;padding:34px 28px 56px
+}
+.fan{position:relative;width:min(630px,96%);height:640px}
+.fan img{
+  position:absolute;bottom:0;width:49%;max-height:600px;object-fit:contain;
+  border:1px solid rgba(244,241,232,.58);
+  box-shadow:0 30px 72px rgba(0,0,0,.68);
+  background:#050505;transition:transform .38s ease,filter .3s ease
+}
+.fan img:nth-child(1){left:3%;transform:rotate(-10deg) translateY(42px);z-index:1}
+.fan img:nth-child(2){left:26%;transform:rotate(-1deg);z-index:4}
+.fan img:nth-child(3){right:0;transform:rotate(10deg) translateY(42px);z-index:2}
+.hero-ui:hover .fan img:nth-child(1){transform:rotate(-13deg) translate(-10px,50px)}
+.hero-ui:hover .fan img:nth-child(2){transform:rotate(0deg) translateY(-6px)}
+.hero-ui:hover .fan img:nth-child(3){transform:rotate(13deg) translate(10px,50px)}
+.ticket{
+  position:absolute;left:5%;top:8%;z-index:8;
+  width:240px;background:var(--cream);color:#050505;
+  padding:16px 16px 14px;border:1px solid #050505;
+  transform:rotate(-7deg);
+  box-shadow:8px 8px 0 rgba(217,255,22,.72),0 22px 60px rgba(0,0,0,.4);
+}
+.ticket:before,.ticket:after{
+  content:'';position:absolute;left:0;right:0;height:4px;
+  background:repeating-linear-gradient(90deg,#050505 0 4px,transparent 4px 8px)
+}
+.ticket:before{top:0}.ticket:after{bottom:0}
+.ticket b{display:block;font:950 28px/.9 var(--sans);letter-spacing:-.04em;text-transform:uppercase}
+.ticket small{display:block;margin-top:8px;font:900 8px/1.5 var(--mono);letter-spacing:.11em;text-transform:uppercase}
+.stamp{
+  position:absolute;right:7%;top:10%;z-index:8;
+  border:2px solid var(--acid);color:var(--acid);
+  padding:9px 11px;font:900 10px var(--mono);letter-spacing:.13em;text-transform:uppercase;
+  transform:rotate(8deg);box-shadow:0 0 18px rgba(217,255,22,.08)
+}
+.glitch-label{
+  position:absolute;right:5%;bottom:9%;z-index:8;
+  font:italic clamp(28px,3vw,52px)/.9 var(--serif);color:var(--acid);
+  transform:rotate(-5deg);text-shadow:3px 0 0 rgba(114,216,255,.22),-3px 0 0 rgba(255,95,45,.18)
+}
+
+.strip{
+  background:var(--acid);color:#050505;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-bottom:1px solid #050505
+}
+.strip div{
+  padding:16px 18px;border-right:1px solid rgba(0,0,0,.55);
+  font:950 clamp(20px,2vw,34px)/.88 var(--sans);letter-spacing:-.045em;text-transform:uppercase
+}
+
+.pricing{padding:70px 4vw;border-bottom:1px solid var(--rule)}
+.head{display:grid;grid-template-columns:230px 1fr;gap:32px;margin-bottom:34px}
+.num{font:900 10px var(--mono);color:var(--acid);letter-spacing:.13em;text-transform:uppercase}
+.pricing h2,.section h2{
+  margin:0;font-size:clamp(46px,4.9vw,84px);line-height:.83;letter-spacing:-.062em;text-transform:uppercase
+}
+.pricing h2 em,.section h2 em{font-family:var(--serif);font-style:italic}
+.direct{margin-top:17px;max-width:850px;font:700 13px/1.65 var(--mono);color:#d0cbc2}
+
+.billing{
+  display:inline-flex;gap:1px;background:rgba(244,241,232,.17);
+  margin-bottom:28px;box-shadow:8px 8px 0 rgba(217,255,22,.07)
+}
+.billing button{
+  border:0;background:#050505;color:#c7c2b9;
+  padding:12px 15px;font:900 8px var(--mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer
+}
+.billing button.active{background:var(--acid);color:#050505}
+
+.plan-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:start
+}
+.plan{
+  position:relative;min-height:530px;
+  border:1px solid rgba(244,241,232,.24);
+  background:
+    linear-gradient(180deg,rgba(255,255,255,.018),transparent 20%),
+    #050505;
+  padding:27px 24px 25px;
+  overflow:hidden;
+  transform-origin:center top;
+  transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease
+}
+.plan:nth-child(1){transform:rotate(-1.2deg) translateY(8px)}
+.plan:nth-child(2){transform:rotate(.7deg)}
+.plan:nth-child(3){transform:rotate(-.8deg) translateY(-5px)}
+.plan:nth-child(4){transform:rotate(1.1deg) translateY(7px)}
+.plan:hover{
+  transform:translateY(-10px) rotate(0deg);
+  border-color:rgba(217,255,22,.5);
+  box-shadow:0 22px 55px rgba(0,0,0,.35),0 0 26px rgba(217,255,22,.05)
+}
+.plan:after{
+  content:'';position:absolute;left:-35%;top:-10%;width:22%;height:130%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.12),transparent);
+  transform:skewX(-16deg);transition:left .55s ease
+}
+.plan:hover:after{left:120%}
+.plan.featured{
+  border-color:rgba(217,255,22,.52);
+  box-shadow:0 0 0 1px rgba(217,255,22,.2) inset,0 0 24px rgba(217,255,22,.06)
+}
+.plan.featured:before{
+  content:'MOST USEFUL';position:absolute;right:-42px;top:26px;transform:rotate(45deg);
+  background:var(--acid);color:#050505;padding:7px 42px;
+  font:900 7px var(--mono);letter-spacing:.12em
+}
+.plan b{
+  display:block;font:900 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acid)
+}
+.plan h3{font-size:36px;line-height:.9;text-transform:uppercase;margin:14px 0 18px}
+.price{display:flex;align-items:end;gap:8px;margin:18px 0 22px}
+.price strong{
+  font-size:60px;line-height:.78;letter-spacing:-.065em;
+  text-shadow:2px 0 0 rgba(114,216,255,.1),-2px 0 0 rgba(255,95,45,.1)
+}
+.price span{font:700 9px var(--mono);color:#9f9a91;text-transform:uppercase}
+.features{list-style:none;padding:0;margin:0}
+.features li{
+  padding:10px 0;border-top:1px solid rgba(244,241,232,.13);
+  font:600 10px/1.48 var(--mono);color:#c7c2b9
+}
+.features li:before{content:'+';color:var(--acid);font-weight:900;margin-right:8px}
+.plan-cta{
+  display:block;margin-top:22px;border:1px solid rgba(217,255,22,.45);
+  padding:12px 13px;text-align:center;color:var(--acid);
+  font:900 8px var(--mono);letter-spacing:.11em;text-transform:uppercase
+}
+.plan.featured .plan-cta{background:var(--acid);color:#050505}
+
+.house-builder{
+  margin-top:36px;border:1px solid rgba(244,241,232,.22);
+  display:grid;grid-template-columns:.82fr 1.18fr;
+  background:#050505;position:relative;overflow:hidden
+}
+.house-builder:before{
+  content:'HOUSE MIXER / LIVE';position:absolute;right:15px;top:14px;
+  font:900 8px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acid)
+}
+.house-builder>div{padding:30px}
+.house-builder>div+div{border-left:1px solid rgba(244,241,232,.16)}
+.house-builder b{display:block;color:var(--acid);font:900 9px var(--mono);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
+.house-builder strong{font-size:54px;line-height:.82;letter-spacing:-.055em}
+.stepper{display:flex;gap:8px;align-items:center;margin-top:18px}
+.stepper button{
+  width:46px;height:46px;border:1px solid rgba(244,241,232,.24);
+  background:#050505;color:var(--cream);cursor:pointer;font-size:22px
+}
+.stepper button:hover{border-color:var(--acid);color:var(--acid)}
+.stepper span{
+  min-width:68px;text-align:center;font:900 18px var(--sans);
+  border-top:1px solid rgba(244,241,232,.15);border-bottom:1px solid rgba(244,241,232,.15);padding:9px 0
+}
+.house-meter{margin-top:18px;height:8px;background:rgba(244,241,232,.1);overflow:hidden}
+.house-meter i{
+  display:block;height:100%;width:20%;background:linear-gradient(90deg,var(--acid),var(--acid2));
+  transition:width .25s ease
+}
+
+.section{padding:68px 4vw;border-bottom:1px solid var(--rule)}
+.compare{display:grid;grid-template-columns:1.12fr .88fr;gap:12px}
+.matrix{border-top:1px solid rgba(244,241,232,.17)}
+.row{display:grid;grid-template-columns:240px 1fr;border-bottom:1px solid rgba(244,241,232,.14)}
+.row b{padding:19px 15px 19px 0;color:var(--acid);font:900 9px var(--mono);text-transform:uppercase}
+.row div{padding:19px;border-left:1px solid rgba(244,241,232,.14);font:600 11px/1.58 var(--mono);color:#c7c2b9}
+.beta{
+  position:relative;overflow:hidden;
+  border:1px solid rgba(217,255,22,.4);
+  background:
+    linear-gradient(135deg,rgba(217,255,22,.07),transparent 48%),
+    #050505;
+  padding:32px;box-shadow:10px 10px 0 rgba(217,255,22,.07)
+}
+.beta:before{
+  content:'BETA ACCESS';position:absolute;right:-34px;top:22px;transform:rotate(45deg);
+  background:var(--acid);color:#050505;padding:7px 34px;font:900 7px var(--mono);letter-spacing:.12em
+}
+.beta h3{font-size:clamp(38px,3.8vw,64px);line-height:.86;text-transform:uppercase;letter-spacing:-.055em;margin:0 0 15px}
+.beta p{font:600 11px/1.64 var(--mono);color:#c7c2b9}
+.beta .primary{margin-top:18px}
+
+.manifesto{
+  margin-top:34px;padding:30px;
+  border-top:1px solid rgba(244,241,232,.18);
+  border-bottom:1px solid rgba(244,241,232,.18);
+  display:grid;grid-template-columns:1.15fr .85fr;gap:28px
+}
+.manifesto .big{
+  font-size:clamp(42px,5vw,86px);line-height:.82;letter-spacing:-.06em;text-transform:uppercase;font-weight:950
+}
+.manifesto .big em{font-family:var(--serif);font-style:italic;font-weight:700}
+.manifesto p{font:600 12px/1.68 var(--mono);color:#c7c2b9;margin:0}
+
+.faq{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.q{border:1px solid rgba(244,241,232,.2);padding:24px;background:#050505}
+.q b{display:block;color:var(--acid);font:900 9px var(--mono);text-transform:uppercase;letter-spacing:.11em;margin-bottom:11px}
+.q p{font:600 11px/1.6 var(--mono);color:#c7c2b9;margin:0}
+
+.banner{
+  height:155px;background:var(--acid);color:#050505;
+  display:grid;grid-template-columns:22% 13% 29% 13% 23%;
+  align-items:center;overflow:hidden
+}
+.banner img{width:100%;height:100%;object-fit:cover}
+.banner .brand{font-weight:950;font-size:72px;letter-spacing:-.07em;text-align:center}
+.banner .m{font:800 11px/1.4 var(--mono);text-transform:uppercase}
+
+@media(max-width:1000px){
+  .hero,.compare,.manifesto{grid-template-columns:1fr}
+  .hero-ui{min-height:620px}
+  .fan{height:520px}
+  .plan-grid{grid-template-columns:1fr 1fr}
+  .house-builder{grid-template-columns:1fr}
+  .house-builder>div+div{border-left:0;border-top:1px solid rgba(244,241,232,.16)}
+  .faq{grid-template-columns:1fr}
+}
+@media(max-width:650px){
+  .nav{display:none}
+  .hero{min-height:0}
+  .hero-copy{padding:52px 5.8vw}
+  .hero h1{font-size:14vw}
+  .hero-ui{padding:20px;min-height:520px}
+  .fan{height:430px}
+  .ticket{width:190px;top:3%;left:3%}
+  .strip{grid-template-columns:1fr 1fr}
+  .head{grid-template-columns:1fr}
+  .plan-grid{grid-template-columns:1fr}
+  .banner{grid-template-columns:25% 50% 25%}
+  .banner .m{display:none}
+  .banner .brand{font-size:12vw}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a href="#"><img src="assets/4DK_primary_dark.svg" alt="4DK"></a>
+  <nav class="nav"><a href="#plans">Plans</a><a href="#house">House</a><a href="#beta">Beta</a><a href="#questions">Questions</a></nav>
+  <div class="stat"><i></i>pricing system / nominal</div>
+</header>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span>DINNER DECIDED.</span><span>USE WHAT YOU HAVE.</span><span>SHOP SMARTER.</span><span>WASTE LESS.</span><span>GOOD FOOD. BETTER PEOPLE.</span><span>FOR D KITCHEN.</span>
+    <span>DINNER DECIDED.</span><span>USE WHAT YOU HAVE.</span><span>SHOP SMARTER.</span><span>WASTE LESS.</span><span>GOOD FOOD. BETTER PEOPLE.</span><span>FOR D KITCHEN.</span>
+  </div>
+</div>
+
+<section class="hero">
+  <div class="hero-copy">
+    <div class="kicker">Stage 12 / Pricing / Beta / Get 4DK</div>
+    <h1>Get 4DK.<br>Make the kitchen <em>remember.</em></h1>
+    <p class="hero-lede">Free should already feel useful. Paid plans should feel like giving the kitchen a longer memory, a bigger brain and more people—not buying permission to make dinner.</p>
+
+    <div class="hero-actions">
+      <a class="primary" href="#plans">See plans →</a>
+      <a class="ghost" href="#beta">Join beta</a>
+    </div>
+
+    <div class="hero-manifesto">
+      <div><b>FREE</b><span>A real kitchen tool. Not a crippled demo pretending to be generous.</span></div>
+      <div><b>PAID</b><span>More context, more memory, more people, more room to use the intelligence.</span></div>
+    </div>
+  </div>
+
+  <div class="hero-ui">
+    <div class="ticket">
+      <b>4DK ACCESS PASS</b>
+      <small>Guest → Free → Individual → House<br>Systems nominal / kitchen online</small>
+    </div>
+    <div class="stamp">BETA / LIVE TEST</div>
+    <div class="glitch-label">good food.<br>brighter days.</div>
+    <div class="fan">
+      <img src="assets/plan.png" alt="4DK Plan interface">
+      <img src="assets/home.png" alt="4DK Home interface">
+      <img src="assets/shop.png" alt="4DK Shop interface">
+    </div>
+  </div>
+</section>
+
+<section class="strip">
+  <div>Guest.</div><div>Free.</div><div>Individual.</div><div>House.</div>
+</section>
+
+<section class="pricing" id="plans">
+  <div class="head">
+    <div class="num">01 / Plans</div>
+    <div>
+      <h2>Choose how much kitchen context you want 4DK to <em>keep.</em></h2>
+      <p class="direct">Weekly, monthly and yearly are billing cadences—not different product tiers.</p>
+    </div>
+  </div>
+
+  <div class="billing">
+    <button data-cadence="weekly">Weekly</button>
+    <button data-cadence="monthly" class="active">Monthly</button>
+    <button data-cadence="yearly">Yearly</button>
+  </div>
+
+  <div class="plan-grid">
+    <article class="plan">
+      <b>00 / Guest</b>
+      <h3>Try the kitchen.</h3>
+      <div class="price"><strong>$0</strong><span>/ temporary</span></div>
+      <ul class="features">
+        <li>Temporary pantry</li>
+        <li>Limited Ask access</li>
+        <li>Basic image + voice trials</li>
+        <li>One temporary shopping list</li>
+        <li>No permanent cloud memory</li>
+      </ul>
+      <a class="plan-cta" href="#beta">Try guest</a>
+    </article>
+
+    <article class="plan">
+      <b>01 / Free</b>
+      <h3>Actually useful.</h3>
+      <div class="price"><strong>$0</strong><span>/ ongoing</span></div>
+      <ul class="features">
+        <li>25–30 pantry items</li>
+        <li>Kitchen Scan 3× / week</li>
+        <li>Ask 4DK 5× / week</li>
+        <li>STEAL IT 3× / week</li>
+        <li>Receipt Scan 2× / week</li>
+        <li>1 additional House member</li>
+        <li>14-day rolling cloud</li>
+      </ul>
+      <a class="plan-cta" href="#beta">Start free</a>
+    </article>
+
+    <article class="plan featured">
+      <b>02 / Individual</b>
+      <h3>Your kitchen remembers.</h3>
+      <div class="price"><strong id="individualPrice">$4.99</strong><span id="individualUnit">/ month</span></div>
+      <ul class="features">
+        <li>Higher fair-use limits</li>
+        <li>Longer cloud memory</li>
+        <li>Deeper personalization</li>
+        <li>More image + voice intelligence</li>
+        <li>Priority access under capacity pressure</li>
+      </ul>
+      <a class="plan-cta" href="#beta">Get Individual</a>
+    </article>
+
+    <article class="plan">
+      <b>03 / House</b>
+      <h3>One kitchen. Actual people.</h3>
+      <div class="price"><strong id="housePrice">$8.49</strong><span id="houseUnit">/ month</span></div>
+      <ul class="features">
+        <li>Starts with 2 people</li>
+        <li>Shared Pantry + Shop</li>
+        <li>Individual preferences preserved</li>
+        <li>Household meal compatibility</li>
+        <li>Add members up to 6</li>
+      </ul>
+      <a class="plan-cta" href="#house">Build your House</a>
+    </article>
+  </div>
+
+  <div class="house-builder" id="house">
+    <div>
+      <b>House size</b>
+      <strong><span id="peopleCount">2</span> people</strong>
+      <div class="stepper">
+        <button id="minus" aria-label="Remove a person">−</button>
+        <span>2–6</span>
+        <button id="plus" aria-label="Add a person">+</button>
+      </div>
+      <div class="house-meter"><i id="houseMeter"></i></div>
+    </div>
+    <div>
+      <b>Current House reference price</b>
+      <strong id="houseTotal">$8.49</strong>
+      <div style="font:700 10px var(--mono);color:#9f9a91;margin-top:8px" id="houseTotalUnit">/ month</div>
+      <div style="font:600 10px/1.55 var(--mono);color:#aaa59d;margin-top:13px" id="houseMath">Base House plan for 2 people</div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="beta">
+  <div class="head">
+    <div class="num">02 / Beta</div>
+    <div>
+      <h2>Beta should feel like access.<br>Not a <em>penalty.</em></h2>
+      <p class="direct">The beta should expose real product value while giving 4DK enough telemetry to fix the kitchen loop before wider release.</p>
+    </div>
+  </div>
+
+  <div class="compare">
+    <div class="matrix">
+      <div class="row"><b>Guest</b><div>Try the product without making a permanent kitchen profile.</div></div>
+      <div class="row"><b>Free account</b><div>Useful recurring limits with a real Pantry, Ask, Shop and one additional House member.</div></div>
+      <div class="row"><b>Paid</b><div>Higher fair-use ceilings, deeper memory and household scale—not “the app finally works now.”</div></div>
+      <div class="row"><b>Regional pricing</b><div>Pricing can be region-adjusted at checkout rather than pretending one FX conversion is fair everywhere.</div></div>
+    </div>
+
+    <div class="beta">
+      <div class="kicker">Get 4DK / Beta access</div>
+      <h3>Dinner decided.<br>Kitchen remembered.</h3>
+      <p>This prototype CTA does not pretend a live signup backend exists. Production should connect the same action to the real beta/account flow.</p>
+      <a class="primary" href="https://get4dk.com/">Get 4DK</a>
+    </div>
+  </div>
+
+  <div class="manifesto">
+    <div class="big">Pay for more <em>memory.</em><br>Not permission.</div>
+    <p>That distinction is the soul of the pricing system. 4DK should not punish somebody for being broke, curious or early. The free tier proves the kitchen loop. Paid tiers let the loop hold more history, more people and more usage.</p>
+  </div>
+</section>
+
+<section class="section" id="questions">
+  <div class="head">
+    <div class="num">03 / Questions</div>
+    <div><h2>What should a pricing page answer before someone <em>pays?</em></h2></div>
+  </div>
+
+  <div class="faq">
+    <div class="q"><b>Can I use 4DK for free?</b><p>Yes. Guest is temporary; Free is an ongoing tier with real recurring limits.</p></div>
+    <div class="q"><b>Is Premium unlimited?</b><p>No. Premium uses high fair-use limits so one abusive workload cannot degrade the service for everyone else.</p></div>
+    <div class="q"><b>Does House merge everyone's preferences?</b><p>No. Kitchen state is shared, while people keep individual preferences and restrictions.</p></div>
+    <div class="q"><b>Are these prices converted directly into every currency?</b><p>No. The product plan is to use intentional regional pricing rather than simple FX conversion.</p></div>
+  </div>
+</section>
+
+<section class="banner">
+  <img src="assets/footer_left.png" alt="">
+  <div class="m">Food intelligence<br>for real life.</div>
+  <div class="brand">4DK.</div>
+  <div class="m">Start free.<br>Remember more.</div>
+  <img src="assets/footer_right.png" alt="Make something real">
+</section>
+
+<script>
+const prices={
+ weekly:{individual:1.99,house:3.49,extra:1.19,label:'/ week'},
+ monthly:{individual:4.99,house:8.49,extra:2.99,label:'/ month'},
+ yearly:{individual:39.99,house:67.99,extra:23.99,label:'/ year'}
+};
+let cadence='monthly';
+let people=2;
+const buttons=[...document.querySelectorAll('[data-cadence]')];
+
+function money(v){return '$'+v.toFixed(2)}
+function render(){
+  const p=prices[cadence];
+  document.getElementById('individualPrice').textContent=money(p.individual);
+  document.getElementById('individualUnit').textContent=p.label;
+
+  const extras=Math.max(0,people-2);
+  const houseTotal=p.house + extras*p.extra;
+  document.getElementById('housePrice').textContent=money(p.house);
+  document.getElementById('houseUnit').textContent=p.label;
+  document.getElementById('peopleCount').textContent=people;
+  document.getElementById('houseTotal').textContent=money(houseTotal);
+  document.getElementById('houseTotalUnit').textContent=p.label;
+  document.getElementById('houseMath').textContent=
+    extras
+      ? `${money(p.house)} base + ${extras} × ${money(p.extra)} additional member${extras>1?'s':''}`
+      : 'Base House plan for 2 people';
+  document.getElementById('houseMeter').style.width=((people-1)/5*100)+'%';
+
+  buttons.forEach(b=>b.classList.toggle('active',b.dataset.cadence===cadence));
+}
+buttons.forEach(b=>b.addEventListener('click',()=>{
+  cadence=b.dataset.cadence;
+  render();
+}));
+document.getElementById('minus').addEventListener('click',()=>{
+  people=Math.max(2,people-1);
+  render();
+});
+document.getElementById('plus').addEventListener('click',()=>{
+  people=Math.min(6,people+1);
+  render();
+});
+render();
+</script>
+</body>
+</html>

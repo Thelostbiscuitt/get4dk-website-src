@@ -1,0 +1,31 @@
+---
+// /recipes/20-minute-tomato-spinach-pasta/ — public recipe, canonical
+// demonstration of the Stage-10 recipe system. REFERENCE:
+// 4DK_Stage10_Public_Recipe_Template_v1 recipe-sample.html (verbatim port;
+// recipe-template.html is the reusable template system, not a launch route).
+// Ingredients / method / time / servings / substitutions visible and static.
+import Base from '../../layouts/Base.astro';
+import raw from '../../page-artifacts/recipe-tomato-spinach-pasta.html?raw';
+import { portArtifact } from '../../lib/port';
+import { CANONICAL_ASSETS, MARKETING_CTA_HREF } from '../../lib/artifact-links';
+import { insertNavAfterBrand, LOGO_ONLY_NAV_CSS } from '../../lib/feature-pages';
+
+// W9-R1: locked five-item primary nav inserted into the approved logo-only
+// header (composition preserved; nav hidden < 900px). The artifact's only
+// dead link is the topbar logo stub — wire it home.
+const withNav = insertNavAfterBrand(raw);
+
+const ported = portArtifact(withNav, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/recipes',
+  appendCss: LOGO_ONLY_NAV_CSS,
+  rawReplaces: [['href="#"', 'href="/"']],
+  ctaHrefs: MARKETING_CTA_HREF,
+});
+---
+
+<Base routeKey="recipe-pasta" artifactSchema={ported.headJsonLd}>
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

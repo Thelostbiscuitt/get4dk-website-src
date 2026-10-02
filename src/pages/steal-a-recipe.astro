@@ -1,0 +1,27 @@
+---
+// /steal-a-recipe/ — C1 conversion: STEAL IT (Stage 5).
+// REFERENCE: 4DK_C1_Conversion_Landing_Batch_v7_Audited (verbatim port).
+// Locked headline: "SAW IT? BRING IT HOME."
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/c1-steal.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { C1_LINK_REWRITES, CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/c1',
+  // W9-R1: locked five-item primary nav (replaces the batch nav).
+  rawReplaces: [lockedNavReplace('c1.html')],
+  linkRewrites: C1_LINK_REWRITES,
+  // W6: STEAL IT CTA → the app's real /steal route.
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.appSteal.href },
+});
+---
+
+<Base routeKey="c1-steal">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

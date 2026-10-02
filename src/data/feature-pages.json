@@ -1,0 +1,122 @@
+[
+  {
+    "key": "pantry",
+    "route": "/features/pantry/",
+    "img": "assets/pantry.png",
+    "kick": "01 / Pantry + Kitchen Scan",
+    "title": "Know what's<br>actually <em>there.</em>",
+    "body": "Scan it, add it, move on. Pantry should be the kitchen's current state, not another list you have to babysit.",
+    "points": [
+      "Kitchen Scan feeds the pantry instead of dying as a one-off result.",
+      "Quantities, categories and storage state become useful context.",
+      "Everything downstream can ask the same question: what is actually here?"
+    ],
+    "note": "start with what's real.",
+    "index": 1
+  },
+  {
+    "key": "freshness",
+    "route": "/features/freshness/",
+    "img": "assets/pantry.png",
+    "kick": "02 / Freshness",
+    "title": "Use it before<br>it becomes a <em>problem.</em>",
+    "body": "A date alone is not freshness. 4DK keeps track of what the date means, how the food is stored, what happened to it and how certain the answer is.",
+    "points": [
+      "Fresh, Use Soon, Priority and Check are useful states, not fake certainty.",
+      "Package dates, purchase dates, opened/cooked/frozen events stay distinct.",
+      "Freshness can change what gets recommended tonight."
+    ],
+    "note": "use this first.",
+    "index": 2
+  },
+  {
+    "key": "ask",
+    "route": "/features/ask/",
+    "img": "assets/ask.png",
+    "kick": "03 / Ask 4DK",
+    "title": "Ask from the kitchen<br>you actually <em>have.</em>",
+    "body": "You should not have to explain your pantry, your preferences and what you ate yesterday every time you ask a food question.",
+    "points": [
+      "Ask reads current kitchen state before answering.",
+      "Freshness, people, location and recent meals can change the answer.",
+      "The goal is fewer random suggestions and less re-explaining yourself."
+    ],
+    "note": "less guessing.",
+    "index": 3
+  },
+  {
+    "key": "steal",
+    "route": "/features/steal-it/",
+    "img": "assets/tools.png",
+    "kick": "04 / STEAL IT",
+    "title": "Saw it?<br><em>Bring it home.</em>",
+    "body": "A recipe you found somewhere else should not stay a bookmark. STEAL IT turns it into something 4DK can actually reason about.",
+    "points": [
+      "Import from supported links, images or text.",
+      "Normalize ingredients and compare them against your kitchen.",
+      "Keep the version that actually worked when you cook it."
+    ],
+    "note": "steal the idea. keep your version.",
+    "index": 4
+  },
+  {
+    "key": "house",
+    "route": "/features/house/",
+    "img": "assets/profile.png",
+    "kick": "05 / The House",
+    "title": "Everybody eats<br><em>different.</em>",
+    "body": "One kitchen can belong to several people without pretending everyone has the same taste, restrictions or history.",
+    "points": [
+      "Shared kitchen state stays shared.",
+      "Individual preferences stay individual.",
+      "Recommendations can optimize for who is actually eating."
+    ],
+    "note": "four people. one dinner.",
+    "index": 5
+  },
+  {
+    "key": "plan",
+    "route": "/features/plan/",
+    "img": "assets/plan.png",
+    "kick": "06 / Plan",
+    "title": "A week should not<br>feel like seven <em>resets.</em>",
+    "body": "Turn the food you already have and the meals that make sense into an actual week instead of planning in a vacuum.",
+    "points": [
+      "Plans can start from pantry and freshness, not a blank calendar.",
+      "Recent meals help keep repetition under control.",
+      "The shopping list can inherit what the plan is actually missing."
+    ],
+    "note": "tomorrow starts tonight.",
+    "index": 6
+  },
+  {
+    "key": "shop",
+    "route": "/features/shop/",
+    "img": "assets/shop.png",
+    "kick": "07 / Shop",
+    "title": "Buy what's missing.<br>Not what you already <em>own.</em>",
+    "body": "Shopping should close the gap between the plan and the pantry, not create another disconnected list.",
+    "points": [
+      "Pantry coverage separates what you own from what you need.",
+      "Planned meals can add missing ingredients automatically.",
+      "Later retail integrations can plug into the same shopping state."
+    ],
+    "note": "less waste. fewer duplicates.",
+    "index": 7
+  },
+  {
+    "key": "memory",
+    "route": "/features/memory/",
+    "img": "assets/profile.png",
+    "kick": "08 / Memory",
+    "title": "Next time should<br>start <em>smarter.</em>",
+    "body": "If you changed a recipe and liked it, cooked something yesterday or keep rejecting the same ingredient, that should matter later.",
+    "points": [
+      "Explicit preferences stay separate from observed behaviour.",
+      "Useful adaptations can be retrieved instead of recalculated.",
+      "Recent meals, history and successful changes give the next decision context."
+    ],
+    "note": "next time, better.",
+    "index": 8
+  }
+]

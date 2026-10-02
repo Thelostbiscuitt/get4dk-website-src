@@ -1,0 +1,136 @@
+/*
+ * 4DK shared design tokens — ONLY genuinely shared approved values.
+ *
+ * Extracted from the approved artifacts (launch-control / How-It-Works v7 /
+ * Features Hub v3 / Stage 8–13 pages). These are the constants every approved
+ * page already agrees on. Intentional per-page visual differences (type scale,
+ * composition, motion specifics) are NOT normalized here — pages own those in
+ * their own scoped styles when they migrate (W2+).
+ *
+ * ZERO-DESIGN-CHANGE RULE: adding to or changing values in this file requires
+ * an approved artifact as evidence.
+ */
+
+:root {
+  /* ── Color tokens (locked identity) ─────────────────────────────── */
+  --ink: #050505;            /* 4DK ink */
+  --ink-deep: #030303;       /* page background used by approved artifacts */
+  --cream: #f4f1e8;          /* 4DK cream */
+  --acid: #d9ff16;           /* 4DK acid — the canonical signal color */
+  --rule: rgba(244, 241, 232, 0.22);   /* hairline rule on dark */
+  --rule-soft: rgba(244, 241, 232, 0.13);
+  --cream-dim: #c9c4bb;      /* secondary text on dark */
+  --cream-mute: #969189;     /* tertiary metadata text on dark */
+
+  /* ── Type families (system stack — approved artifacts ship no webfonts) ── */
+  --mono: 'Courier New', monospace;
+  --sans: Arial, Helvetica, sans-serif;
+  --serif: Georgia, 'Times New Roman', serif;
+
+  /* ── Spacing primitives (common denominals only) ────────────────── */
+  --space-gutter: 4vw;
+  --space-section: 60px;
+
+  /* ── Focus + motion defaults (accessibility floor for every page) ── */
+  --focus-outline: 2px solid var(--acid);
+  --focus-offset: 3px;
+  --motion-fast: 150ms ease;
+  --motion-base: 300ms ease;
+
+  /* ── Shared breakpoints (from approved media queries) ───────────── */
+  /* Used as @media (max-width: var(--bp-1)) … values are informational;
+     media queries repeat literals because CSS vars cannot drive them. */
+  --bp-1: 900px;   /* two-column collapse */
+  --bp-2: 600px;   /* single-column collapse */
+}
+
+/* Visible focus everywhere — release-gate requirement. */
+:focus-visible {
+  outline: var(--focus-outline);
+  outline-offset: var(--focus-offset);
+}
+
+/* Reduced-motion floor — non-essential motion disabled. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ── Shared responsive utilities ──────────────────────────────────── */
+
+/* Shell skip-link (keyboard floor; visually minimal until page owns layout). */
+.w1-skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  background: var(--acid);
+  color: var(--ink);
+  font: 800 11px/1.2 var(--mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+}
+.w1-skip-link:focus {
+  left: 0;
+}
+
+/* W1 placeholder shell styling — scaffolding chrome, deliberately NOT the
+   approved page aesthetic. Replaced wholesale by each page's approved
+   implementation in W2+. No page composition is expressed here. */
+.w1-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--ink-deep);
+  color: var(--cream);
+  font-family: var(--sans);
+}
+.w1-shell__main {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  padding: var(--space-section) var(--space-gutter);
+}
+.w1-shell__card {
+  border: 1px solid var(--rule);
+  background: var(--ink);
+  padding: 34px;
+  max-width: 640px;
+  width: 100%;
+}
+.w1-shell__kicker {
+  color: var(--acid);
+  font: 900 10px/1.4 var(--mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: 0 0 14px;
+}
+.w1-shell__title {
+  font-size: 26px;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+.w1-shell__meta {
+  font: 600 11px/1.7 var(--mono);
+  color: var(--cream-dim);
+  margin: 0;
+  word-break: break-word;
+}
+.w1-shell__note {
+  margin: 18px 0 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--rule-soft);
+  font: 600 10px/1.6 var(--mono);
+  color: var(--cream-mute);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}

@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Pass — 4DK</title>
+<meta name="description" content="The Pass by 4DK: culture, kitchen knowledge, techniques, food rescue, and editorial stories that actually change how you cook.">
+<style>
+:root{--ink:#050505;--cream:#f4f1e8;--acid:#d9ff16;--rule:rgba(244,241,232,.48);--muted:#bcb6ab;--mono:'Courier New',monospace;--sans:Arial,Helvetica,sans-serif;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{background:var(--ink);scroll-behavior:smooth}body{margin:0;background:#030303;color:var(--cream);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:240;opacity:.11;background-image:radial-gradient(circle,#fff .55px,transparent .7px);background-size:6px 6px;mix-blend-mode:screen}
+.dust{position:fixed;inset:0;pointer-events:none;z-index:245;opacity:.12;background-image:radial-gradient(circle at 20% 30%,rgba(217,255,22,.65) 0 1px,transparent 1.4px),radial-gradient(circle at 75% 20%,rgba(255,255,255,.5) 0 .85px,transparent 1.3px),radial-gradient(circle at 68% 78%,rgba(217,255,22,.55) 0 .9px,transparent 1.45px),radial-gradient(circle at 36% 72%,rgba(255,255,255,.45) 0 .8px,transparent 1.35px),radial-gradient(circle at 84% 54%,rgba(217,255,22,.45) 0 1px,transparent 1.5px);background-size:360px 360px,420px 420px,390px 390px,340px 340px,440px 440px;mix-blend-mode:screen}
+.topbar{position:sticky;top:0;z-index:120;height:72px;border-bottom:1px solid var(--rule);background:rgba(3,3,3,.95);backdrop-filter:blur(8px);display:flex;align-items:center;padding:0 3.7vw}.logo{font-weight:950;font-size:40px;letter-spacing:-.065em;width:18%}.dot{color:var(--acid)}.nav{display:flex;gap:3.2vw;font:700 13px var(--mono);letter-spacing:.13em;text-transform:uppercase}.nav a:hover,.nav a.active{color:var(--acid)}.status{margin-left:auto;display:flex;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase}.status-dot{width:10px;height:10px;border-radius:50%;background:var(--acid)}.top-cta{margin-left:2.4vw;background:var(--acid);color:#050505;align-self:stretch;display:flex;align-items:center;padding:0 30px;font:900 12px var(--mono);letter-spacing:.11em;text-transform:uppercase}
+.hero{position:relative;min-height:860px;border-bottom:1px solid var(--rule);overflow:hidden;background:linear-gradient(180deg,#030303 0,#050505 100%)}
+.hero-photo-main{position:absolute;right:-4%;top:9%;width:43%;height:62%;object-fit:cover;object-position:center;filter:brightness(.88) contrast(1.08) saturate(1.05);border:1px solid rgba(244,241,232,.45);box-shadow:0 40px 85px rgba(0,0,0,.55);transform:rotate(2.6deg)}
+.hero-photo-strip{position:absolute;right:24%;top:18%;width:15%;height:36%;object-fit:cover;object-position:center;filter:brightness(.62) contrast(1.12) saturate(1);border:1px solid rgba(244,241,232,.28);transform:rotate(-6deg)}
+.hero-photo-bottom{position:absolute;right:8%;bottom:9%;width:26%;height:20%;object-fit:cover;object-position:center;filter:brightness(.58) contrast(1.16);border:1px solid rgba(244,241,232,.25);transform:rotate(-1.6deg)}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#050505 0 43%,rgba(5,5,5,.22) 63%,rgba(5,5,5,.28) 72%,#050505 100%),linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.32));pointer-events:none}
+.hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - .5px),rgba(244,241,232,.045) calc(25% - .5px) 25%),repeating-linear-gradient(180deg,transparent 0 calc(19% - .5px),rgba(244,241,232,.035) calc(19% - .5px) 19%);opacity:.35;pointer-events:none}
+.hero-copy{position:relative;z-index:5;padding:96px 4.1% 60px;width:60%}
+.eyebrow{font:800 13px var(--mono);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:18px}.eyebrow:before{content:'//';font-size:28px;font-weight:400}.eyebrow b{color:var(--acid)}
+.hero h1{margin:26px 0 22px;font-size:clamp(94px,11vw,196px);line-height:.72;letter-spacing:-.085em;text-transform:uppercase}.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:800}
+.hero-sub{max-width:710px;font:600 clamp(16px,1.2vw,20px)/1.62 var(--mono);letter-spacing:.03em;color:#e1ddd3}
+.hero-manifesto{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:820px;margin-top:34px}
+.manifesto-card{border:1px solid rgba(244,241,232,.24);min-height:125px;padding:18px 18px 16px;background:rgba(7,7,7,.72);box-shadow:0 0 0 1px rgba(217,255,22,.02) inset}
+.manifesto-card .k{font:900 10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--acid);margin-bottom:12px}.manifesto-card p{margin:0;font:600 11px/1.52 var(--mono);color:#d2cec5}
+.hero-note{position:absolute;left:2.6%;top:18%;width:8.2%;z-index:5;opacity:.96;filter:brightness(1.05)}
+.hero-scribble{position:absolute;right:6.6%;top:14%;z-index:6;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:clamp(30px,2.9vw,52px);line-height:.92;transform:rotate(-5deg)}
+.hero-index{position:absolute;left:4.1%;right:4.1%;bottom:3.6%;z-index:6;border-top:1px solid var(--rule);display:grid;grid-template-columns:15% 27% 26% 32%;gap:26px;padding-top:18px;font:800 11px/1.5 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#cbc7be}
+.hero-index b{color:var(--acid)}
+.hero-sticker{position:absolute;right:24%;top:61%;z-index:7;background:var(--acid);color:#050505;padding:11px 14px;font:900 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-4deg);box-shadow:0 12px 28px rgba(0,0,0,.4)}
+.hero-frame{position:absolute;left:3.2%;right:3.2%;top:78px;bottom:22px;border:1px solid rgba(244,241,232,.18);pointer-events:none}
+.filter-bar{position:sticky;top:72px;z-index:90;background:rgba(3,3,3,.97);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;padding:12px 4.1%}.filter-title{margin-right:16px;font:900 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}.filter{cursor:pointer;background:transparent;color:var(--cream);border:1px solid rgba(217,255,22,.28);padding:10px 13px;font:800 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:.2s ease;box-shadow:0 0 14px rgba(217,255,22,.08),inset 0 0 12px rgba(217,255,22,.02)}.filter.active{background:var(--acid);color:#050505;border-color:var(--acid);box-shadow:0 0 22px rgba(217,255,22,.18)}.filter:hover{border-color:rgba(217,255,22,.68);box-shadow:0 0 18px rgba(217,255,22,.15)}
+.issue-wrap{padding:38px 4.1% 18px;background:#040404;border-bottom:1px solid var(--rule)}
+.issue-strip{display:grid;grid-template-columns:1fr auto;gap:24px;border:1px solid rgba(244,241,232,.2);padding:14px 18px;background:linear-gradient(90deg,rgba(217,255,22,.06),rgba(217,255,22,0) 18%,rgba(255,255,255,.02) 100%)}
+.issue-strip strong{font:900 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}.issue-strip span{font:700 11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#d4cfc5}
+.lead{display:grid;grid-template-columns:1.05fr .95fr;gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}
+.lead-media,.lead-copy{background:#050505}
+.lead-media{position:relative;min-height:710px;overflow:hidden}.lead-media img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;filter:brightness(.86) contrast(1.1) saturate(1.04)}.lead-media:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,5,.92),rgba(5,5,5,.12) 46%,rgba(5,5,5,.06) 100%)}
+.lead-callout{position:absolute;left:4.5%;top:4.5%;z-index:3;background:#050505;border:1px solid rgba(217,255,22,.38);padding:12px 14px;box-shadow:0 0 22px rgba(217,255,22,.12)}.lead-callout b{display:block;font:900 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:8px}.lead-callout span{display:block;font:700 11px/1.45 var(--mono);letter-spacing:.06em;max-width:220px;color:#d9d4ca}
+.lead-stamp{position:absolute;right:4.2%;bottom:4.6%;z-index:3;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:clamp(24px,2.4vw,40px);line-height:.92;transform:rotate(-5deg)}
+.lead-copy{padding:62px 4.1vw;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}.lead-copy:before{content:'';position:absolute;right:-10%;top:-12%;width:56%;height:56%;background:radial-gradient(circle,rgba(217,255,22,.08),transparent 68%);filter:blur(8px)}
+.lead-copy .issue{font:900 12px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--acid);margin-bottom:22px}.lead-copy h2{margin:0 0 26px;font-size:clamp(58px,6.6vw,110px);line-height:.82;letter-spacing:-.075em;text-transform:uppercase;position:relative;z-index:2}.lead-copy h2 em{font-family:var(--serif);font-style:italic;font-weight:800}.lead-copy p{margin:0 0 18px;font:600 clamp(15px,1.08vw,18px)/1.68 var(--mono);color:#d2cec4;max-width:620px;position:relative;z-index:2}.lead-points{margin-top:20px;display:grid;gap:11px;position:relative;z-index:2}.lead-point{display:grid;grid-template-columns:38px 1fr;gap:12px;align-items:start;padding-top:10px;border-top:1px solid rgba(244,241,232,.14)}.lead-point b{font:900 10px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:var(--acid)}.lead-point span{font:600 12px/1.5 var(--mono);color:#cfc9bf}.read-link{display:inline-flex;align-self:flex-start;margin-top:26px;padding:14px 16px;border:1px solid var(--acid);font:900 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--acid);box-shadow:0 0 16px rgba(217,255,22,.1);position:relative;z-index:2}.read-link:hover{background:var(--acid);color:#050505}
+.section-head{padding:64px 4.1% 30px;display:flex;justify-content:space-between;align-items:end;gap:34px;border-bottom:1px solid rgba(244,241,232,.14)}.section-head h2{margin:0;font-size:clamp(48px,4.8vw,86px);line-height:.86;letter-spacing:-.065em;text-transform:uppercase}.section-head h2 em{font-family:var(--serif);font-style:italic}.section-head p{margin:0;max-width:560px;font:600 12px/1.58 var(--mono);letter-spacing:.05em;text-transform:uppercase;color:#bcb8ae}
+.story-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;padding:0 4.1% 72px;background:#030303;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.story{position:relative;background:#050505;min-height:440px;overflow:hidden;cursor:pointer;border:1px solid rgba(244,241,232,.28);box-shadow:0 18px 38px rgba(0,0,0,.34),inset 0 0 0 1px rgba(255,255,255,.015);transition:border-color .22s ease,box-shadow .22s ease,transform .22s ease}.story.large{grid-column:span 7}.story.tall{grid-column:span 5;min-height:540px}.story.med{grid-column:span 4;min-height:410px}.story.wide{grid-column:span 6;min-height:360px}
+.story img{width:100%;height:100%;object-fit:cover;transition:transform .55s cubic-bezier(.2,.8,.2,1),filter .4s ease;filter:brightness(.72) contrast(1.08)}.story:hover{border-color:rgba(217,255,22,.62);box-shadow:0 22px 48px rgba(0,0,0,.42),0 0 24px rgba(217,255,22,.08),inset 0 0 0 1px rgba(217,255,22,.10);transform:translateY(-2px)}.story:hover img{transform:scale(1.04);filter:brightness(.9) contrast(1.08)}.story:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,rgba(5,5,5,.97) 0,rgba(5,5,5,.42) 44%,rgba(5,5,5,.08) 76%)}
+.story .frame{position:absolute;left:12px;right:12px;top:12px;bottom:12px;border:1px solid rgba(244,241,232,.24);pointer-events:none;z-index:2}.story .frame:before{content:'';position:absolute;left:-1px;top:-1px;width:64px;height:3px;background:var(--acid);box-shadow:0 0 12px rgba(217,255,22,.16)}
+.story-meta{position:absolute;left:24px;right:24px;bottom:20px;z-index:4}.story-kicker{font:900 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acid);margin-bottom:10px}.story h3{margin:0 0 10px;font-size:clamp(28px,2.8vw,48px);line-height:.88;letter-spacing:-.055em;text-transform:uppercase}.story h3 em{font-family:var(--serif);font-style:italic;font-weight:800}.story p{margin:0;max-width:88%;font:600 11px/1.48 var(--mono);color:#d0cbc1}
+.story-tag{position:absolute;right:20px;top:20px;z-index:5;border:1px solid rgba(217,255,22,.72);background:rgba(5,5,5,.78);color:var(--acid);padding:8px 10px;font:800 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 12px rgba(217,255,22,.12)}
+.story-scribble{position:absolute;right:24px;bottom:120px;z-index:5;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:26px;line-height:.9;transform:rotate(-7deg);opacity:.92}
+.story.hidden{display:none}
+.editor-note{padding:74px 4.1%;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;overflow:hidden}.editor-note:before{content:'';position:absolute;right:-4%;top:0;width:42%;height:100%;background:radial-gradient(circle at center,rgba(217,255,22,.11),transparent 68%);filter:blur(16px)}.editor-note h2{margin:0;font-size:clamp(62px,6.8vw,118px);line-height:.8;letter-spacing:-.075em;text-transform:uppercase;position:relative;z-index:2}.editor-note h2 em{font-family:var(--serif);font-style:italic}.editor-note p{margin:0;font:600 16px/1.68 var(--mono);color:#cbc7bd;position:relative;z-index:2}.editor-note strong{color:var(--acid)}
+.mini-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}.rail-card{background:#050505;padding:28px 24px 30px;min-height:210px;position:relative;overflow:hidden}.rail-card:before{content:'';position:absolute;right:-10%;bottom:-12%;width:130px;height:130px;background:radial-gradient(circle,rgba(217,255,22,.12),transparent 70%)}.rail-card b{display:block;font:900 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:14px}.rail-card h3{margin:0 0 12px;font-size:clamp(26px,2.3vw,40px);line-height:.9;letter-spacing:-.04em;text-transform:uppercase}.rail-card p{margin:0;font:600 12px/1.56 var(--mono);color:#cecac0;max-width:92%}
+.canonical-banner{position:relative;width:100%;height:clamp(128px,8.4vw,178px);background:var(--acid);color:#030303;display:grid;grid-template-columns:22% 13% 29% 13% 23%;align-items:center;overflow:hidden;border-bottom:1px solid #050505;z-index:10}.canonical-banner .acid-art{width:100%;height:100%;object-fit:cover}.canonical-banner .acid-meta{font:800 clamp(10px,.95vw,16px)/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase}.canonical-banner .acid-brand{font-weight:950;font-size:clamp(48px,5.2vw,87px);letter-spacing:-.07em;text-align:center;white-space:nowrap}.canonical-banner .acid-brand small{font:800 clamp(9px,.9vw,15px) var(--mono);letter-spacing:.12em;margin-left:1.5vw}.canonical-banner .acid-divider{border-left:2px solid rgba(0,0,0,.7);padding-left:2vw}.canonical-banner .acid-right{width:100%;height:100%;object-fit:cover}
+.closing-banner:after{content:'';position:absolute;top:-10%;left:-35%;width:22%;height:120%;background:linear-gradient(105deg,transparent 0,rgba(255,255,255,.02) 32%,rgba(255,255,255,.52) 50%,rgba(255,255,255,.02) 68%,transparent 100%);opacity:0;transform:skewX(-14deg);pointer-events:none;z-index:20}.closing-banner.hit{animation:closingKick .42s cubic-bezier(.2,.8,.2,1) both}.closing-banner.hit .acid-brand{animation:brandSnap .52s cubic-bezier(.16,.85,.2,1) both}.closing-banner.hit:after{animation:closingShine .72s .06s cubic-bezier(.18,.72,.15,1) 1}@keyframes closingKick{0%{filter:brightness(.8) contrast(1.05)}42%{filter:brightness(1.12) contrast(1.08)}100%{filter:none}}@keyframes brandSnap{0%{transform:scale(.955);letter-spacing:-.09em}55%{transform:scale(1.025);letter-spacing:-.06em}100%{transform:scale(1);letter-spacing:-.07em}}@keyframes closingShine{0%{left:-35%;opacity:0}18%{opacity:.55}100%{left:120%;opacity:0}}
+@media(max-width:980px){.hero-copy{width:68%}.hero-manifesto{grid-template-columns:1fr}.hero-photo-main{width:46%}}
+@media(max-width:850px){.topbar{height:58px;padding:0 5.5vw}.logo{font-size:28px;width:auto}.nav,.status{display:none}.top-cta{margin-left:auto;padding:0 15px;font-size:9px}.hero{min-height:1060px}.hero-note{display:none}.hero-copy{width:100%;padding:72px 5.8% 40px}.hero h1{font-size:22vw;margin-top:20px}.hero-sub{font-size:3.55vw;max-width:92%}.hero-manifesto{grid-template-columns:1fr;max-width:100%}.hero-photo-main{right:-20%;top:48%;width:88%;height:28%;transform:rotate(0)}.hero-photo-strip{display:none}.hero-photo-bottom{right:4%;bottom:16%;width:44%;height:13%}.hero-scribble{right:6%;top:42%;font-size:8vw}.hero-index{left:5.8%;right:5.8%;bottom:3%;grid-template-columns:1fr;gap:8px}.filter-bar{top:58px;padding:10px 5.8%;overflow-x:auto;white-space:nowrap}.filter-title{display:none}.issue-wrap{padding:22px 5.8% 18px}.issue-strip{grid-template-columns:1fr}.lead{grid-template-columns:1fr}.lead-media{min-height:420px}.lead-copy{padding:44px 5.8%}.lead-copy h2{font-size:14vw}.section-head{padding:46px 5.8% 22px;display:block}.section-head h2{font-size:12vw}.section-head p{margin-top:16px}.story-grid{display:grid;grid-template-columns:1fr;gap:14px;padding:0 5.8% 46px;background:#030303}.story,.story.large,.story.tall,.story.med,.story.wide{grid-column:auto;min-height:420px;border:1px solid rgba(244,241,232,.28)}.editor-note{grid-template-columns:1fr;padding:56px 5.8%;gap:24px}.editor-note h2{font-size:14vw}.editor-note p{font-size:3.5vw}.mini-rail{grid-template-columns:1fr}.canonical-banner{height:122px;grid-template-columns:23% 0 50% 0 27%}.canonical-banner .acid-meta{display:none}.canonical-banner .acid-brand{font-size:12vw}.canonical-banner .acid-brand small{display:block;margin:4px 0 0;font-size:2.4vw}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<div class="dust"></div>
+<header class="topbar">
+  <a class="logo" href="index.html">4DK<span class="dot">.</span></a>
+  <nav class="nav"><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a class="active" href="the-pass.html">The Pass</a><a href="#">Pricing</a></nav>
+  <div class="status"><span class="status-dot"></span>Systems nominal</div>
+  <a class="top-cta" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">Start cooking →</a>
+</header>
+<section class="hero">
+  <div class="hero-frame"></div>
+  <img class="hero-photo-main" src="assets/food-jollof-poster.jpg" alt="Jollof rice editorial food photography">
+  <img class="hero-photo-strip" src="assets/food-card-tacos.jpg" alt="Tacos food photography">
+  <img class="hero-photo-bottom" src="assets/food-card-pasta.jpg" alt="Pasta food photography">
+  <img class="hero-note" src="assets/note_left.png" alt="Good food better people note">
+  <div class="hero-overlay"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-copy">
+    <div class="eyebrow">The Pass / <b>Issue 01</b> / food worth knowing</div>
+    <h1>The <em>Pass.</em></h1>
+    <p class="hero-sub">Not food-media fluff. If a post does not help you cook better, understand what you're buying, use something before it dies, or see the culture around the food, it has no business being here. The Pass is where 4DK talks like it actually has taste.</p>
+    <div class="hero-manifesto">
+      <div class="manifesto-card"><div class="k">Culture</div><p>Food has a backstory. Ingredients do not appear from nowhere and recipes are not floating in empty space.</p></div>
+      <div class="manifesto-card"><div class="k">Technique</div><p>Some things change the result. Some things are just noise. The useful difference is the point.</p></div>
+      <div class="manifesto-card"><div class="k">Rescue</div><p>Storage, leftovers, substitutions, salvage moves. Good food should go further than one perfect photo.</p></div>
+    </div>
+  </div>
+  <div class="hero-scribble">not a blog.<br>a kitchen paper.</div>
+  <div class="hero-sticker">Culture / technique / rescue</div>
+  <div class="hero-index"><span><b>EDITORIAL SYSTEM</b><br>The Pass / not content.</span><span><b>WHAT SHOWS UP HERE</b><br>Stories. arguments. context. things that actually help.</span><span><b>READ IT THEN COOK</b><br>Everything should end up back in the kitchen somehow.</span><span><b>80s PRESSURE</b><br>big type. acid hits. grit. zero polite lifestyle nonsense.</span></div>
+</section>
+<nav class="filter-bar" aria-label="Filter The Pass"><strong class="filter-title">Filter the pass</strong><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="use">Use it</button><button class="filter" data-filter="cook">Cook it</button><button class="filter" data-filter="know">Know it</button></nav>
+<section class="issue-wrap">
+  <div class="issue-strip"><strong>On this issue</strong><span>Jollof as culture. Rescue moves that matter. Why some ingredients are doing more than people give them credit for.</span></div>
+</section>
+<section class="lead" data-cat="culture">
+  <div class="lead-media">
+    <img src="assets/food-jollof-wide.jpg" alt="Jollof rice and grilled chicken">
+    <div class="lead-callout"><b>Lead story / Nigeria</b><span>Not just a plate. Memory. place. argument. method. the whole thing.</span></div>
+    <div class="lead-stamp">food carries<br>people.</div>
+  </div>
+  <div class="lead-copy">
+    <div class="issue">Culture / 001</div>
+    <h2>Jollof isn't<br>just <em>rice.</em></h2>
+    <p>Everybody wants the final plate. Not enough people want to talk about what the dish is carrying with it. Jollof is taste, yes. It's also region, heat management, party memory, household method, and the kind of arguments food only gets when it actually matters.</p>
+    <p>This is where 4DK earns the editorial lane. We are not flattening dishes into generic recipe cards and pretending that's enough.</p>
+    <div class="lead-points">
+      <div class="lead-point"><b>01</b><span>Where the dish sits culturally matters as much as the ingredient list.</span></div>
+      <div class="lead-point"><b>02</b><span>Technique changes identity. Heat, tomato handling and stock choices are not background details.</span></div>
+      <div class="lead-point"><b>03</b><span>If the food is loved enough to start an argument, it deserves better storytelling too.</span></div>
+    </div>
+    <a class="read-link" href="#">Read the story →</a>
+  </div>
+</section>
+<section>
+  <div class="section-head"><h2>On the <em>pass.</em></h2><p>Useful stories only. The kind you save, quote, or remember the next time you're staring into the fridge.</p></div>
+  <div class="story-grid" id="story-grid">
+    <article class="story large" data-cat="culture"><div class="frame"></div><img src="assets/food-card-tacos.jpg" alt="Tacos"><span class="story-tag">Culture</span><div class="story-scribble">more than<br>fillings.</div><div class="story-meta"><div class="story-kicker">Mexico / Food culture</div><h3>Tacos were never<br>supposed to be <em>boring.</em></h3><p>The wrappers and fillings are the easy part. Texture, acidity, heat balance and the actual reason the thing works are where the conversation starts.</p></div></article>
+    <article class="story tall" data-cat="use"><div class="frame"></div><img src="assets/food-plan-grid.jpg" alt="Meal planning"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Freshness / Rescue</div><h3>Cook the chicken<br><em>first.</em></h3><p>Novelty should not outrank urgency. If one ingredient is about to go, it gets first say in dinner.</p></div></article>
+    <article class="story med" data-cat="know"><div class="frame"></div><img src="assets/food-card-pasta.jpg" alt="Pasta"><span class="story-tag">Know it</span><div class="story-meta"><div class="story-kicker">Technique / Ingredient</div><h3>Panko is not<br>just <em>breadcrumbs.</em></h3><p>Texture, crunch, airflow and why the swap is sometimes fine and sometimes lazy.</p></div></article>
+    <article class="story med" data-cat="cook"><div class="frame"></div><img src="assets/food-jollof-clean.jpg" alt="Jollof rice"><span class="story-tag">Cook it</span><div class="story-meta"><div class="story-kicker">Technique / Heat</div><h3>Stop crowding<br>the <em>pan.</em></h3><p>Sometimes your recipe is fine. Your heat management is just ruining the ending.</p></div></article>
+    <article class="story med" data-cat="use"><div class="frame"></div><img src="assets/food-card-jollof.jpg" alt="Food rescue"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Storage / Leftovers</div><h3>Leftovers are<br>still <em>food.</em></h3><p>Store it like you plan to eat it. Not like you're hoping it disappears quietly.</p></div></article>
+    <article class="story wide" data-cat="know"><div class="frame"></div><img src="assets/food-jollof-poster.jpg" alt="Scotch bonnet"><span class="story-tag">Know it</span><div class="story-scribble">heat with a<br>point.</div><div class="story-meta"><div class="story-kicker">Ingredient intelligence</div><h3>Scotch bonnet.<br>Not just <em>heat.</em></h3><p>Flavour, aroma, substitutes and why replacing chilli with chilli is not the same as understanding the ingredient.</p></div></article>
+    <article class="story wide" data-cat="culture"><div class="frame"></div><img src="assets/food-card-pasta.jpg" alt="Carbonara"><span class="story-tag">Culture</span><div class="story-meta"><div class="story-kicker">Italy / Technique</div><h3>Carbonara has<br>opinions <em>too.</em></h3><p>What the dish is, what people fight about, and what actually changes the result versus what is just internet theatre.</p></div></article>
+  </div>
+</section>
+<section class="editor-note">
+  <h2>Good food deserves<br>better than <em>content.</em></h2>
+  <p><strong>The Pass should earn the click.</strong><br><br>If a story does not help you understand food, use something before it dies, cook it better, or see where it came from, it should not make the cut. That is the rule. Everything else is decoration.</p>
+</section>
+<section class="mini-rail">
+  <article class="rail-card"><b>Lane 01</b><h3>Culture with<br>teeth.</h3><p>Not postcard culture. The real stuff. Migration, habit, arguments, memory, and how dishes actually live with people.</p></article>
+  <article class="rail-card"><b>Lane 02</b><h3>Kitchen rescue<br>moves.</h3><p>The parts of cooking that save money, save food, and save you from doing dumb things twice.</p></article>
+  <article class="rail-card"><b>Lane 03</b><h3>Ingredient<br>intelligence.</h3><p>Why something works, what it changes, what you can swap, and what should absolutely be left alone.</p></article>
+</section>
+<section class="canonical-banner closing-banner" id="closing-banner">
+  <img class="acid-art" src="assets/footer_left.png" alt="">
+  <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
+  <a class="acid-brand" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></a>
+  <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
+  <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
+</section>
+<script>
+const filters=[...document.querySelectorAll('.filter')];
+const items=[...document.querySelectorAll('[data-cat]')];
+filters.forEach(btn=>btn.addEventListener('click',()=>{
+  filters.forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  const f=btn.dataset.filter;
+  items.forEach(item=>{
+    const ok=f==='all'||item.dataset.cat===f;
+    item.classList.toggle('hidden',!ok);
+  });
+}));
+const closing=document.getElementById('closing-banner');
+if(closing){
+  const io=new IntersectionObserver(entries=>entries.forEach(e=>{
+    if(e.isIntersecting){closing.classList.remove('hit'); void closing.offsetWidth; closing.classList.add('hit');}
+  }),{threshold:.45});
+  io.observe(closing);
+}
+</script>
+</body>
+</html>

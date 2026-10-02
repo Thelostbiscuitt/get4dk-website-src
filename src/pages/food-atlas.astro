@@ -1,0 +1,31 @@
+---
+// /food-atlas/ — Food Atlas (Stage 13).
+// REFERENCE: 4DK_Stage13_Food_Atlas_v1/food-atlas.html (concrete page —
+// latest). Verbatim port via lib/port.ts. The page's single external CTA
+// ("Use location context in 4DK →") is routed through the central CTA config.
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/food-atlas.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { insertNavAfterBrand, LOGO_ONLY_NAV_CSS } from '../lib/feature-pages';
+
+// W9-R1: locked five-item primary nav inserted after the brand mark in the
+// approved logo-only header (composition preserved; nav hidden < 900px).
+const withNav = insertNavAfterBrand(raw, '/food-atlas/');
+
+const ported = portArtifact(withNav, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/food-atlas',
+  appendCss: LOGO_ONLY_NAV_CSS,
+  // W6: "Use location context in 4DK →" → Ask the Kitchen, where the app
+  // applies location context to recommendations.
+  ctaHrefs: { 'https://get4dk.com/': CTA.appAsk.href },
+});
+---
+
+<Base routeKey="food-atlas">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

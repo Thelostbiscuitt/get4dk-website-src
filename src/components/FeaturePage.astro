@@ -1,0 +1,44 @@
+---
+/**
+ * FeaturePage — the eight standalone PRODUCT routes, exploded at build time
+ * from the approved Features Hub v3 artifact (W0: all eight routes share the
+ * hub's detail states as their canonical visual reference).
+ *
+ * Composition is the approved hub exactly — header, hero, sticky feature list
+ * (crawlable <a> navigation to all eight), baked detail state, system note,
+ * closing banner — with the locked five-item primary nav (W9-R1 §6/§7).
+ * Product imagery resolves through the canonical current-4DK screens (W4).
+ */
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/features.html?raw';
+import { portArtifact } from '../lib/port';
+import { explodeFeatureHtml, getFeaturePage } from '../lib/feature-pages';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+
+interface Props {
+  featureKey: 'pantry' | 'freshness' | 'ask' | 'steal' | 'house' | 'plan' | 'shop' | 'memory';
+}
+
+const { featureKey } = Astro.props;
+const feature = getFeaturePage(featureKey);
+
+const exploded = explodeFeatureHtml(raw, featureKey);
+const ported = portArtifact(exploded, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/features',
+  linkRewrites: { 'index.html': '/' },
+  ctaHrefs: {
+    // Topbar/closing-banner CTA (approved mailto) → signup, per W6.
+    [LEGACY_BETA_MAILTO]: CTA.betaAccess.href,
+    // The feature's own primary CTA, "Start cooking →" (W0) → app welcome.
+    'https://get4dk.com/': CTA.startCooking.href,
+  },
+});
+---
+
+<Base routeKey={`features-${feature.key === 'steal' ? 'steal-it' : feature.key}`}>
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

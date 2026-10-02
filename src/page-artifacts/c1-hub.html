@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>4DK C1 Conversion Landing System</title>
+<meta name="description" content="Four problem-first 4DK conversion routes: dinner decisions, freshness rescue, Kitchen Scan and STEAL IT.">
+<style>
+:root{
+  --ink:#050505;
+  --cream:#f4f1e8;
+  --acid:#d9ff16;
+  --rule:rgba(244,241,232,.40);
+  --paper:#f5f3ee;
+  --ghost:#dedede;
+  --mono:'Courier New',monospace;
+  --sans:Arial,Helvetica,sans-serif;
+}
+*{box-sizing:border-box}
+html{background:#030303}
+body{margin:0;background:#030303;color:var(--cream);font-family:var(--sans);overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+img{display:block;max-width:100%}
+
+/* ---------- ACCEPTED GRID VIEW: restored, not redesigned ---------- */
+.grid-header{
+  padding:70px 5vw 44px;
+  border-bottom:1px solid var(--rule);
+  background:#030303;
+}
+.grid-logo{
+  font-size:48px;
+  font-weight:950;
+  letter-spacing:-.06em;
+}
+.grid-logo b{color:var(--acid)}
+.grid-header h1{
+  font-size:clamp(68px,8vw,138px);
+  line-height:.78;
+  letter-spacing:-.07em;
+  text-transform:uppercase;
+  margin:34px 0 22px;
+}
+.grid-header p{
+  font:600 15px/1.6 var(--mono);
+  max-width:780px;
+  color:#cdc8be;
+}
+.grid-view{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1px;
+  background:var(--rule);
+}
+.grid-card{
+  background:#050505;
+  padding:46px 5vw;
+  min-height:410px;
+  position:relative;
+  overflow:hidden;
+}
+.grid-card:after{
+  content:'';
+  position:absolute;
+  right:-70px;
+  bottom:-70px;
+  width:230px;
+  height:230px;
+  background:radial-gradient(circle,rgba(217,255,22,.12),transparent 70%);
+  pointer-events:none;
+}
+.grid-card:hover{background:#080808}
+.grid-num{
+  font:900 10px var(--mono);
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--acid);
+}
+.grid-card h2{
+  font-size:clamp(42px,4.7vw,78px);
+  line-height:.84;
+  letter-spacing:-.06em;
+  text-transform:uppercase;
+  margin:24px 0 20px;
+}
+.grid-card p{
+  font:600 12px/1.62 var(--mono);
+  color:#c9c4ba;
+  max-width:650px;
+}
+.grid-cta{
+  display:inline-block;
+  margin-top:24px;
+  border:1px solid var(--acid);
+  color:var(--acid);
+  padding:12px 14px;
+  font:900 10px var(--mono);
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  position:relative;
+  z-index:2;
+}
+
+/* ---------- SHARED SWITCH ---------- */
+.view-switch{
+  position:fixed;
+  z-index:300;
+  left:50%;
+  bottom:25px;
+  transform:translateX(-50%);
+  background:#fff;
+  color:#050505;
+  border:1px solid #111;
+  border-radius:30px;
+  padding:4px;
+  box-shadow:0 3px 0 var(--acid);
+}
+.view-switch button{
+  border:0;
+  background:transparent;
+  color:#050505;
+  padding:10px 15px;
+  border-radius:22px;
+  font:700 9px var(--mono);
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+.view-switch button.active{background:#050505;color:#fff}
+
+/* ---------- LIST MODE: rebuilt from HABIBCORE Work composition ---------- */
+.list-topbar,
+.list-view,
+.wheel-mark,
+.pick-circle,
+.list-preview-wrap,
+.list-meta,
+.list-case-cta,
+.list-instruction{display:none}
+
+body.list-mode{
+  background:var(--paper);
+  color:#050505;
+}
+body.list-mode .grid-header,
+body.list-mode .grid-view{display:none}
+
+body.list-mode .list-topbar{
+  display:flex;
+  position:fixed;
+  z-index:220;
+  left:0;right:0;top:0;
+  height:62px;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 14px 0 0;
+  background:var(--paper);
+}
+.list-brand{
+  padding-left:0;
+  font-size:28px;
+  font-weight:950;
+  letter-spacing:-.055em;
+}
+.list-brand b{color:#718200}
+.list-start{
+  background:#050505;
+  color:#fff;
+  padding:12px 15px;
+  font:800 9px var(--mono);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+
+body.list-mode .list-view{
+  display:block;
+  width:min(calc(100% - 72px),1240px);
+  margin:0 auto;
+  min-height:1750px;
+  padding:calc(60vh - 90px) 0 calc(50vh + 80px);
+  position:relative;
+}
+.list-names{
+  width:83%;
+  padding-left:210px;
+}
+.list-name{
+  display:block;
+  width:100%;
+  border:0;
+  background:none;
+  text-align:left;
+  padding:0;
+  font-size:clamp(70px,8.4vw,138px);
+  font-weight:850;
+  line-height:.78;
+  letter-spacing:-.073em;
+  text-transform:uppercase;
+  color:var(--ghost);
+  transition:color .16s ease;
+}
+.list-name.active,
+.list-name:hover{color:#050505}
+
+/* HABIBCORE has a separate fixed logo-mark at left and a pick point on the type.
+   The user's requested adaptation uses 4DK. as that left wheel/indicator. */
+body.list-mode .wheel-mark{
+  display:block;
+  position:fixed;
+  z-index:225;
+  left:88px;
+  top:47%;
+  transform:translateY(-50%);
+  font-size:22px;
+  font-weight:950;
+  letter-spacing:-.07em;
+  color:#050505;
+  pointer-events:none;
+}
+.wheel-mark b{color:#718200}
+.wheel-ring{
+  position:absolute;
+  inset:-8px -10px;
+  border:1px solid #050505;
+  border-radius:50%;
+  transform:rotate(var(--wheel-rot,0deg));
+  transition:transform .08s linear;
+}
+.wheel-ring:after{
+  content:'';
+  position:absolute;
+  width:6px;height:6px;
+  border-radius:50%;
+  background:#050505;
+  top:-3px;left:50%;
+  transform:translateX(-50%);
+}
+
+/* Keep the original list pick point too; this is the small dot that chooses the active line. */
+body.list-mode .pick-circle{
+  display:block;
+  position:fixed;
+  z-index:226;
+  left:50.3%;
+  top:59.8%;
+  width:22px;
+  height:22px;
+  border-radius:50%;
+  background:#050505;
+  transform:translate(-50%,-50%);
+  pointer-events:none;
+}
+
+/* single preview image, no nested/broken composition */
+body.list-mode .list-preview-wrap{
+  display:block;
+  position:fixed;
+  z-index:230;
+  right:17px;
+  top:39%;
+  width:315px;
+  height:395px;
+  border:1px solid #111;
+  background:#fff;
+  padding:9px;
+  transform:rotate(-7deg);
+}
+.list-preview-wrap:hover{transform:rotate(-3deg)}
+.list-preview{
+  width:100%;
+  height:100%;
+  background:#f2f2ef;
+  overflow:hidden;
+}
+.list-preview img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* metadata + explicit CTA, matching the Habibcore layout instead of hiding the action in text */
+body.list-mode .list-meta{
+  display:block;
+  position:fixed;
+  z-index:232;
+  right:350px;
+  top:49%;
+  width:175px;
+  font:600 9px/1.45 var(--mono);
+  text-transform:uppercase;
+}
+.list-meta b{font-weight:900}
+body.list-mode .list-case-cta{
+  display:inline-flex;
+  position:fixed;
+  z-index:233;
+  right:346px;
+  top:56%;
+  background:#050505;
+  color:#fff;
+  padding:8px 11px;
+  font:800 8px var(--mono);
+  letter-spacing:.12em;
+  text-transform:uppercase;
+}
+body.list-mode .list-case-cta:hover{background:#718200}
+
+body.list-mode .list-instruction{
+  display:block;
+  position:fixed;
+  z-index:232;
+  left:50%;
+  bottom:77px;
+  transform:translateX(-50%);
+  font:600 8px var(--mono);
+  letter-spacing:.08em;
+  color:#777;
+  white-space:nowrap;
+  text-transform:uppercase;
+}
+
+@media(max-width:1050px){
+  .grid-view{grid-template-columns:1fr}
+  body.list-mode .list-view{
+    width:min(calc(100% - 36px),900px);
+    padding-top:24vh;
+  }
+  .list-names{width:100%;padding-left:0}
+  .list-name{font-size:clamp(62px,13vw,110px)}
+  body.list-mode .wheel-mark,
+  body.list-mode .pick-circle,
+  body.list-mode .list-preview-wrap,
+  body.list-mode .list-meta,
+  body.list-mode .list-case-cta,
+  body.list-mode .list-instruction{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- Accepted grid -->
+<header class="grid-header">
+  <div class="grid-logo">4DK<b>.</b></div>
+  <h1>C1 / Conversion<br>Landing System.</h1>
+  <p>Four problem-first acquisition pages. Each one answers a different kitchen pain, demonstrates the relevant part of 4DK, and points toward the same product without turning into a generic SaaS landing page.</p>
+</header>
+
+<main class="grid-view" id="gridView">
+  <a class="grid-card" href="what-should-i-cook-tonight.html">
+    <div class="grid-num">C1 / Dinner decision</div>
+    <h2>I DON'T KNOW WHAT TO EAT.</h2>
+    <p>Good. Start there. 4DK looks at what is actually in the kitchen, what needs using, who is eating, and what you have been eating lately. Then it helps narrow dinner down to something that makes sense now.</p>
+    <span class="grid-cta">Open page →</span>
+  </a>
+
+  <a class="grid-card" href="use-it-before-it-goes-bad.html">
+    <div class="grid-num">C1 / Freshness rescue</div>
+    <h2>USE THIS FIRST.</h2>
+    <p>The food closest to becoming a problem should get a louder vote. 4DK manages freshness as kitchen context so the next meal can rescue something before it turns into waste.</p>
+    <span class="grid-cta">Open page →</span>
+  </a>
+
+  <a class="grid-card" href="scan-my-kitchen.html">
+    <div class="grid-num">C1 / Kitchen Scan</div>
+    <h2>POINT. SCAN. MOVE ON.</h2>
+    <p>Inventory only works if adding food does not become a second job. Kitchen Scan is for turning what the camera can see into useful kitchen state, then letting you correct the exceptions.</p>
+    <span class="grid-cta">Open page →</span>
+  </a>
+
+  <a class="grid-card" href="steal-a-recipe.html">
+    <div class="grid-num">C1 / STEAL IT</div>
+    <h2>SAW IT? BRING IT HOME.</h2>
+    <p>A recipe you found somewhere else should not die as another bookmark. STEAL IT turns the idea into something 4DK can compare against your pantry, adapt to your reality, and remember after you cook it.</p>
+    <span class="grid-cta">Open page →</span>
+  </a>
+</main>
+
+<!-- List-only chrome -->
+<header class="list-topbar">
+  <div class="list-brand">4DK<b>.</b></div>
+  <a class="list-start" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">START COOKING</a>
+</header>
+
+<section class="list-view" id="listView">
+  <div class="list-names">
+    <a class="list-name active" data-key="dinner" href="what-should-i-cook-tonight.html">I don't know what to eat.</a>
+    <a class="list-name" data-key="freshness" href="use-it-before-it-goes-bad.html">Use this first.</a>
+    <a class="list-name" data-key="scan" href="scan-my-kitchen.html">Point. Scan. Move on.</a>
+    <a class="list-name" data-key="steal" href="steal-a-recipe.html">Saw it? Bring it home.</a>
+  </div>
+</section>
+
+<div class="wheel-mark" aria-hidden="true">
+  <span class="wheel-ring"></span>
+  4DK<b>.</b>
+</div>
+<div class="pick-circle" aria-hidden="true"></div>
+
+<a class="list-preview-wrap" id="listPreviewLink" href="what-should-i-cook-tonight.html" aria-label="Open selected route">
+  <div class="list-preview">
+    <img id="listPreviewImage" src="assets/ask.png" alt="4DK route preview">
+  </div>
+</a>
+
+<div class="list-meta" id="listMeta">
+  ROUTE<br><b>01 / DINNER DECISION</b><br><br>
+  INTENT<br><b>WHAT TO COOK TONIGHT</b>
+</div>
+<a class="list-case-cta" id="listCaseCta" href="what-should-i-cook-tonight.html">OPEN PAGE →</a>
+<div class="list-instruction">SCROLL TO MOVE THE ROUTES — THE DOT PICKS — CLICK A NAME OR OPEN PAGE</div>
+
+<div class="view-switch" aria-label="Change view">
+  <button class="active" data-view="grid">▦ GRID VIEW</button>
+  <button data-view="list">☰ LIST VIEW</button>
+</div>
+
+<script>
+const routes={
+  dinner:{
+    label:'01 / DINNER DECISION',
+    intent:'WHAT TO COOK TONIGHT',
+    href:'what-should-i-cook-tonight.html',
+    preview:'assets/ask.png'
+  },
+  freshness:{
+    label:'02 / FRESHNESS RESCUE',
+    intent:'USE FOOD BEFORE IT GOES BAD',
+    href:'use-it-before-it-goes-bad.html',
+    preview:'assets/pantry.png'
+  },
+  scan:{
+    label:'03 / KITCHEN SCAN',
+    intent:'CAMERA TO PANTRY CONTEXT',
+    href:'scan-my-kitchen.html',
+    preview:'assets/tools.png'
+  },
+  steal:{
+    label:'04 / STEAL IT',
+    intent:'IMPORT AND ADAPT A RECIPE',
+    href:'steal-a-recipe.html',
+    preview:'assets/recipe.png'
+  }
+};
+
+const names=[...document.querySelectorAll('.list-name')];
+const previewLink=document.getElementById('listPreviewLink');
+const previewImage=document.getElementById('listPreviewImage');
+const meta=document.getElementById('listMeta');
+const caseCta=document.getElementById('listCaseCta');
+const switchButtons=[...document.querySelectorAll('[data-view]')];
+
+let activeKey='dinner';
+
+function activate(key){
+  const d=routes[key];
+  if(!d || key===activeKey && document.querySelector('.list-name.active')?.dataset.key===key) return;
+  activeKey=key;
+  names.forEach(n=>n.classList.toggle('active',n.dataset.key===key));
+  meta.innerHTML=`ROUTE<br><b>${d.label}</b><br><br>INTENT<br><b>${d.intent}</b>`;
+  previewLink.href=d.href;
+  caseCta.href=d.href;
+  previewImage.src=d.preview;
+}
+
+function updateFromScroll(){
+  if(!document.body.classList.contains('list-mode')) return;
+  const target=window.innerHeight*.598;
+  let best=names[0],dist=Infinity;
+  names.forEach(n=>{
+    const r=n.getBoundingClientRect();
+    const d=Math.abs((r.top+r.height/2)-target);
+    if(d<dist){dist=d;best=n}
+  });
+  activate(best.dataset.key);
+
+  // 4DK wheel indicator rotates gently with scroll; the pick logic remains the central dot.
+  const rot=(window.scrollY*.08)%360;
+  document.documentElement.style.setProperty('--wheel-rot',`${rot}deg`);
+}
+
+let raf=false;
+window.addEventListener('scroll',()=>{
+  if(raf)return;
+  raf=true;
+  requestAnimationFrame(()=>{
+    raf=false;
+    updateFromScroll();
+  });
+},{passive:true});
+
+names.forEach(n=>{
+  n.addEventListener('mouseenter',()=>activate(n.dataset.key));
+  n.addEventListener('focus',()=>activate(n.dataset.key));
+});
+
+switchButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  switchButtons.forEach(b=>b.classList.toggle('active',b===btn));
+  const list=btn.dataset.view==='list';
+  document.body.classList.toggle('list-mode',list);
+  window.scrollTo({top:0,behavior:'auto'});
+  if(list) requestAnimationFrame(updateFromScroll);
+}));
+
+activate('dinner');
+</script>
+</body>
+</html>

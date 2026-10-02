@@ -1,0 +1,74 @@
+{
+  "schemaVersion": "mimosa-finding-ledger-batch/v1",
+  "batchId": "stop-20260930T190105808Z-118252-cc95ee431f83",
+  "runId": "20260930T190105808Z-118252-cc95ee431f83",
+  "runStatus": "inconclusive",
+  "coverage": {
+    "status": "partial",
+    "reasons": [
+      {
+        "code": "baseline_snapshot_unreadable",
+        "stage": "baseline-read",
+        "target": "src/lib/cta.ts",
+        "detail": "file is missing from task baseline",
+        "affectsCompletion": true
+      },
+      {
+        "code": "project_check_failed",
+        "stage": "baseline-read",
+        "target": "src/lib/cta.ts",
+        "detail": "baseline_snapshot_unreadable: file is missing from task baseline",
+        "affectsCompletion": true
+      }
+    ]
+  },
+  "source": {
+    "component": "zcode-hook",
+    "operationId": "Stop"
+  },
+  "revision": null,
+  "diffHash": "3a0714a2c0a28bc08cd102028564d292a7f1a7a408f72aba0901ce6bfa496233",
+  "rulesVersion": "unavailable",
+  "sessionHash": "eb8a75d9651cadbef4c4f557340c3322824307f9303bc552c451e095a4bfd1b9",
+  "reportRef": ".mimosa/reports/task-review-sess_84d546c5-6b9b-4dd9-8206-edd2d2c5fce1-20260930T190105808Z-118252-cc95ee431f83.json",
+  "events": [
+    {
+      "eventId": "hook-88250c450f6c844eec7074335e1da196",
+      "findingId": "mimosa-0e0bdd55205301ebf36395a9",
+      "type": "finding_observed",
+      "at": "2026-09-30T19:01:05.808Z",
+      "identity": {
+        "projectRelativeFile": "package.json",
+        "ruleId": "mimosa.supply.version-range",
+        "codeEvidenceHash": "b80f8b7ddb594c8d54156529e4fdaf021a772dca4845878e8fa554d36c1fb5a3",
+        "confidence": "stable"
+      },
+      "scope": "direct",
+      "line": 20,
+      "endLine": 20,
+      "reasonCode": "observe",
+      "reportedToAgent": false,
+      "evidence": {
+        "kind": "source",
+        "boundary": "candidate",
+        "producer": "deterministic",
+        "evidenceHash": "b80f8b7ddb594c8d54156529e4fdaf021a772dca4845878e8fa554d36c1fb5a3"
+      },
+      "sequence": 0
+    }
+  ],
+  "observedFindingIds": [],
+  "verifiedFiles": [
+    {
+      "file": "src/lib/port.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    },
+    {
+      "file": "src/lib/cta.ts",
+      "direct": "complete",
+      "projectContext": "partial"
+    }
+  ],
+  "recordedAt": "2026-09-30T19:01:06.190Z"
+}

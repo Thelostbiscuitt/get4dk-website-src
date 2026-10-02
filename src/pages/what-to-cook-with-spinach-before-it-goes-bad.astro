@@ -1,0 +1,24 @@
+---
+// /what-to-cook-with-spinach-before-it-goes-bad/ — Food Intelligence sample (Stage 7).
+// Archetype: freshness rescue (problem-aware buyer stage).
+// REFERENCE: 4DK_First_Content_Program_Samples_v1 (verbatim port).
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/intelligence-spinach-freshness.html?raw';
+import { portArtifact } from '../lib/port';
+import { CONTENT_LINK_REWRITES, MARKETING_CTA_HREF, CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/content',
+  rawReplaces: [lockedNavReplace('content.html')],
+  linkRewrites: CONTENT_LINK_REWRITES,
+  ctaHrefs: MARKETING_CTA_HREF,
+});
+---
+
+<Base routeKey="content-freshness-rescue" artifactSchema={ported.headJsonLd}>
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

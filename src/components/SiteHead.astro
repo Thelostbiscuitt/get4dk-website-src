@@ -1,0 +1,63 @@
+---
+/**
+ * SiteHead — global metadata + canonical + Open Graph + schema seam.
+ * Every page composes this; pages add their own scoped styles/assets in W2.
+ */
+import { getRoute } from '../lib/routes';
+import { buildPageMeta, ogImagePath, ogType, socialDescription, SITE_IDENTITY } from '../lib/seo';
+import { schemaForRoute } from '../lib/schema';
+import { identityAssets } from '../lib/assets';
+import { absoluteUrl } from '../lib/hosts';
+
+interface Props {
+  routeKey: string;
+  /**
+   * Approved JSON-LD extracted from the page's artifact (lib/port.ts).
+   * When present it is emitted verbatim and the manifest-seam nodes are
+   * suppressed for that page — the artifact @graph already carries the
+   * complete approved nodes (WebPage + BreadcrumbList + Recipe/Article),
+   * so emitting both would duplicate types with thinner data.
+   */
+  artifactSchema?: string | null;
+}
+
+const { routeKey, artifactSchema } = Astro.props;
+const route = getRoute(routeKey);
+const meta = buildPageMeta(route);
+const schemaNodes = artifactSchema ? [] : schemaForRoute(route);
+const ogImage = absoluteUrl(ogImagePath(route));
+const ogDescription = socialDescription(route);
+const ogIsArticle = ogType(route) === 'article';
+---
+
+<title>{meta.title}</title>
+{meta.description ? <meta name="description" content={meta.description} /> : null}
+<meta name="robots" content={meta.robots} />
+<link rel="canonical" href={meta.canonical} />
+<meta name="theme-color" content="#050505" />
+
+{/* Open Graph */}
+<meta property="og:site_name" content={SITE_IDENTITY.name} />
+<meta property="og:title" content={meta.title} />
+<meta property="og:description" content={ogDescription} />
+<meta property="og:type" content={ogType(route)} />
+<meta property="og:url" content={meta.canonical} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content={route.name} />
+{ogIsArticle ? <meta property="article:publisher" content={absoluteUrl('/')} /> : null}
+
+{/* Twitter/X */}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={meta.title} />
+<meta name="twitter:description" content={ogDescription} />
+<meta name="twitter:image" content={ogImage} />
+<meta name="twitter:image:alt" content={route.name} />
+
+<link rel="icon" href={identityAssets.faviconSvg} type="image/svg+xml" />
+<link rel="alternate icon" href={identityAssets.favicon32} type="image/png" sizes="32x32" />
+<link rel="apple-touch-icon" href={identityAssets.favicon180} />
+
+{schemaNodes.map((node) => <script type="application/ld+json" set:html={JSON.stringify(node)} />)}
+{artifactSchema ? <script type="application/ld+json" set:html={artifactSchema} /> : null}

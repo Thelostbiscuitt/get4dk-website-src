@@ -1,0 +1,647 @@
+{
+  "pages": {
+    "/404.html": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:This route isn't on the pass.",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/ask/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Ask 4DK",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/freshness/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Freshness",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/house/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:The House",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Everything inthe kitchen should talk.",
+        "H2:Kitchentools.",
+        "H3:Know what'sactually there.",
+        "H2:Not eight appswearing one logo."
+      ],
+      "buttons": 8,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/memory/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Memory",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/pantry/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Pantry",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/plan/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Plan",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/shop/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Shop",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/features/steal-it/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:STEAL IT",
+        "H2:Product",
+        "H2:Discover",
+        "H2:Intelligence",
+        "H2:Get 4DK"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/food-atlas/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Where you are should change the answer.",
+        "H2:Why should location and cuisine stay sep",
+        "H3:Lagos.",
+        "H3:Nigerian",
+        "H2:How should 4DK decide what is realistica",
+        "H3:Local-first",
+        "H3:Observed ≠ assumed.",
+        "H2:What belongs inside a location record?",
+        "H3:Canonical + local.",
+        "H3:How people buy.",
+        "H3:Likely, not guaranteed.",
+        "H3:Function first.",
+        "H3:Context, not cages.",
+        "H3:Say the right thing.",
+        "H2:Same craving.Better local answer."
+      ],
+      "buttons": 10,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/how-it-works/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:The kitchendoesn't reset.",
+        "H2:What do weactually have?",
+        "H2:Having chickenisn't the answer.",
+        "H2:Okay. So whatmakes sense now?",
+        "H2:Make it.Change it if you want.",
+        "H3:Original recipe",
+        "H2:Tomorrow shouldn'tstart from zero.",
+        "H2:The meal isn'tthe end of the loop."
+      ],
+      "buttons": 9,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/how-long-does-cooked-jollof-rice-last-in-the-fridge/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:How long does cooked jollof rice last in",
+        "H2:What changes the storage answer?",
+        "H2:What if the rice sat out before it went ",
+        "H2:Why should 4DK store more than an expiry",
+        "H2:The page gives a rule.4DK keeps the reco"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/how-to-share-a-grocery-list-with-your-household/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:How do you share a grocery list without ",
+        "H2:What belongs to the household and what b",
+        "H3:Preferences.",
+        "H3:One state.",
+        "H3:Still a person.",
+        "H2:How should a shared grocery list prevent",
+        "H3:Build the delta.",
+        "H3:Sync the state.",
+        "H3:Feed Pantry.",
+        "H2:Why is this more than a shared checklist",
+        "H2:Share the kitchen.Not one personality.",
+        "H2:What questions naturally follow shared g"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Dinnerdecided.",
+        "H3:Use what you have",
+        "H3:Get ideas anytime",
+        "H3:Plan with ease",
+        "H3:Shop smarter",
+        "H3:Reduce waste",
+        "H2:Start cooking.",
+        "H2:Pantry.",
+        "H2:Ask.",
+        "H2:Plan.",
+        "H2:Shop.",
+        "H2:Recipes.",
+        "H1:Good food.Brighter days.",
+        "H2:SIGN IN."
+      ],
+      "buttons": 1,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/pricing/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Get 4DK.Make the kitchen remember.",
+        "H2:Choose how much kitchen context you want",
+        "H3:Try the kitchen.",
+        "H3:Actually useful.",
+        "H3:Your kitchen remembers.",
+        "H3:One kitchen. Actual people.",
+        "H2:Beta should feel like access.Not a penal",
+        "H3:Dinner decided.Kitchen remembered.",
+        "H2:What should a pricing page answer before"
+      ],
+      "buttons": 5,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/recipes/20-minute-tomato-spinach-pasta/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:20-minute tomato & spinach pasta.",
+        "H2:Ingredients",
+        "H2:Method",
+        "H3:Boil the pasta.",
+        "H3:Build the tomato base.",
+        "H3:Add spinach.",
+        "H3:Finish together.",
+        "H3:Season.",
+        "H2:What can I change without breaking the r",
+        "H3:Use another green.",
+        "H3:Use tinned.",
+        "H3:Skip it.",
+        "H2:What changes when I cook for two instead",
+        "H3:Halve quantities.",
+        "H3:Keep enough surface.",
+        "H3:Taste again.",
+        "H2:Cook it once.Keep your version."
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/recipes/one-pot-jollof-style-chicken-rice/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:One-pot jollof-stylechicken rice.",
+        "H2:What do I need for one-pot jollof-style ",
+        "H2:Ingredients",
+        "H2:Method",
+        "H3:Brown the chicken.",
+        "H3:Build the tomato base.",
+        "H3:Add rice + liquid.",
+        "H3:Cook covered.",
+        "H3:Rest.",
+        "H2:What can I change without pretending it ",
+        "H3:Reduce chilli.",
+        "H3:Use water.",
+        "H3:Respect timing.",
+        "H2:How do I know the chicken is safely cook",
+        "H2:Cook it once.Keep your version.",
+        "H2:What supporting pages should this recipe"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/scan-my-kitchen/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:POINT.SCAN.MOVE ON.",
+        "H2:The scan shouldfeed the system.",
+        "H3:Capture whatis visible.",
+        "H3:Fix theexceptions.",
+        "H3:Let the kitchenremember.",
+        "H2:The useful part comesafter the scan.",
+        "H2:Quick answers."
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/steal-a-recipe/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:SAW IT?BRING IT HOME.",
+        "H2:Bookmarks do notknow your kitchen.",
+        "H3:Bring in theidea.",
+        "H3:What do youalready have?",
+        "H3:Keep yourversion.",
+        "H2:Save less.Remember better.",
+        "H2:Quick answers."
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/the-pass/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:The Pass.",
+        "H2:Jollof isn'tjust rice.",
+        "H2:On the pass.",
+        "H3:Tacos were neversupposed to be boring.",
+        "H3:Cook the chickenfirst.",
+        "H3:Panko is notjust breadcrumbs.",
+        "H3:Stop crowdingthe pan.",
+        "H3:Leftovers arestill food.",
+        "H3:Scotch bonnet.Not just heat.",
+        "H3:Carbonara hasopinions too.",
+        "H2:Good food deservesbetter than content.",
+        "H3:Culture withteeth.",
+        "H3:Kitchen rescuemoves.",
+        "H3:Ingredientintelligence."
+      ],
+      "buttons": 5,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/the-pass/nigerian-jollof-rice/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:What makes Nigerian jollof Nigerian?",
+        "H2:What is Nigerian jollof?",
+        "H2:Why does party jollof taste more smoky?",
+        "H3:Fire changes flavour.",
+        "H3:The bottom matters.",
+        "H3:Big-batch cooking is different.",
+        "H2:Is jollof rice Nigerian?",
+        "H3:Shared roots.",
+        "H3:Distinct habits.",
+        "H2:Culture should changethe recommendation.",
+        "H2:What should this page lead to next?"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/use-cases/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:C1 / ConversionLanding System.",
+        "H2:I DON'T KNOW WHAT TO EAT.",
+        "H2:USE THIS FIRST.",
+        "H2:POINT. SCAN. MOVE ON.",
+        "H2:SAW IT? BRING IT HOME."
+      ],
+      "buttons": 2,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/use-it-before-it-goes-bad/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:USE THISFIRST.",
+        "H2:A date is not thewhole story.",
+        "H3:What do weknow?",
+        "H3:What needsattention?",
+        "H3:Cook the rightthing first.",
+        "H2:4DK manages freshness.You manage excepti",
+        "H2:Quick answers."
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/versus/fried-plantain-vs-boiled-plantain/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Friedplantain.",
+        "H1:Boiledplantain.",
+        "H2:Why do people care this much about plant",
+        "H3:Texture wins.",
+        "H3:The meal matters.",
+        "H2:Your vote should feel like a comment.",
+        "H2:The app should knowwhich side you actual"
+      ],
+      "buttons": 3,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/what-can-i-cook-with-what-i-have/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:What can I cook withwhat I have?",
+        "H2:How do I decide what to cook from the in",
+        "H3:Start with anchors.",
+        "H3:Check the gap.",
+        "H3:Let urgency vote.",
+        "H2:What makes one recipe a better pantry ma",
+        "H2:Why is this more useful than a generic r",
+        "H2:Your pantry shoulddo the filtering.",
+        "H2:What should I ask after I know what I ha"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/what-can-i-use-instead-of-panko-in-nigeria/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:What can I use instead of panko in Niger",
+        "H2:What job is panko doing in the recipe?",
+        "H3:Dry breadcrumbs.",
+        "H3:Crushed cornflakes.",
+        "H3:Cracker crumbs.",
+        "H3:Regular breadcrumbs.",
+        "H2:Which panko substitute should I choose f",
+        "H2:How should Nigeria change a substitution",
+        "H2:A substitute shouldstill do the job.",
+        "H2:What related substitution questions dese"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/what-should-a-meal-planning-app-do/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:What should a meal planning app actually",
+        "H2:Which meal-planning features actually re",
+        "H3:Pantry-aware",
+        "H3:Easy to change",
+        "H3:Household-aware",
+        "H3:Shopping-connected",
+        "H2:What makes a meal-planning app feel like",
+        "H2:How should I compare meal-planning apps ",
+        "H2:Not seven boxes.One kitchen loop.",
+        "H2:What do prospective buyers search after "
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/what-should-i-cook-tonight/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:I DON'T KNOWWHAT TO EAT.",
+        "H2:Tonight should notstart from zero.",
+        "H3:What is here?",
+        "H3:What matters now?",
+        "H3:Pick fromfewer.",
+        "H2:You do not needanother recipe feed.",
+        "H2:Quick answers."
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/what-to-cook-with-spinach-before-it-goes-bad/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:What should I cook with spinach before i",
+        "H2:How should freshness change what I cook?",
+        "H2:What kinds of meals use a lot of spinach",
+        "H3:Eggs + spinach.",
+        "H3:Rice or noodles.",
+        "H3:Soup or stew.",
+        "H2:When should I stop trying to rescue spin",
+        "H2:The date should changewhat comes next.",
+        "H2:What should freshness questions lead to "
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    },
+    "/why-does-overcrowding-a-pan-stop-browning/": {
+      "status": 200,
+      "reloadStatus": 200,
+      "cls": 0,
+      "lcpMs": null,
+      "iframes": 0,
+      "headings": [
+        "H1:Why does overcrowding a pan stop food fr",
+        "H2:What actually changes when the pan is ov",
+        "H2:How do I get better browning without buy",
+        "H3:Dry the surface.",
+        "H3:Keep capacity.",
+        "H3:Batch it.",
+        "H2:What is the deeper cooking rule behind t",
+        "H2:Know why.Then change the move.",
+        "H2:What questions naturally fan out from br"
+      ],
+      "buttons": 0,
+      "linksWithoutHref": 0,
+      "lang": "en"
+    }
+  },
+  "axe": {},
+  "consoleIssues": [
+    {
+      "at": "http://127.0.0.1:4321/no-such-route/",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "badReqs": [
+    "/no-such-route/ → 404"
+  ],
+  "notFound": {
+    "status": 404,
+    "hasH1": true
+  }
+}

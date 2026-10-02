@@ -1,0 +1,24 @@
+{
+  "name": "4dk-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Production marketing website for get4dk.com — separate from the 4DK application codebase. Route truth: W0 APPROVED_ROUTE_MATRIX.md / Stage14 ROUTE_MANIFEST.json.",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "smoke": "node tools/smoke.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.2.1",
+    "astro": "^5.1.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "axe-core": "^4.13.0",
+    "playwright": "^1.63.0",
+    "typescript": "^5.7.2"
+  }
+}

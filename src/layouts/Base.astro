@@ -1,0 +1,60 @@
+---
+/**
+ * Base layout — html document wrapper + global tokens + metadata seam.
+ * Page individuality lives in page files and their scoped styles, never here.
+ */
+import '../styles/global.css';
+import SiteHead from '../components/SiteHead.astro';
+import { identityAssets } from '../lib/assets';
+
+interface Props {
+  routeKey?: string;
+  /** Approved artifact JSON-LD (see SiteHead). */
+  artifactSchema?: string | null;
+  /**
+   * 404 mode (W5): a not-found response must never be canonicalized or
+   * indexed, so it emits a minimal noindex head instead of borrowing any
+   * route's metadata (previously it mounted the home head — a W5 finding).
+   */
+  notFound?: boolean;
+}
+
+const { routeKey, artifactSchema, notFound } = Astro.props;
+
+/**
+ * W7 accessibility layer — injected via set:html (Astro treats a literal
+ * expression inside <style> as raw CSS text, which corrupted the first rule;
+ * W8 visual regression caught it). Mouse users see nothing: focus outlines
+ * are :focus-visible only, the skip link is off-screen until focused, and
+ * reduced-motion applies solely to users who requested it.
+ */
+const W7_A11Y_CSS = `
+  .w7-skip{position:absolute;left:-9999px;top:0;z-index:999;background:#050505;color:#f4f1e8;border:1px solid #d9ff16;padding:10px 14px;font:700 12px/1 'Courier New',monospace;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+  .w7-skip:focus{left:8px;top:8px;outline:2px solid #d9ff16;outline-offset:2px}
+  a:focus-visible,button:focus-visible,[tabindex]:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,label:focus-visible{outline:2px solid #d9ff16;outline-offset:2px}
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  }
+`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {notFound ? (
+      <>
+        <title>Page not found — 4DK</title>
+        <meta name="robots" content="noindex, nofollow" />
+        <meta name="theme-color" content="#050505" />
+        <link rel="icon" href={identityAssets.faviconSvg} type="image/svg+xml" />
+        <link rel="alternate icon" href={identityAssets.favicon32} type="image/png" sizes="32x32" />
+      </>
+    ) : (
+      <SiteHead routeKey={routeKey!} artifactSchema={artifactSchema} />
+    )}
+    <style is:global set:html={W7_A11Y_CSS} />
+  </head>
+  <slot />
+</html>

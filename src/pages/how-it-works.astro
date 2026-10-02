@@ -1,0 +1,26 @@
+---
+// /how-it-works/ — How 4DK Works (Stage 2).
+// REFERENCE: 4DK_How_It_Works_v7_LockedBanner_VisibleGlow (v7 — latest,
+// supersedes the master v4 stage-2 embed). Verbatim port via lib/port.ts.
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/how-it-works.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/how-it-works',
+  // W9-R1: locked five-item primary nav (replaces the section-anchor nav).
+  rawReplaces: [lockedNavReplace('how-it-works.html', '/how-it-works/')],
+  linkRewrites: { 'index.html': '/' },
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.betaAccess.href },
+});
+---
+
+<Base routeKey="how-it-works">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

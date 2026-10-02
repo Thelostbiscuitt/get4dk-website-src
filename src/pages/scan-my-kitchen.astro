@@ -1,0 +1,27 @@
+---
+// /scan-my-kitchen/ — C1 conversion: Kitchen Scan (Stage 5).
+// REFERENCE: 4DK_C1_Conversion_Landing_Batch_v7_Audited (verbatim port).
+// Locked headline: "POINT. SCAN. MOVE ON."
+import Base from '../layouts/Base.astro';
+import raw from '../page-artifacts/c1-scan.html?raw';
+import { portArtifact } from '../lib/port';
+import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
+import { C1_LINK_REWRITES, CANONICAL_ASSETS } from '../lib/artifact-links';
+import { lockedNavReplace } from '../lib/feature-pages';
+
+const ported = portArtifact(raw, {
+  canonicalAssets: CANONICAL_ASSETS,
+  assetPrefix: '/assets/pages/c1',
+  // W9-R1: locked five-item primary nav (replaces the batch nav).
+  rawReplaces: [lockedNavReplace('c1.html')],
+  linkRewrites: C1_LINK_REWRITES,
+  // W6: Kitchen Scan CTA → the app's real /scan route.
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.appScan.href },
+});
+---
+
+<Base routeKey="c1-scan">
+  <style is:global set:html={ported.css} />
+  <Fragment set:html={ported.body} />
+  {ported.scripts.map((js) => <script is:inline set:html={js} />)}
+</Base>

@@ -1,0 +1,60 @@
+---
+/**
+ * AcidBanner — the canonical 4DK closing banner block.
+ *
+ * LOCKED: this banner is literal. The approved composition (Stage14
+ * launch-control and every approved artifact footer): left image block,
+ * mono message, centered 4DK. brand, mono message, right image block on the
+ * acid field. Do not recreate approximately; do not redesign. Higher-resolution
+ * strip exports are a W0-recorded asset task — composition stays untouched.
+ */
+import { bannerAssets } from '../lib/assets';
+---
+
+<section class="w1-banner" aria-label="4DK">
+  <img src={bannerAssets.footerLeft} alt="" width="350" height="141" loading="lazy" decoding="async" />
+  <div class="w1-banner__m">Food intelligence<br />for real life.</div>
+  <div class="w1-banner__brand">4DK.</div>
+  <div class="w1-banner__m">Approved.<br />Integrated. Shipped.</div>
+  <img src={bannerAssets.footerRight} alt="Make something real" width="442" height="141" loading="lazy" decoding="async" />
+</section>
+
+<style>
+  .w1-banner {
+    background: var(--acid);
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 22% 13% 29% 13% 23%;
+    align-items: center;
+    overflow: hidden;
+    min-height: 155px;
+  }
+  .w1-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .w1-banner__brand {
+    font-weight: 950;
+    font-size: 72px;
+    letter-spacing: -0.07em;
+    text-align: center;
+    line-height: 1;
+  }
+  .w1-banner__m {
+    font: 800 11px/1.4 var(--mono);
+    text-transform: uppercase;
+  }
+  @media (max-width: 600px) {
+    .w1-banner {
+      grid-template-columns: 25% 50% 25%;
+    }
+    .w1-banner__m {
+      display: none;
+    }
+    .w1-banner__brand {
+      font-size: 12vw;
+    }
+  }
+</style>

@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>How 4DK Works — For D Kitchen</title>
+<meta name="description" content="4DK keeps the kitchen connected. See what you have, understand what matters, decide what makes sense, cook it, and remember what worked.">
+<style>
+:root{--ink:#050505;--cream:#f4f1e8;--acid:#d9ff16;--rule:rgba(244,241,232,.46);--muted:#aaa69e;--mono:'Courier New',monospace;--sans:Arial,Helvetica,sans-serif;--serif:Georgia,'Times New Roman',serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth;background:var(--ink)}body{margin:0;background:#030303;color:var(--cream);font-family:var(--sans);overflow-x:hidden}a{color:inherit;text-decoration:none}button{font:inherit}img{display:block;max-width:100%}.grain{position:fixed;inset:0;z-index:300;pointer-events:none;opacity:.11;background-image:radial-gradient(circle,#fff .52px,transparent .68px);background-size:6px 6px;mix-blend-mode:screen}.topbar{position:sticky;top:0;z-index:120;height:72px;border-bottom:1px solid var(--rule);background:rgba(3,3,3,.94);backdrop-filter:blur(9px);display:flex;align-items:center;padding:0 3.7vw}.logo{font-weight:950;font-size:40px;letter-spacing:-.065em;width:19%}.dot{color:var(--acid)}.nav{display:flex;gap:3.4vw;font:700 13px var(--mono);letter-spacing:.13em;text-transform:uppercase}.nav a:hover{color:var(--acid)}.status{margin-left:auto;display:flex;align-items:center;gap:10px;font:700 12px var(--mono);letter-spacing:.12em;text-transform:uppercase}.status-dot{width:10px;height:10px;border-radius:50%;background:var(--acid)}.top-cta{margin-left:2.4vw;background:var(--acid);color:#050505;align-self:stretch;display:flex;align-items:center;padding:0 30px;font:900 12px var(--mono);letter-spacing:.11em;text-transform:uppercase}
+.hero{position:relative;min-height:760px;height:calc(100vh - 72px);overflow:hidden;border-bottom:1px solid var(--rule)}.hero-food{position:absolute;right:-1%;top:-5%;width:61%;height:110%;object-fit:cover;object-position:center;filter:contrast(1.12) brightness(.65) saturate(1.03)}.hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0 36%,rgba(5,5,5,.72) 51%,rgba(5,5,5,.16) 74%,#050505 100%),linear-gradient(0deg,#050505 0,transparent 22% 72%,rgba(5,5,5,.5));pointer-events:none}.hero-copywrap{position:absolute;z-index:5;left:4.1%;top:10%;width:62%}.eyebrow{font:700 14px var(--mono);letter-spacing:.15em;text-transform:uppercase;display:flex;gap:18px;align-items:center}.eyebrow:before{content:'//';font-size:31px;font-weight:400}.hero h1{font-size:clamp(78px,8vw,142px);line-height:.78;letter-spacing:-.075em;text-transform:uppercase;margin:28px 0 30px;max-width:1050px}.hero h1 em{font-family:var(--serif);font-style:italic;font-weight:800}.hero p{font:600 clamp(15px,1.2vw,20px)/1.55 var(--mono);letter-spacing:.075em;text-transform:uppercase;max-width:760px}.hero-note{position:absolute;z-index:6;right:4.6%;top:12%;width:17%;filter:brightness(1.08);transform:rotate(-2deg)}.hero-footer{position:absolute;z-index:6;left:4.1%;right:4.1%;bottom:5.4%;display:flex;align-items:end;justify-content:space-between;border-top:1px solid var(--rule);padding-top:20px}.hero-footer .loop{font:900 13px var(--mono);letter-spacing:.13em;text-transform:uppercase}.hero-footer .loop b{color:var(--acid)}.hero-footer .line{font:600 12px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#c9c5bc}
+/* canonical brand banner: literal reuse of the approved landing-page acid strip */
+.canonical-banner{position:relative;width:100%;height:clamp(128px,8.4vw,178px);background:var(--acid);color:#030303;display:grid;grid-template-columns:22% 13% 29% 13% 23%;align-items:center;overflow:hidden;border-bottom:1px solid #050505;z-index:10}.canonical-banner .acid-art{width:100%;height:100%;object-fit:cover}.canonical-banner .acid-meta{font:800 clamp(10px,.95vw,16px)/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase}.canonical-banner .acid-brand{font-weight:950;font-size:clamp(48px,5.2vw,87px);letter-spacing:-.07em;text-align:center;white-space:nowrap}.canonical-banner .acid-brand small{font:800 clamp(9px,.9vw,15px) var(--mono);letter-spacing:.12em;margin-left:1.5vw}.canonical-banner .acid-divider{border-left:2px solid rgba(0,0,0,.7);padding-left:2vw}.canonical-banner .acid-right{width:100%;height:100%;object-fit:cover}
+
+.stage{position:relative;min-height:800px;border-bottom:1px solid var(--rule);overflow:hidden}.stage-inner{min-height:800px;display:grid;grid-template-columns:42% 58%;position:relative;z-index:4}.stage.alt .stage-inner{grid-template-columns:58% 42%}.stage-copy{padding:75px 7vw 60px 4.1%;display:flex;flex-direction:column;justify-content:center}.stage.alt .stage-copy{grid-column:2;padding:75px 4.1vw 60px 4vw}.num{font:900 15px var(--mono);letter-spacing:.16em;color:var(--acid);text-transform:uppercase;margin-bottom:22px}.stage h2{font-size:clamp(58px,6.1vw,104px);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;margin:0 0 28px}.stage h2 em{font-family:var(--serif);font-style:italic;font-weight:800}.stage .body{font:500 clamp(16px,1.2vw,20px)/1.55 var(--mono);letter-spacing:.02em;color:#d2cec4;max-width:650px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--rule);padding:9px 12px;font:700 11px var(--mono);letter-spacing:.09em;text-transform:uppercase}.chip.acid{background:var(--acid);color:#050505;border-color:var(--acid)}.visual{position:relative;display:grid;place-items:center;padding:55px 4.1vw}.stage.alt .visual{grid-column:1;grid-row:1}.annotation{position:absolute;z-index:12;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:clamp(27px,2.35vw,42px);line-height:.95;transform:rotate(-7deg);right:4%;bottom:10%;max-width:250px}.stage.alt .annotation{right:auto;left:4%;transform:rotate(6deg)}
+/* 01 — scan interaction */
+.scan-machine{position:relative;width:min(560px,86%);aspect-ratio:941/1672;border:1px solid rgba(244,241,232,.7);box-shadow:0 32px 90px rgba(0,0,0,.72);overflow:hidden;background:#060606;transform:rotate(-1.6deg)}.scan-machine>img{width:100%;height:100%;object-fit:cover}.scanline{position:absolute;left:0;right:0;height:2px;top:8%;background:var(--acid);box-shadow:0 0 15px var(--acid),0 0 32px rgba(217,255,22,.6);animation:scan 3.5s ease-in-out infinite alternate}.scanline:after{content:'READING KITCHEN STATE';position:absolute;right:12px;top:8px;background:#050505;color:var(--acid);font:800 9px var(--mono);letter-spacing:.1em;padding:5px 7px;border:1px solid var(--acid)}@keyframes scan{from{top:10%}to{top:86%}}.scan-stamps{position:absolute;left:-6%;bottom:10%;display:grid;gap:8px}.scan-stamps span{background:var(--acid);color:#050505;padding:7px 9px;font:900 10px var(--mono);letter-spacing:.09em;text-transform:uppercase;box-shadow:6px 6px 0 #050505}
+/* 02 — context board */
+.context-board{width:min(820px,95%);border:1px solid var(--rule);background:rgba(5,5,5,.92);display:grid;grid-template-columns:1.04fr 1fr;min-height:520px;box-shadow:0 28px 85px rgba(0,0,0,.55)}.context-photo{position:relative;overflow:hidden;border-right:1px solid var(--rule);background:linear-gradient(180deg,#090909 0,#050505 100%);display:flex;align-items:center;justify-content:center;padding:18px}.context-photo img{width:100%;height:auto;max-height:100%;object-fit:contain;object-position:center;filter:contrast(1.08) brightness(.9)}.context-photo:after{content:'';position:absolute;inset:0;background:linear-gradient(0deg,#050505,transparent 36%)}.context-controls{padding:34px}.context-controls .mini{font:800 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:20px}.ctx-buttons{display:grid;gap:10px}.ctx-btn{cursor:pointer;background:transparent;color:var(--cream);border:1px solid var(--rule);padding:13px 14px;text-align:left;font:800 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center;transition:border-color .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease}.ctx-btn:not(.active){border-color:rgba(217,255,22,.62);background:rgba(217,255,22,.018);box-shadow:0 0 16px 1px rgba(217,255,22,.24),inset 0 0 16px rgba(217,255,22,.045);text-shadow:0 0 9px rgba(217,255,22,.14)}.ctx-btn:not(.active):hover{border-color:rgba(217,255,22,.72);box-shadow:0 0 22px rgba(217,255,22,.26),inset 0 0 20px rgba(217,255,22,.06)}.ctx-btn.active{background:var(--acid);color:#050505;border-color:var(--acid);box-shadow:0 0 24px rgba(217,255,22,.18)}.ctx-answer{margin-top:24px;border-top:1px solid var(--rule);padding-top:24px}.ctx-answer b{display:block;font-size:31px;letter-spacing:-.04em;margin-bottom:12px}.ctx-answer p{margin:0;font:500 13px/1.6 var(--mono);color:#cfcac0}
+/* mid banner */
+/* 03 — meal choice */
+.meal-console{width:min(900px,96%)}.meal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.meal-card{cursor:pointer;border:1px solid var(--rule);background:#070707;text-align:left;color:var(--cream);padding:0;transition:.2s transform ease,.2s border-color ease,.2s filter ease,.2s box-shadow ease}.meal-card:not(.active){border-color:rgba(217,255,22,.52);box-shadow:0 0 16px 1px rgba(217,255,22,.21),inset 0 0 15px rgba(217,255,22,.035)}.meal-card:hover{transform:translateY(-5px);border-color:var(--acid);box-shadow:0 0 24px rgba(217,255,22,.27),inset 0 0 18px rgba(217,255,22,.045)}.meal-card.active{border:2px solid var(--acid);transform:translateY(-7px);box-shadow:0 0 26px rgba(217,255,22,.18)}.meal-card img{width:100%;aspect-ratio:16/9;object-fit:cover}.meal-card .meal-info{padding:14px}.meal-card b{font-size:16px;text-transform:uppercase}.meal-card small{display:block;margin-top:8px;font:700 9px var(--mono);letter-spacing:.09em;text-transform:uppercase;color:#bbb7ae}.why-box{margin-top:12px;border:1px solid var(--rule);display:grid;grid-template-columns:150px 1fr}.why-label{background:var(--acid);color:#050505;padding:18px;font:900 11px var(--mono);letter-spacing:.1em;text-transform:uppercase}.why-copy{padding:18px;font:600 12px/1.55 var(--mono);color:#d5d1c8}
+/* 04 — adaptation toggle */
+.cook-panel{width:min(830px,94%);border:1px solid var(--rule);background:#080808;box-shadow:0 28px 85px rgba(0,0,0,.55)}.cook-photo{height:290px;overflow:hidden;border-bottom:1px solid var(--rule)}.cook-photo img{width:100%;height:100%;object-fit:cover;filter:contrast(1.1) saturate(1.04)}.cook-toggle{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--rule)}.cook-toggle button{cursor:pointer;padding:14px;background:transparent;border:0;border-right:1px solid var(--rule);color:var(--cream);font:900 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:background .2s ease,color .2s ease,box-shadow .2s ease,border-color .2s ease}.cook-toggle button:last-child{border-right:0}.cook-toggle button:not(.active){background:rgba(217,255,22,.018);box-shadow:0 0 16px 1px rgba(217,255,22,.23),inset 0 0 15px rgba(217,255,22,.045);color:#f4f1e8;text-shadow:0 0 9px rgba(217,255,22,.14)}.cook-toggle button:not(.active):hover{box-shadow:0 0 22px rgba(217,255,22,.26),inset 0 0 18px rgba(217,255,22,.05)}.cook-toggle button.active{background:var(--acid);color:#050505;box-shadow:0 0 24px rgba(217,255,22,.18)}.cook-details{padding:28px}.cook-details h3{margin:0 0 16px;font-size:34px;text-transform:uppercase}.cook-details ul{margin:0;padding:0;list-style:none;display:grid;gap:9px}.cook-details li{font:600 12px var(--mono);color:#cfcac0;border-top:1px solid rgba(244,241,232,.16);padding-top:9px}.cook-details li:first-child{border-top:0;padding-top:0}
+/* 05 — memory ledger */
+.memory-board{width:min(850px,96%);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}.memory-row{cursor:pointer;display:grid;grid-template-columns:105px 1fr 120px;gap:18px;padding:18px 12px;border-bottom:1px solid rgba(217,255,22,.34);align-items:center;transition:.18s background ease,.18s box-shadow ease,.18s border-color ease}.memory-row:last-child{border-bottom:0}.memory-row:not(.active){background:rgba(217,255,22,.012);box-shadow:inset 0 0 0 1px rgba(217,255,22,.28),0 0 13px rgba(217,255,22,.13)}.memory-row:not(.active):hover{background:rgba(217,255,22,.05);box-shadow:inset 0 0 0 1px rgba(217,255,22,.54),0 0 20px rgba(217,255,22,.23)}.memory-row.active{background:rgba(217,255,22,.10);box-shadow:inset 4px 0 0 var(--acid),0 0 22px rgba(217,255,22,.15)}.memory-time{font:800 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}.memory-event b{display:block;text-transform:uppercase;font-size:18px}.memory-event small{font:600 10px var(--mono);color:#bdb9b1}.memory-state{font:900 10px var(--mono);letter-spacing:.08em;text-transform:uppercase;text-align:right}.memory-state span{color:var(--acid)}.memory-detail{margin-top:14px;padding:18px;border:1px solid var(--rule);font:600 12px/1.6 var(--mono);color:#d0ccc3}
+.loop-end{position:relative;min-height:760px;padding:90px 4.1% 110px;overflow:hidden}.loop-end .bg{position:absolute;right:0;top:50%;transform:translateY(-50%);width:64%;height:auto;max-height:104%;object-fit:contain;object-position:center;filter:brightness(.48) contrast(1.2);opacity:.78;mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 18%,#000 100%)}.loop-end:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#050505 0 38%,rgba(5,5,5,.76) 49%,rgba(5,5,5,.18) 79%),linear-gradient(0deg,#050505 0 12%,rgba(5,5,5,.18) 45%,#050505 100%)}.loop-inner{position:relative;z-index:5;max-width:1350px;margin:auto}.loop-end h2{font-size:clamp(68px,7.6vw,132px);line-height:.78;letter-spacing:-.075em;text-transform:uppercase;margin:0 0 30px;max-width:1100px}.loop-end h2 em{font-family:var(--serif);font-style:italic}.loop-end p{font:600 17px/1.55 var(--mono);letter-spacing:.04em;max-width:760px}.loop-diagram{margin-top:60px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);display:grid;grid-template-columns:repeat(5,1fr)}.loop-node{padding:24px 16px;border-right:1px solid var(--rule);font:900 13px var(--mono);text-transform:uppercase;letter-spacing:.1em}.loop-node:last-child{border:0}.loop-node b{display:block;color:var(--acid);font-size:22px;margin-bottom:8px}.cta-band{position:relative;background:var(--acid);color:#050505;padding:48px 4.1% 42px;display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:34px;overflow:hidden;border-top:1px solid #050505}.cta-band:before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.06),transparent 18% 82%,rgba(0,0,0,.08));pointer-events:none}.cta-band .cta-art-left,.cta-band .cta-art-right{position:absolute;top:0;height:100%;width:19%;object-fit:cover;mix-blend-mode:multiply;opacity:.88;pointer-events:none}.cta-band .cta-art-left{left:0;object-position:left center}.cta-band .cta-art-right{right:0;object-position:right center}.cta-copy{position:relative;z-index:2;max-width:1080px;padding-right:24px}.cta-kicker{font:900 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;margin-bottom:16px}.cta-band h3{font-size:clamp(56px,6.2vw,114px);line-height:.86;text-transform:uppercase;letter-spacing:-.07em;margin:0}.cta-band h3 em{font-family:var(--serif);font-style:italic;font-weight:800}.cta-band p{max-width:780px;margin:22px 0 0;font:700 clamp(14px,1.1vw,18px)/1.55 var(--mono);letter-spacing:.045em;text-transform:uppercase}.cta-actions{position:relative;z-index:2;display:flex;flex-direction:column;gap:14px;align-items:stretch}.cta-actions a{display:inline-flex;align-items:center;justify-content:center;min-width:228px;padding:18px 24px;font:900 13px var(--mono);letter-spacing:.12em;text-transform:uppercase;white-space:nowrap;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,color .2s ease}.cta-actions .primary{background:#050505;color:var(--acid);border:2px solid #050505;box-shadow:10px 10px 0 rgba(0,0,0,.22)}.cta-actions .primary:hover{transform:translate(-3px,-3px);box-shadow:16px 16px 0 rgba(0,0,0,.18)}.cta-actions .secondary{border:2px solid #050505;color:#050505;box-shadow:inset 0 0 0 1px rgba(0,0,0,.08)}.cta-actions .secondary:hover{background:rgba(5,5,5,.08)}.cta-note{position:absolute;right:4.6%;top:16px;font-family:var(--serif);font-style:italic;font-size:clamp(28px,2.35vw,42px);line-height:.92;color:#050505;transform:rotate(-5deg);text-align:right;z-index:2}
+
+.closing-banner{cursor:pointer;transform-origin:center;isolation:isolate}
+.closing-banner:after{content:'';position:absolute;top:-10%;left:-35%;width:22%;height:120%;background:linear-gradient(105deg,transparent 0,rgba(255,255,255,.02) 32%,rgba(255,255,255,.52) 50%,rgba(255,255,255,.02) 68%,transparent 100%);opacity:0;transform:skewX(-14deg);pointer-events:none;z-index:20}
+.closing-brand{position:relative;z-index:5}
+.closing-banner.hit{animation:closingKick .42s cubic-bezier(.2,.8,.2,1) both}
+.closing-banner.hit .closing-brand{animation:brandSnap .52s cubic-bezier(.16,.85,.2,1) both}
+.closing-banner.hit:after{animation:closingShine .72s .06s cubic-bezier(.18,.72,.15,1) 1}
+@keyframes closingKick{0%{filter:brightness(.8) contrast(1.05)}42%{filter:brightness(1.12) contrast(1.08)}100%{filter:none}}
+@keyframes brandSnap{0%{transform:scale(.955);letter-spacing:-.09em}55%{transform:scale(1.025);letter-spacing:-.06em}100%{transform:scale(1);letter-spacing:-.07em}}
+@keyframes closingShine{0%{left:-35%;opacity:0}18%{opacity:.55}100%{left:120%;opacity:0}}
+@media(prefers-reduced-motion:reduce){.closing-banner.hit,.closing-banner.hit .closing-brand,.closing-banner.hit:after{animation:none}}
+@media(max-width:800px){.topbar{height:58px;padding:0 5.5vw}.logo{font-size:28px;width:auto}.nav,.status{display:none}.top-cta{margin-left:auto;padding:0 15px;font-size:9px}.hero{height:auto;min-height:830px}.hero-food{width:100%;height:58%;right:0;top:0;opacity:.82}.hero:after{background:linear-gradient(0deg,#050505 0 44%,rgba(5,5,5,.56) 68%,rgba(5,5,5,.18) 100%),linear-gradient(90deg,#050505,transparent 25% 75%,#050505)}.hero-copywrap{left:5.8%;top:7%;width:88%}.eyebrow{font-size:10px}.eyebrow:before{font-size:22px}.hero h1{font-size:16.5vw;line-height:.8;margin-top:25px}.hero p{font-size:3.2vw;line-height:1.5;margin-top:32px}.hero-note{right:6%;top:28%;width:26%}.hero-footer{left:5.8%;right:5.8%;bottom:4%;display:block}.hero-footer .line{margin-top:12px;font-size:9px}.manifest{height:430px}.manifest-copy{left:5.8%;top:13%;transform:none;width:88%}.manifest h2{font-size:12.5vw}.manifest-photo{right:-4%;top:62%;width:88%;max-height:230px;transform:translateY(-50%);opacity:.76}.manifest-meta{left:5.8%;right:auto;top:auto;bottom:7%;transform:none;width:43%;padding:0;border-left:0;border-top:2px solid rgba(0,0,0,.65);padding-top:12px}.manifest:after{right:6%;bottom:7%}.stage-inner,.stage.alt .stage-inner{display:flex;flex-direction:column;min-height:0}.stage-copy,.stage.alt .stage-copy{order:1;padding:58px 5.8% 28px}.visual,.stage.alt .visual{order:2;padding:20px 5.8% 70px;width:100%}.stage h2{font-size:13vw}.stage .body{font-size:3.4vw}.annotation{font-size:7vw;right:6%;bottom:5%}.stage.alt .annotation{left:6%}.scan-machine{width:min(74vw,420px)}.context-board{grid-template-columns:1fr;min-height:0}.context-photo{height:250px;border-right:0;border-bottom:1px solid var(--rule)}.mid-banner{height:520px}.mid-banner img{right:-10%;top:28%;width:112%;max-height:270px;transform:none;opacity:.78}.mid-banner:after{background:linear-gradient(0deg,#050505 0 42%,rgba(5,5,5,.6) 58%,rgba(5,5,5,.05) 100%),linear-gradient(90deg,#050505,transparent 22% 78%,#050505)}.mid-copy{left:5.8%;right:5.8%;top:auto;bottom:9%;transform:none;width:auto}.mid-copy h2{font-size:13vw}.mid-banner .banner-note{right:6%;top:9%;font-size:7vw}.meal-grid{grid-template-columns:1fr}.why-box{grid-template-columns:1fr}.cook-photo{height:220px}.memory-row{grid-template-columns:78px 1fr}.memory-state{grid-column:2;text-align:left}.loop-end{min-height:720px;padding:70px 5.8%}.loop-end .bg{right:-12%;top:22%;transform:none;width:118%;max-height:330px}.loop-end h2{font-size:15vw}.loop-end p{font-size:3.5vw}.loop-diagram{grid-template-columns:1fr}.loop-node{border-right:0;border-bottom:1px solid var(--rule)}.loop-node:last-child{border-bottom:0}.cta-band{display:block;padding:36px 5.8% 34px}.cta-band .cta-art-left,.cta-band .cta-art-right{display:none}.cta-band h3{font-size:12.8vw;margin-bottom:20px}.cta-band p{font-size:3.25vw;max-width:none}.cta-actions{margin-top:22px}.cta-actions a{display:flex;width:100%;min-width:0}.cta-note{position:static;transform:none;text-align:left;margin:0 0 16px;font-size:10vw}}
+
+@media(max-width:800px){.canonical-banner{height:112px;grid-template-columns:24% 0 48% 0 28%}.canonical-banner .acid-meta{display:none}.canonical-banner .acid-brand{font-size:11vw;text-align:center}.canonical-banner .acid-brand small{display:block;font-size:2.2vw;margin:2px 0 0}.canonical-banner .acid-art,.canonical-banner .acid-right{object-fit:cover}.content-bridge{font-size:10px!important;line-height:1.5}}
+</style>
+</head>
+<body>
+<div class="grain"></div>
+<header class="topbar">
+  <a class="logo" href="index.html">4DK<span class="dot">.</span></a>
+  <nav class="nav"><a href="#see">Pantry</a><a href="#decide">Ask</a><a href="#cook">Cook</a><a href="#remember">Memory</a><a href="#loop">The loop</a></nav>
+  <div class="status"><span class="status-dot"></span>Systems nominal</div>
+  <a class="top-cta" href="#loop">Start cooking →</a>
+</header>
+
+<section class="hero">
+  <img class="hero-food" src="assets/food-jollof-clean.jpg" alt="Jollof rice and grilled chicken">
+  <div class="hero-copywrap">
+    <div class="eyebrow">How 4DK works / 001</div>
+    <h1>The kitchen<br>doesn't <em>reset.</em></h1>
+    <p>You cook. You use things. You change recipes. People change their minds. The kitchen moves. 4DK moves with it.</p>
+  </div>
+  <img class="hero-note" src="assets/footer_right.png" alt="Make something real">
+  <div class="hero-footer">
+    <div class="loop"><b>SCAN</b> → UNDERSTAND → DECIDE → COOK → REMEMBER ↺</div>
+    <div class="line">The meal isn't the end of the loop.</div>
+  </div>
+</section>
+
+<section class="canonical-banner" aria-label="4DK brand banner">
+  <img class="acid-art" src="assets/footer_left.png" alt="">
+  <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
+  <div class="acid-brand">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></div>
+  <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
+  <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
+</section>
+
+<section class="stage" id="see">
+  <div class="stage-inner">
+    <div class="stage-copy">
+      <div class="num">01 / SEE</div>
+      <h2>What do we<br>actually <em>have?</em></h2>
+      <div class="body">Scan the fridge. Scan the receipt. Add it once. 4DK turns what it sees into actual kitchen state instead of making you babysit a list.</div>
+      <div class="chips"><span class="chip acid">Kitchen Scan</span><span class="chip">Receipt Scan</span><span class="chip">Pantry</span></div>
+    </div>
+    <div class="visual">
+      <div class="scan-machine"><img src="assets/screen-pantry.png" alt="4DK pantry screen"><span class="scanline"></span><div class="scan-stamps"><span>13 items found</span><span>2 need attention</span></div></div>
+      <div class="annotation">start with what's real.</div>
+    </div>
+  </div>
+</section>
+
+<section class="stage alt" id="understand">
+  <div class="stage-inner">
+    <div class="stage-copy">
+      <div class="num">02 / UNDERSTAND</div>
+      <h2>Having chicken<br>isn't the <em>answer.</em></h2>
+      <div class="body">Is it fresh? Opened? Frozen? Needs using tonight? Who's eating? What do they hate? Where are you? 4DK checks the things that actually change the answer.</div>
+      <div class="chips"><span class="chip acid">Freshness</span><span class="chip">Personal context</span><span class="chip">The House</span><span class="chip">Location</span></div>
+    </div>
+    <div class="visual">
+      <div class="context-board">
+        <div class="context-photo"><img src="assets/food-plan-grid.jpg" alt="Meals"></div>
+        <div class="context-controls">
+          <div class="mini">Context changes the answer / tap a signal</div>
+          <div class="ctx-buttons">
+            <button class="ctx-btn active" data-key="fresh">Freshness <span>01</span></button>
+            <button class="ctx-btn" data-key="people">Who's eating <span>02</span></button>
+            <button class="ctx-btn" data-key="recent">Recent meals <span>03</span></button>
+            <button class="ctx-btn" data-key="location">Location <span>04</span></button>
+          </div>
+          <div class="ctx-answer"><b id="ctx-title">Chicken = PRIORITY</b><p id="ctx-copy">It needs using first. That changes what 4DK should recommend before taste or novelty even enters the room.</p></div>
+        </div>
+      </div>
+      <div class="annotation">context changes dinner.</div>
+    </div>
+  </div>
+</section>
+
+<div class="content-bridge" style="border-bottom:1px solid var(--rule);padding:24px 4.1%;font:800 12px var(--mono);letter-spacing:.13em;text-transform:uppercase;color:#c9c5bc">THE RECIPE IS THE OUTPUT. <span style="color:var(--acid)">THE KITCHEN IS THE SYSTEM.</span></div>
+
+<section class="stage" id="decide">
+  <div class="stage-inner">
+    <div class="stage-copy">
+      <div class="num">03 / DECIDE</div>
+      <h2>Okay. So what<br>makes sense <em>now?</em></h2>
+      <div class="body">Not forty random recipes. What fits what you have, what needs using, how much time you have, who you're feeding and what you've already eaten this week.</div>
+      <div class="chips"><span class="chip acid">Ask 4DK</span><span class="chip">Recipe matching</span><span class="chip">Next-best meal</span></div>
+    </div>
+    <div class="visual">
+      <div class="meal-console">
+        <div class="meal-grid">
+          <button class="meal-card active" data-meal="jollof"><img src="assets/food-card-jollof.jpg" alt="Jollof rice"><div class="meal-info"><b>Jollof + chicken</b><small>Uses priority chicken · 35 min</small></div></button>
+          <button class="meal-card" data-meal="pasta"><img src="assets/food-card-pasta.jpg" alt="Pasta"><div class="meal-info"><b>Tomato pasta</b><small>Fast · pantry heavy · 20 min</small></div></button>
+          <button class="meal-card" data-meal="tacos"><img src="assets/food-card-tacos.jpg" alt="Tacos"><div class="meal-info"><b>Tacos</b><small>House fit 82% · 25 min</small></div></button>
+        </div>
+        <div class="why-box"><div class="why-label">Why this?</div><div class="why-copy" id="why-copy">Chicken is priority, tomatoes are already in the pantry, and you haven't had rice in the last few meals. It wins without needing a speech.</div></div>
+      </div>
+      <div class="annotation">less guessing.</div>
+    </div>
+  </div>
+</section>
+
+<section class="stage alt" id="cook">
+  <div class="stage-inner">
+    <div class="stage-copy">
+      <div class="num">04 / COOK</div>
+      <h2>Make it.<br>Change it if you <em>want.</em></h2>
+      <div class="body">Swap panko for breadcrumbs. Air fry it. Add more pepper. If it worked, 4DK shouldn't act brand new the next time you make it.</div>
+      <div class="chips"><span class="chip acid">Cook Mode</span><span class="chip">STEAL IT</span><span class="chip">Recipe adaptation</span></div>
+    </div>
+    <div class="visual">
+      <div class="cook-panel">
+        <div class="cook-photo"><img src="assets/food-jollof-clean.jpg" alt="Cooked meal"></div>
+        <div class="cook-toggle"><button class="active" data-version="original">Original</button><button data-version="mine">My version</button></div>
+        <div class="cook-details"><h3 id="cook-title">Original recipe</h3><ul id="cook-list"><li>Standard heat + timing</li><li>Original ingredient list</li><li>No personal adjustment yet</li></ul></div>
+      </div>
+      <div class="annotation">make it yours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="stage" id="remember">
+  <div class="stage-inner">
+    <div class="stage-copy">
+      <div class="num">05 / REMEMBER</div>
+      <h2>Tomorrow shouldn't<br>start from <em>zero.</em></h2>
+      <div class="body">Cooking changes pantry. Pantry changes freshness. Leftovers become food state. What worked becomes memory. The next recommendation starts from there.</div>
+      <div class="chips"><span class="chip acid">Memory</span><span class="chip">Leftovers</span><span class="chip">History</span><span class="chip">Consumption</span></div>
+    </div>
+    <div class="visual">
+      <div style="width:min(850px,96%)">
+        <div class="memory-board">
+          <div class="memory-row active" data-memory="cook"><div class="memory-time">Tonight / 20:14</div><div class="memory-event"><b>Meal cooked</b><small>Jollof + chicken / 4 servings</small></div><div class="memory-state"><span>Recorded</span></div></div>
+          <div class="memory-row" data-memory="pantry"><div class="memory-time">20:15</div><div class="memory-event"><b>Pantry changed</b><small>Chicken −500g · tomatoes −4</small></div><div class="memory-state"><span>Updated</span></div></div>
+          <div class="memory-row" data-memory="leftover"><div class="memory-time">20:16</div><div class="memory-event"><b>Leftovers created</b><small>2 servings / refrigerate</small></div><div class="memory-state"><span>Tracked</span></div></div>
+          <div class="memory-row" data-memory="preference"><div class="memory-time">20:42</div><div class="memory-event"><b>Adaptation worked</b><small>More pepper · saved variation</small></div><div class="memory-state"><span>Remembered</span></div></div>
+        </div>
+        <div class="memory-detail" id="memory-detail">4DK knows this meal happened. Tomorrow it doesn't need to pretend the chicken is still there or suggest the same dinner again.</div>
+      </div>
+      <div class="annotation">next time, better.</div>
+    </div>
+  </div>
+</section>
+
+<section class="loop-end" id="loop">
+  <img class="bg" src="assets/food-jollof-clean.jpg" alt="Food photography">
+  <div class="loop-inner">
+    <div class="eyebrow">The loop / always on</div>
+    <h2>The meal isn't<br>the end of the <em>loop.</em></h2>
+    <p>You cook something. The kitchen changes. 4DK records the useful parts and the next decision starts with more context than the last one. That's the point.</p>
+    <div class="loop-diagram"><div class="loop-node"><b>01</b>See</div><div class="loop-node"><b>02</b>Understand</div><div class="loop-node"><b>03</b>Decide</div><div class="loop-node"><b>04</b>Cook</div><div class="loop-node"><b>05</b>Remember ↺</div></div>
+  </div>
+</section>
+<section class="canonical-banner closing-banner" id="closing-banner">
+  <img class="acid-art" src="assets/footer_left.png" alt="">
+  <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
+  <a class="acid-brand closing-brand" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></a>
+  <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
+  <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
+</section>
+<script>
+const contexts={fresh:['Chicken = PRIORITY','It needs using first. That changes what 4DK should recommend before taste or novelty even enters the room.'],people:['Four people. Four opinions.','One person hates mushrooms. Another wants something light. 4DK should know that before it recommends dinner.'],recent:['You had rice twice this week.','Liking something does not mean you want it again tonight. Recent meals should suppress repetition without rewriting your taste profile.'],location:['You are here. The recipe lives there.','4DK uses location to make ingredients, naming and substitutions realistic without trapping you inside local cuisine.']};
+document.querySelectorAll('.ctx-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.ctx-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const [t,c]=contexts[btn.dataset.key];document.getElementById('ctx-title').textContent=t;document.getElementById('ctx-copy').textContent=c;}));
+const meals={jollof:'Chicken is priority, tomatoes are already in the pantry, and you haven\'t had rice in the last few meals. It wins without needing a speech.',pasta:'Fast, heavy pantry coverage, and the tomatoes need using soon. Good answer when time matters more than novelty.',tacos:'Still realistic, but it asks for more missing ingredients. 4DK can show it without pretending it is the best answer right now.'};
+document.querySelectorAll('.meal-card').forEach(card=>card.addEventListener('click',()=>{document.querySelectorAll('.meal-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');document.getElementById('why-copy').textContent=meals[card.dataset.meal];}));
+const cook={original:['Original recipe',['Standard heat + timing','Original ingredient list','No personal adjustment yet']],mine:['Your version',['More pepper — kept','Air fryer instead of deep fry','Successful variation saved for next time']]};
+document.querySelectorAll('.cook-toggle button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.cook-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const [t,items]=cook[btn.dataset.version];document.getElementById('cook-title').textContent=t;document.getElementById('cook-list').innerHTML=items.map(x=>`<li>${x}</li>`).join('');}));
+const memory={cook:'4DK knows this meal happened. Tomorrow it does not need to pretend the chicken is still there or suggest the same dinner again.',pantry:'The kitchen state changes after cooking. Quantities move with the meal instead of waiting for you to manually fix them later.',leftover:'The extra servings become their own food state with storage and freshness context. Leftovers are not an afterthought.',preference:'The successful change is remembered as your version. It can be retrieved next time instead of solving the same problem again.'};
+document.querySelectorAll('.memory-row').forEach(row=>row.addEventListener('click',()=>{document.querySelectorAll('.memory-row').forEach(r=>r.classList.remove('active'));row.classList.add('active');document.getElementById('memory-detail').textContent=memory[row.dataset.memory];}));
+
+const closingBanner=document.getElementById('closing-banner');
+if(closingBanner){
+  const closingObserver=new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        closingBanner.classList.remove('hit');
+        void closingBanner.offsetWidth;
+        closingBanner.classList.add('hit');
+      }
+    });
+  },{threshold:.45});
+  closingObserver.observe(closingBanner);
+}
+
+</script>
+</body>
+</html>
