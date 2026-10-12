@@ -24,7 +24,7 @@ import sharp from 'sharp';
 
 const BASE = process.env.W8_BASE ?? 'http://localhost:4321';
 const WIDTHS = [360, 390, 768, 1280, 1440, 1900];
-const R = '/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources';
+const R = '/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources';
 const C1 = `${R}/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited`;
 const CP = `${R}/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1`;
 const C2 = `${R}/4DK_C2_Cultural_Discovery_Stage8_v1/4dk_c2_cultural_discovery_v1`;

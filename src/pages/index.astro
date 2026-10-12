@@ -2,31 +2,132 @@
 // / — Home / Landing (Stage 1).
 // REFERENCE: 4DK_Approved_Stages_1-8_MASTER_SINGLE_FILE_v4.html → embedded key
 // `landing` (latest on-disk source; decoded verbatim into page-artifacts).
-// Port: verbatim via lib/port.ts. Review-only machinery removed (master
-// iframe bridge script, R-key debug overlay — invisible in approved state).
+// Port the approved composition through the shared production shell.
 import Base from '../layouts/Base.astro';
 import raw from '../page-artifacts/landing.html?raw';
 import { portArtifact } from '../lib/port';
 import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
 import { CANONICAL_ASSETS } from '../lib/artifact-links';
 import { lockedNavReplace } from '../lib/feature-pages';
+import { getRoute } from '../lib/routes';
 
 const ported = portArtifact(raw, {
-  canonicalAssets: CANONICAL_ASSETS,
+  canonicalAssets: { ...CANONICAL_ASSETS, 'hero_food_clean.png': '/assets/photo/hero-food-landing.webp' },
   assetPrefix: '/assets/pages/landing',
-  // W9-R1: locked five-item primary nav (replaces the section-anchor nav).
-  rawReplaces: [lockedNavReplace('landing.html')],
-  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.betaAccess.href },
-  removePatterns: [
-    /<img class="reference"[^>]*>/g,
-    /<img class="mobile-reference"[^>]*>/g,
+  linkRewrites: {
+    '#top': '/',
+    '#m-top': '/',
+    '#start': CTA.startCooking.href,
+    '#m-start': CTA.startCooking.href,
+    '#login': CTA.signIn.href,
+    '#pantry': getRoute('features-pantry').path,
+    '#ask': getRoute('features-ask').path,
+    '#plan': getRoute('features-plan').path,
+    '#shop': getRoute('features-shop').path,
+    '#recipes': getRoute('features-steal-it').path,
+    '#freshness': getRoute('features-freshness').path,
+  },
+  rawReplaces: [
+    // W9-R1: locked five-item primary nav (replaces the section-anchor nav).
+    lockedNavReplace('landing.html'),
   ],
-  removeCssPatterns: [
-    /\.show-ref \.reference\{[^}]*\}/g,
-    /\.show-ref \.mobile-reference\{[^}]*\}/g,
-    /\.reference\{[^}]*\}/g,
-    /\.mobile-reference\{[^}]*\}/g,
-  ],
+  ctaHrefs: { [LEGACY_BETA_MAILTO]: CTA.startCooking.href },
+  removePatterns: [/<a class="m-logo"[^>]*>[\s\S]*?<\/a>/g],
+  appendCss: `@media(min-width:801px){
+    .desktop-stage{aspect-ratio:auto;height:clamp(650px,max(calc(56.28vw - 68px),calc(100vh - 68px)),1040px);min-height:0}
+    .hero{top:0;height:64.7%}
+    .kicker{top:15.3%}
+    .hero-title{left:8.2%;top:23.1%;font-size:clamp(70px,8vw,134px);line-height:.74}
+    .hero-copy{top:60.5%}
+    .hero-actions{top:74.8%}
+    .hero-actions .btn{min-width:18.3%}
+    .side-note{top:7.4%}
+    .note-left{top:5.7%}
+    .note-center{position:absolute;left:40.3%;top:7%;width:clamp(112px,9.5vw,159px);height:auto;z-index:6;transform:rotate(-6deg)}
+    .hero-food{object-position:center 30%;opacity:.9}
+    .fan{left:56%;right:1.6%;top:12%;bottom:0}
+    .d-ask,.d-pantry{display:none}
+    .d-home{width:58%;height:97%;left:0;top:2%;z-index:5;--base-transform:rotate(-3deg);--hover-transform:translate3d(0,-3%,150px) rotate(0deg) scale(1.04)}
+    .d-plan{width:31%;height:79%;left:57%;top:12%;z-index:4;--base-transform:rotate(3deg);--hover-transform:translate3d(-7%,-5%,150px) rotate(1deg) scale(1.08)}
+    .d-shop{width:20%;height:68%;left:81%;top:21%;z-index:3;--base-transform:rotate(7deg);--hover-transform:translate3d(-12%,-5%,150px) rotate(2deg) scale(1.08)}
+    .d-home img{object-fit:fill}
+    .d-plan img{object-fit:contain;object-position:center center}
+    .d-shop img{object-fit:contain;object-position:center center}
+    .rail{top:64.7%;height:20.4%}
+    .feature{padding:clamp(17px,1.5vw,25px) clamp(14px,1.6vw,28px)}
+    .feature-icon{height:clamp(30px,2.7vw,45px);max-height:45px;margin-bottom:clamp(8px,.8vw,14px)}
+    .feature h3{margin-bottom:clamp(6px,.65vw,10px)}
+    .acid{top:85.1%;height:14.9%}
+    .acid-brand{font-size:clamp(82px,6.7vw,112px)}
+    .acid-brand small{font-size:clamp(11px,1vw,17px)}
+  }
+  @media(max-width:800px),(min-width:801px) and (max-aspect-ratio:3/5){
+    .mobile-stage{display:block;position:relative;width:100%;height:auto;min-height:0;aspect-ratio:auto;overflow:hidden;padding:0 5.8% 22px;background:#050505}
+    .mobile-stage::before{content:'';position:absolute;right:-7%;top:95px;width:70%;height:320px;background:url('/assets/banner/mobile-tomatoes.webp') center/contain no-repeat;opacity:.8;pointer-events:none}
+    .mobile-stage::after{content:'';position:absolute;left:-20px;bottom:0;width:135px;height:160px;background:url('/assets/banner/rail-right.webp') left center/auto 160px no-repeat;opacity:.9;pointer-events:none;z-index:1}
+    .m-meta{position:absolute;right:5.8%;top:38px;font-size:clamp(10px,2.5vw,15px);line-height:1.4;z-index:2}
+    .m-title{position:relative;left:auto;top:auto;margin:0;padding-top:85px;font-size:clamp(42px,11vw,88px);line-height:.86;z-index:2}
+    .m-copy{position:relative;left:auto;top:auto;margin-top:10px;font:600 clamp(12px,3.15vw,22px)/1.48 var(--mono);letter-spacing:.07em;z-index:2}
+    .m-note{position:absolute;right:3%;top:165px;width:100px;height:100px;object-fit:contain;z-index:2}
+    .m-fan{position:relative;left:-2%;right:auto;top:auto;width:104%;height:clamp(212px,56vw,460px);margin-top:4px;z-index:2}
+    .m-device{height:auto;aspect-ratio:941/1672}
+    .m-device img{object-fit:contain;object-position:center center}
+    .m-ask{width:24%;left:1%;top:20%}
+    .m-pantry{width:27%;left:14%;top:9%}
+    .m-home{width:32%;left:34%;top:0}
+    .m-plan{width:27%;left:58%;top:9%}
+    .m-shop{width:21%;left:78%;right:auto;top:20%}
+    .m-features{position:relative;left:auto;right:auto;top:auto;height:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);margin-top:9px;z-index:2}
+    .m-feature{display:flex;flex-direction:column;align-items:center;min-width:0;min-height:116px;text-align:center;padding:12px 5px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+    .m-feature:nth-child(3n){border-right:0}
+    .m-feature:nth-last-child(-n+3){border-bottom:0}
+    .m-feature img{height:27px;width:auto;margin:0 auto 7px}
+    .m-feature b{font:800 clamp(11px,3.1vw,15px)/1.16 var(--mono);letter-spacing:.02em}
+    .m-feature span{font:500 clamp(11px,3vw,14px)/1.28 var(--mono);color:#d0ccc3;margin-top:5px}
+    .m-btn{position:relative;left:auto;right:auto;height:auto;min-height:54px;font:900 clamp(12px,3vw,18px)/1.2 var(--mono);letter-spacing:.1em;text-align:center;z-index:2}
+    .m-start{top:auto;margin-top:23px}
+    .m-sign{top:auto;margin-top:10px}
+    .m-bottom-note{position:relative;left:auto;bottom:auto;width:clamp(100px,27vw,170px);margin:42px 0 8px 22%;filter:none;z-index:3}
+  }
+  @media(min-width:600px) and (max-width:800px),(min-width:801px) and (max-aspect-ratio:3/5){
+    .mobile-stage{padding-inline:5.8%}
+    .mobile-stage::before{top:290px;width:65%;height:540px}
+    .mobile-stage::after{width:220px;height:220px;background-size:auto 220px}
+    .m-meta{top:70px}
+    .m-title{padding-top:155px;font-size:clamp(68px,10vw,88px)}
+    .m-copy{margin-top:24px}
+    .m-note{top:300px;right:3%;width:160px;height:160px}
+    .m-fan{height:clamp(380px,55vw,460px);margin-top:16px}
+    .m-features{grid-template-columns:repeat(6,minmax(0,1fr));margin-top:15px}
+    .m-feature{min-height:150px;border-bottom:0;padding:15px 6px}
+    .m-feature:nth-child(3n){border-right:1px solid var(--rule)}
+    .m-feature:last-child{border-right:0}
+    .m-feature img{height:38px;margin-bottom:12px}
+    .m-feature b{font-size:clamp(11px,1.65vw,14px)}
+    .m-feature span{font-size:clamp(10px,1.5vw,13px)}
+    .m-btn{min-height:64px}
+    .m-bottom-note{margin-top:65px}
+  }
+  @media(min-width:801px) and (max-aspect-ratio:3/5){
+    .site-header.is-home{height:170px}
+    .site-header.is-home .site-brand{margin-bottom:0}
+    .site-header.is-home .site-brand img{width:180px}
+    .mobile-stage{min-height:100vh;padding-bottom:12px}
+    .m-meta{top:90px;font-size:20px}
+    .m-title{padding-top:197px;font-size:88px}
+    .m-copy{margin-top:24px;font-size:22px}
+    .m-note{top:190px;right:5%;width:180px;height:180px}
+    .m-fan{height:520px;margin-top:16px}
+    .m-features{margin-top:15px}
+    .m-feature{min-height:180px;padding:16px 6px}
+    .m-feature img{height:48px;margin-bottom:10px}
+    .m-feature b{font-size:18px}
+    .m-feature span{font-size:15px;line-height:1.25}
+    .m-start{margin-top:36px}
+    .m-btn{min-height:85px}
+    .m-sign{margin-top:14px}
+    .m-bottom-note{width:140px;margin:42px 0 8px 19%}
+  }`,
 });
 ---
 

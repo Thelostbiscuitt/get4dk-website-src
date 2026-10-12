@@ -1,87 +1,86 @@
 ---
-/**
- * SiteNav — the locked 5-item primary navigation.
- * Structure/content locked by GLOBAL_NAV.json (Stage14). Visual styling is
- * W1 scaffolding chrome only; the approved per-page header treatments land
- * with each page in W2+ and may restyle this markup via slots/classes.
- */
 import { primaryNav } from '../lib/routes';
-import { identityAssets } from '../lib/assets';
+import { CTA } from '../lib/cta';
 
-const current = Astro.url.pathname;
+const path = Astro.url.pathname;
+const isActive = (href: string) => path === href || (href !== '/' && path.startsWith(href));
 ---
 
-<nav class="w1-nav" aria-label="Primary">
-  <a class="w1-nav__brand" href="/" aria-label="4DK home">
-    <img src={identityAssets.primaryWordmarkDark} alt="4DK" width="92" height="28" loading="eager" fetchpriority="high" decoding="async" />
+<header class:list={['site-header', { 'is-home': path === '/' }]}>
+  <a class="site-brand" href="/" aria-label="4DK home">
+    <img src="/assets/identity/4DK_primary_dark_trimmed.svg" alt="4DK" width="145" height="55" loading="eager" fetchpriority="high" decoding="async" />
   </a>
-  <ul class="w1-nav__list">
+  <nav class="site-links" aria-label="Primary">
     {primaryNav.map((item) => (
-      <li>
-        <a
-          href={item.href}
-          aria-current={current === item.href ? 'page' : undefined}
-          class:list={['w1-nav__link', { 'is-active': current === item.href }]}
-        >
-          {item.label}
-        </a>
-      </li>
+      <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined} class:list={{ active: isActive(item.href) }}>{item.label}</a>
     ))}
-  </ul>
-</nav>
+  </nav>
+  <span class="site-status"><i aria-hidden="true"></i>Kitchen intelligence</span>
+  <a class="site-signin" href={CTA.signIn.href}>Sign in</a>
+  <a class="site-start" href={CTA.startCooking.href}>Start cooking <span aria-hidden="true">↗</span></a>
+  <details class="site-menu">
+    <summary aria-label="Site navigation"><span>Menu</span><b aria-hidden="true">+</b></summary>
+    <nav aria-label="Mobile primary">
+      {primaryNav.map((item) => (
+        <a href={item.href} aria-current={isActive(item.href) ? 'page' : undefined}>{item.label}</a>
+      ))}
+      <a href={CTA.signIn.href}>Sign in</a>
+      <a class="menu-start" href={CTA.startCooking.href}>Start cooking ↗</a>
+    </nav>
+  </details>
+</header>
 
-<style>
-  .w1-nav {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    min-height: 64px;
-    padding: 0 var(--space-gutter);
-    border-bottom: 1px solid var(--rule);
-    background: rgba(3, 3, 3, 0.96);
-    position: sticky;
-    top: 0;
-    z-index: 30;
-  }
-  .w1-nav__brand img {
-    display: block;
-    width: 88px;
-    height: auto;
-  }
-  .w1-nav__list {
-    display: flex;
-    gap: 4px;
-    list-style: none;
-    margin: 0 0 0 auto;
-    padding: 0;
-    flex-wrap: wrap;
-  }
-  .w1-nav__link {
-    display: inline-block;
-    padding: 9px 11px;
-    color: var(--cream-dim);
-    font: 900 10px/1.2 var(--mono);
-    letter-spacing: 0.11em;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 1px solid transparent;
-  }
-  .w1-nav__link:hover {
-    color: var(--cream);
-  }
-  .w1-nav__link.is-active {
-    background: var(--acid);
-    color: var(--ink);
-    border-color: var(--acid);
-  }
-  @media (max-width: 600px) {
-    .w1-nav {
-      flex-wrap: wrap;
-      padding-top: 8px;
-      padding-bottom: 8px;
+<script>
+  const menu = document.querySelector<HTMLDetailsElement>('.site-menu');
+  menu?.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menu.open) {
+      menu.open = false;
+      menu.querySelector('summary')?.focus();
     }
-    .w1-nav__list {
-      margin-left: 0;
-    }
+  });
+</script>
+
+<style is:global>
+  :root { --site-header-height: 68px; }
+  .site-header { position:sticky;top:0;z-index:350;display:flex;align-items:center;gap:clamp(10px,1.35vw,22px);height:var(--site-header-height);padding:0 clamp(18px,4.1vw,64px);background:#050505;color:#f4f1e8;border-bottom:1px solid rgba(244,241,232,.36);font-family:'Courier New',monospace }
+  .site-brand { display:flex;align-items:center;flex:none }
+  .site-brand img { display:block;width:clamp(100px,8.7vw,145px);height:auto }
+  .site-links { display:flex;align-items:center;gap:clamp(9px,1.5vw,25px);margin-left:clamp(20px,7vw,118px) }
+  .site-links a,.site-signin { display:flex;align-items:center;min-height:44px;padding:0 2px;color:#d0ccc3;text-decoration:none;text-transform:uppercase;white-space:nowrap;font-size:clamp(10px,.79vw,13px);font-weight:800;letter-spacing:.08em }
+  @media (hover:hover) and (pointer:fine) { .site-links a:hover,.site-signin:hover { color:var(--acid) } }
+  .site-header a:active,.site-menu summary:active { opacity:.8 }
+  .site-menu nav { max-block-size:calc(100dvh - var(--site-header-height) - 16px);overflow-y:auto;overscroll-behavior:contain }
+  .site-links a.active { color:#d9ff16 }
+  .site-status { display:flex;align-items:center;gap:8px;margin-left:auto;color:#c8c4bb;white-space:nowrap;font-size:clamp(10px,.72vw,12px);letter-spacing:.05em }
+  .site-status i { width:7px;height:7px;border-radius:50%;background:#d9ff16;box-shadow:0 0 10px #d9ff16 }
+  .site-start,.site-menu .menu-start { display:flex;align-items:center;justify-content:center;min-height:48px;padding:0 clamp(14px,1.7vw,28px);background:#d9ff16;color:#050505;text-decoration:none;text-transform:uppercase;white-space:nowrap;font-size:clamp(10px,.75vw,13px);font-weight:900;letter-spacing:.07em }
+  .site-menu { display:none }
+  @media (min-width:801px) and (max-width:1320px) { .site-status { display:none } .site-links { gap:clamp(7px,1vw,14px);margin-left:clamp(20px,5vw,64px) } }
+  @media (min-width:801px) and (max-width:1020px) { .site-links { display:none } .site-signin { margin-left:auto } .site-menu { position:relative;display:block } .site-menu summary { display:flex;align-items:center;justify-content:center;gap:5px;min-width:72px;height:44px;list-style:none;cursor:pointer;border:1px solid rgba(244,241,232,.38);font-size:9px;font-weight:800;letter-spacing:.09em;text-transform:uppercase } .site-menu summary::-webkit-details-marker { display:none } .site-menu nav { position:absolute;top:calc(100% + 7px);right:0;display:grid;width:280px;padding:8px 14px;background:#050505;border:1px solid rgba(244,241,232,.4);z-index:360 } .site-menu nav a { display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(244,241,232,.2);color:#f4f1e8;text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.1em } .site-menu nav a:last-child { border-bottom:0 } }
+  @media (max-width:800px), (min-width:801px) and (max-aspect-ratio:3/5) {
+    :root { --site-header-height:58px }
+    .site-header { gap:6px;padding:0 clamp(12px,4vw,20px) }
+    .site-brand img { width:105px }
+    .site-links,.site-status { display:none }
+    /* Sign in remains in the menu; keeping both actions here overflows narrow phones. */
+    .site-signin { display:none }
+    .site-start { display:flex;min-height:44px;margin-inline-start:auto;padding:0 9px;font-size:9px }
+    .site-menu { position:relative;display:block }
+    .site-menu summary { display:flex;align-items:center;justify-content:center;gap:5px;min-width:72px;height:44px;list-style:none;cursor:pointer;border:1px solid rgba(244,241,232,.38);font-size:9px;font-weight:800;letter-spacing:.09em;text-transform:uppercase }
+    .site-menu summary::-webkit-details-marker { display:none }
+    .site-menu summary b { color:#d9ff16;font-size:18px;font-weight:400 }
+    .site-menu[open] summary b { transform:rotate(45deg) }
+    .site-menu nav { position:absolute;top:calc(100% + 7px);right:0;display:grid;width:min(280px,calc(100vw - 24px));padding:8px 14px;background:#050505;border:1px solid rgba(244,241,232,.4);box-shadow:0 12px 30px #000;z-index:360 }
+    .site-menu nav a { display:flex;align-items:center;min-height:48px;border-bottom:1px solid rgba(244,241,232,.2);color:#f4f1e8;text-decoration:none;text-transform:uppercase;font-size:10px;font-weight:800;letter-spacing:.1em }
+    .site-menu nav a[aria-current="page"] { color:#d9ff16 }
+    .site-menu nav a:last-child { border-bottom:0 }
+    .site-menu nav .menu-start { margin:8px 0;color:#050505 }
+    .site-header.is-home { position:absolute;left:0;right:0;top:0;height:74px;padding:0 5.8%;border:0;background:transparent }
+    .site-header.is-home .site-brand { align-self:flex-end;margin-bottom:-8px }
+    .site-header.is-home .site-brand img { width:112px }
+    .site-header.is-home .site-signin,.site-header.is-home .site-start { display:none }
+    .site-header.is-home .site-menu { position:absolute;right:5.8%;top:3px }
+    .site-header.is-home .site-menu summary { width:44px;min-width:44px;border:0;background:rgba(0,0,0,.7) }
+    .site-header.is-home .site-menu summary span { position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%) }
   }
 </style>

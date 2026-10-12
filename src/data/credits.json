@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-02",
+  "generated": "2026-10-11",
   "images": [
     {
       "file": "/assets/photo/food-jollof-clean.webp",
@@ -12,12 +12,12 @@
     },
     {
       "file": "/assets/photo/food-jollof-poster.webp",
-      "title": "Jollof Rice and Meat",
-      "author": "Major Lyte",
-      "source": "https://commons.wikimedia.org/wiki/File:Jollof_Rice_and_Meat.jpg",
+      "title": "Jollof rice 20th April 2025",
+      "author": "Sasu photography",
+      "source": "https://commons.wikimedia.org/wiki/File:Jollof_rice_20th_April_2025.jpg",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "note": "center-cropped web derivative of the Commons original; swapped 2026-10-02"
+      "note": "Same attributed web derivative; reassigned 2026-10-11 after visual review."
     },
     {
       "file": "/assets/photo/food-jollof-wide.webp",
@@ -30,21 +30,12 @@
     },
     {
       "file": "/assets/photo/food-card-jollof.webp",
-      "title": "Jollof Rice",
-      "author": "ChukaMadu",
-      "source": "https://commons.wikimedia.org/wiki/File:Jollof_Rice.jpg",
+      "title": "Jollof rice 20th April 2025",
+      "author": "Sasu photography",
+      "source": "https://commons.wikimedia.org/wiki/File:Jollof_rice_20th_April_2025.jpg",
       "license": "CC-BY-SA-4.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "note": "center-cropped web derivative of the Commons original; swapped 2026-10-02"
-    },
-    {
-      "file": "/assets/photo/food-card-pasta.webp",
-      "title": "A Pasta dish with meatballs and tomato sauce",
-      "author": "Peachyeung316",
-      "source": "https://commons.wikimedia.org/wiki/File:A_Pasta_dish_with_meatballs_and_tomato_sauce.jpg",
-      "license": "CC-BY-SA-4.0",
-      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
-      "note": "center-cropped web derivative of the Commons original; swapped 2026-10-02"
+      "note": "Same attributed web derivative; reassigned 2026-10-11 after visual review."
     },
     {
       "file": "/assets/photo/food-card-tacos.webp",
@@ -54,6 +45,24 @@
       "license": "CC-BY-SA-2.0",
       "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
       "note": "center-cropped web derivative of the Commons original; swapped 2026-10-02"
+    },
+    {
+      "file": "Embedded in /assets/app-screens/4dk-{home,pantry,ask,shop,recipe}.webp where visible",
+      "title": "Liat Portal for Foodie Disorder - Garlic Cloves.jpg",
+      "author": "HaJunkiyada",
+      "source": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Garlic_Cloves.jpg",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "note": "Photograph cropped by the actual product UI for sample-data marketing captures. The photo derivative remains CC-BY-SA-4.0; this does not license the surrounding application UI. Source SHA-256: 6ef82c9d8ffa3ba5ec172613c23a56f2d74f1147c6cd8c5632484c23ce3b3cf3"
+    },
+    {
+      "file": "Embedded in /assets/app-screens/4dk-{home,pantry,ask,shop,recipe}.webp where visible",
+      "title": "Liat Portal for Foodie Disorder - Red grape tomatoes.jpg",
+      "author": "HaJunkiyada",
+      "source": "https://commons.wikimedia.org/wiki/File:Liat_Portal_for_Foodie_Disorder_-_Red_grape_tomatoes.jpg",
+      "license": "CC-BY-SA-4.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/4.0",
+      "note": "Photograph cropped by the actual product UI for sample-data marketing captures. The photo derivative remains CC-BY-SA-4.0; this does not license the surrounding application UI. Source SHA-256: 7b32eb492e8eed6ad0120af374a2e0dd7c42309a458944601d984e9bf072291c"
     }
   ]
 }

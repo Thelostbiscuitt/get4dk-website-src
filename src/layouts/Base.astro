@@ -5,6 +5,7 @@
  */
 import '../styles/global.css';
 import SiteHead from '../components/SiteHead.astro';
+import SiteNav from '../components/SiteNav.astro';
 import { identityAssets } from '../lib/assets';
 
 interface Props {
@@ -56,5 +57,6 @@ const W7_A11Y_CSS = `
     )}
     <style is:global set:html={W7_A11Y_CSS} />
   </head>
+  <SiteNav />
   <slot />
 </html>

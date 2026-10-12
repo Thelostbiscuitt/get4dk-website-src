@@ -1,4 +1,4 @@
-// W9-R3 — www.get4dk.com permanent redirect worker.
+// Canonical HTTPS redirect for www and plain HTTP on the marketing host.
 // Deploy (from this directory):  npx wrangler deploy
 {
   "$schema": "node_modules/wrangler/config-schema.json",
@@ -6,7 +6,8 @@
   "compatibility_date": "2026-09-30",
   "main": "worker.js",
   "routes": [
-    { "pattern": "www.get4dk.com", "custom_domain": true }
+    { "pattern": "www.get4dk.com", "custom_domain": true },
+    { "pattern": "http://get4dk.com/*", "zone_name": "get4dk.com" }
   ],
   "observability": { "enabled": false }
 }

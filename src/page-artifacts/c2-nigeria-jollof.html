@@ -105,7 +105,7 @@ h1 em{font-family:var(--serif);font-style:italic}
 .product-visual{background:#050505;padding:46px;display:grid;place-items:center;position:relative;overflow:hidden}
 .product-visual:before{content:'';position:absolute;width:74%;height:74%;background:radial-gradient(circle,rgba(217,255,22,.09),transparent 68%);filter:blur(12px)}
 .product-visual img{position:relative;z-index:2;max-height:560px;width:auto;border:1px solid rgba(244,241,232,.52);box-shadow:0 30px 70px rgba(0,0,0,.62);transform:rotate(1.8deg)}
-.product-copy{background:#050505;padding:60px 4.1vw;display:flex;flex-direction:column;justify-content:center}
+.product-copy{background:#050505;padding:60px 4.1vw;display:flex;flex-direction:column;justify-content:center;min-inline-size:0;overflow-wrap:anywhere}
 .product-copy h2{font-size:clamp(52px,5.2vw,94px);line-height:.84;letter-spacing:-.06em;text-transform:uppercase;margin:16px 0 20px}
 .product-copy h2 em{font-family:var(--serif);font-style:italic}
 .product-copy p{font:600 13px/1.65 var(--mono);color:#cbc6bd;max-width:700px}
@@ -132,6 +132,7 @@ h1 em{font-family:var(--serif);font-style:italic}
  .topbar{height:60px;padding:0 5.5vw}.brand{width:85px}.brand img{width:70px}.nav,.status{display:none}.start{margin-left:auto;padding:0 13px;font-size:8px}
  .meta{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr;min-height:0}.hero-copy{padding:54px 5.8vw 44px}h1{font-size:14.5vw}.hero-media{min-height:520px}.ui-card{width:48%;min-width:210px}
  .culture-rail{grid-template-columns:1fr 1fr}.toc{top:60px;padding-left:5.8vw}.section{padding:52px 5.8vw}.section-head,.split{grid-template-columns:1fr}.cards,.query-grid,.product{grid-template-columns:1fr}
+ .product-copy h2{font-size:clamp(30px,9vw,52px)}
  .lineage{grid-template-columns:1fr}.lineage .arrow{min-height:60px;transform:rotate(90deg)}
  .canonical-banner{height:122px;grid-template-columns:23% 0 50% 0 27%}.canonical-banner .acid-meta{display:none}.canonical-banner .acid-brand{font-size:12vw}.canonical-banner .acid-brand small{display:block;margin:4px 0 0;font-size:2.4vw}
 }
@@ -250,18 +251,18 @@ h1 em{font-family:var(--serif);font-style:italic}
 
 <section class="section">
   <div class="section-head">
-    <div class="section-num">04 / Query fan-out</div>
+    <div class="section-num">04 / Explore next</div>
     <div>
-      <h2>What should this page lead to <em>next?</em></h2>
-      <p class="section-answer">C2 pages should create cultural depth and useful search paths rather than ending as decorative brand stories.</p>
+      <h2>Keep <em>exploring.</em></h2>
+      <p class="section-answer">Explore the recipes, storage advice and kitchen techniques behind the story.</p>
     </div>
   </div>
   <div class="query-grid">
-    <a href="#"><b>Fan-out</b><span>What is party jollof?</span></a>
-    <a href="#"><b>Fan-out</b><span>Why is Nigerian jollof smoky?</span></a>
-    <a href="#"><b>Fan-out</b><span>Nigerian vs Ghanaian jollof</span></a>
-    <a href="#"><b>Fan-out</b><span>What rice works for jollof?</span></a>
-    <a href="#"><b>Fan-out</b><span>History of jollof rice</span></a>
+    <a href="#party"><b>Explore next</b><span>What is party jollof?</span></a>
+    <a href="#party"><b>Explore next</b><span>Why is Nigerian jollof smoky?</span></a>
+    <a href="#west-africa"><b>Explore next</b><span>Jollof across West Africa</span></a>
+    <a href="/recipes/one-pot-jollof-style-chicken-rice/"><b>Explore next</b><span>Cook jollof-style chicken rice</span></a>
+    <a href="#west-africa"><b>Explore next</b><span>History of jollof rice</span></a>
   </div>
 </section>
 

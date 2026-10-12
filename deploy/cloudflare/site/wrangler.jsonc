@@ -6,18 +6,14 @@
 //   Workers Scripts:Edit + Zone DNS:Edit on get4dk.com (custom-domain
 //   attachment creates the DNS record + certificate automatically).
 //
-// W9-R2 HOLD: this deploys the HELD build (dist-held = production content,
-// noindex meta, Disallow-all robots.txt, no sitemap, _headers X-Robots-Tag).
-// After W9-R2 asset/rights closure clears, redeploy the production build:
-//   change assets.directory to "../../dist" and remove dist-held/_headers
-//   from the copy, then `npx wrangler deploy` again.
+// Public release: checked production output with indexable routes and sitemap.
 {
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "get4dk-site",
   "compatibility_date": "2026-09-30",
   "assets": {
     "not_found_handling": "404-page",
-    "directory": "../../../dist-held"
+    "directory": "../../../dist"
   },
   "routes": [
     { "pattern": "get4dk.com", "custom_domain": true }

@@ -17,7 +17,7 @@ import { mkdirSync } from 'node:fs';
 
 const BASE = process.env.VERIFY_BASE ?? 'http://localhost:4321';
 const WIDTHS = [360, 390, 768, 1280, 1440, 1900];
-const R = '/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources';
+const R = '/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources';
 const ROUTES = [
   ['home', '/', `file:///tmp/4dk_w2/landing.html`],
   ['how-it-works', '/how-it-works/', `file://${R}/4DK_How_It_Works_v7_LockedBanner_VisibleGlow/4dk_how_it_works_v7_locked_banner_visible_glow/how-it-works.html`],

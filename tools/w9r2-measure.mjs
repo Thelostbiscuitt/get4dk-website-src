@@ -32,7 +32,7 @@ for (const route of pages) {
   for (const width of WIDTHS) {
     const ctx = await browser.newContext({ viewport: { width, height: 900 } });
     const page = await ctx.newPage();
-    await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 }).catch(() => {});
+    await page.goto(BASE + route, { waitUntil: 'networkidle', timeout: 30000 });
     const imgs = await page.evaluate(() =>
       Array.from(document.images).map((i) => ({
         src: i.currentSrc || i.src,

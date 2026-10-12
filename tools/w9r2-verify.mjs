@@ -14,6 +14,8 @@
 import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
 import { join } from 'node:path';
 import sharp from 'sharp';
+import { createHash } from 'node:crypto';
+const release = process.argv.includes('--release');
 
 const ROOT = new URL('..', import.meta.url).pathname;
 const PUB = join(ROOT, 'public/assets');
@@ -40,6 +42,7 @@ for (const a of manifest.assets) {
   if (!VOCAB.has(a.resolution_status)) fail(`${a.asset_id}: resolution_status not in vocabulary`);
   if (ids.has(a.asset_id)) fail(`duplicate asset_id ${a.asset_id}`);
   ids.add(a.asset_id);
+  if (release && a.production_status !== 'APPROVED') fail(`${a.asset_id}: unresolved release blocker`);
   if (a.production_status !== 'APPROVED' && !a.owner_action) fail(`${a.asset_id}: non-APPROVED without owner_action (blocker must be explicit)`);
 }
 ok(`${manifest.assets.length} entries, fields + vocabulary valid, blockers explicit`);
@@ -67,6 +70,7 @@ const exact = manifest.assets.filter((a) => !a.local_path.includes('*') && !a.lo
 for (const a of exact) {
   const p = join(PUB, a.local_path.replace('/assets/', ''));
   if (!existsSync(p)) { fail(`${a.asset_id}: local_path not a file`); continue; }
+  if (release && createHash('sha256').update(readFileSync(p)).digest('hex') !== a.sha256) fail(`${a.asset_id}: release hash missing or changed`);
   const m = await sharp(p).metadata();
   if (m.width !== a.intrinsic_width || m.height !== a.intrinsic_height) {
     fail(`${a.asset_id}: manifest ${a.intrinsic_width}x${a.intrinsic_height} ≠ file ${m.width}x${m.height}`);
@@ -79,7 +83,8 @@ console.log('[4] no falsely-closed low-resolution asset');
 const measured = existsSync(join(ROOT, '.w9/rendered-sizes.json'))
   ? JSON.parse(readFileSync(join(ROOT, '.w9/rendered-sizes.json'), 'utf8')) : null;
 if (!measured) {
-  ok('no measurement file present (run tools/w9r2-measure.mjs) — skipped');
+  if (release) fail('release requires rendered-size measurements');
+  else ok('no measurement file present (run tools/w9r2-measure.mjs) — skipped');
 } else {
   for (const m of measured) {
     const entry = manifest.assets.find((a) => a.local_path.endsWith(m.asset) || m.asset.startsWith(a.local_path.replace('/assets/', '').replace('*', '')));

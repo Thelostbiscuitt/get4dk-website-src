@@ -273,11 +273,11 @@ h1{
 }
 .score-ribbon{
   position:absolute; left:50%; bottom:28px; transform:translateX(-50%);
-  z-index:10; display:grid; grid-template-columns:1fr auto 1fr; gap:1px;
+  z-index:10; display:grid; grid-template-columns:minmax(0,1fr) auto minmax(0,1fr); gap:1px;
   width:min(92vw,560px); background:rgba(244,241,232,.18);
   box-shadow:0 18px 50px rgba(0,0,0,.38);
 }
-.score-ribbon > div{background:rgba(5,5,5,.9); padding:12px 14px}
+.score-ribbon > div{min-inline-size:0;overflow-wrap:anywhere;background:rgba(5,5,5,.9); padding:12px 14px}
 .score-ribbon b{display:block; font:900 8px var(--mono); letter-spacing:.12em; text-transform:uppercase; margin-bottom:4px}
 .score-ribbon strong{font-size:34px; line-height:.8; letter-spacing:-.05em}
 .score-ribbon .mid{
@@ -388,7 +388,7 @@ h1{
     <div class="vote-box">
       <div class="vote-top">
         <div class="vote-title">Cast your vote</div>
-        <div class="vote-local">Local preview tally</div>
+        <div class="vote-local">Your vote on this device</div>
       </div>
       <div class="vote-controls">
         <button class="vote-btn" id="voteFried">Vote fried</button>
@@ -411,7 +411,7 @@ h1{
     <div class="vote-box">
       <div class="vote-top">
         <div class="vote-title">Cast your vote</div>
-        <div class="vote-local">Local preview tally</div>
+        <div class="vote-local">Your vote on this device</div>
       </div>
       <div class="vote-controls">
         <button class="vote-btn" id="voteBoiled">Vote boiled</button>
@@ -447,7 +447,7 @@ h1{
     <div class="num">01 / The argument</div>
     <div>
       <h2>Why do people care this much about <em>plantain?</em></h2>
-      <p class="direct">Because the cooking method changes almost everything people notice first: sweetness, texture, how much oil is involved, and what the plantain pairs with. This is exactly the kind of low-stakes food argument C3 should turn into participation.</p>
+      <p class="direct">Because the cooking method changes almost everything people notice first: sweetness, texture, how much oil is involved, and what the plantain pairs with.</p>
     </div>
   </div>
 
@@ -470,7 +470,7 @@ h1{
     <div class="num">02 / Local interaction</div>
     <div>
       <h2>Your vote should feel like a <em>comment.</em></h2>
-      <p class="direct">This demo stores the vote on this device only. It does not pretend to be a global public tally. Production can connect the same interaction to a real backend or campaign analytics endpoint later.</p>
+      <p class="direct">Your vote stays on this device. It is not added to a public tally.</p>
     </div>
   </div>
 
@@ -484,7 +484,7 @@ h1{
       <strong id="boiledCountMirror">0</strong>
     </div>
   </div>
-  <div class="local-note">LOCAL PREVIEW ONLY / NO FAKE SOCIAL-PROOF COUNTS</div>
+  <div class="local-note">SAVED ON THIS DEVICE ONLY</div>
   <div class="sharebar">
     <button id="copyLink">Copy link</button>
   </div>
@@ -495,7 +495,7 @@ h1{
   <div class="pc">
     <div class="label"><i style="background:var(--acid);box-shadow:0 0 14px rgba(217,255,22,.75)"></i> Social argument → kitchen context</div>
     <h2>The app should know<br>which side you <em>actually eat.</em></h2>
-    <p>C3 works when the conversation can feed preference and cultural memory without becoming a gimmick. A user's answer can eventually inform personal taste, household compatibility and recommendation ranking inside 4DK.</p>
+    <p>Fried or boiled, your choice says something about how you like to eat. Bring those preferences into your kitchen.</p>
     <a href="https://get4dk.com/">Bring your preferences into 4DK →</a>
   </div>
 </section>

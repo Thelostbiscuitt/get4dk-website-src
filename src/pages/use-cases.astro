@@ -10,22 +10,9 @@ import raw from '../page-artifacts/c1-hub.html?raw';
 import { portArtifact } from '../lib/port';
 import { CTA, LEGACY_BETA_MAILTO } from '../lib/cta';
 import { CANONICAL_ASSETS } from '../lib/artifact-links';
-import { insertNavAfterGridLogo } from '../lib/feature-pages';
-
-// W9-R1: locked five-item primary nav inserted after the grid logo in the
-// approved selector header (styled by the hub's own header treatment).
-const hubNavCss =
-  `.grid-header .nav{display:flex;gap:22px;margin:18px 0 0;flex-wrap:wrap}` +
-  `.grid-header .nav a{color:#bdbab3;font:700 11px/1 var(--mono);letter-spacing:.11em;text-transform:uppercase;text-decoration:none}` +
-  `.grid-header .nav a:hover{color:#f4f1e8}` +
-  `.grid-header .nav a.active{color:#d9ff16}` +
-  `@media(max-width:900px){.grid-header .nav{display:none}}`;
-const withNav = insertNavAfterGridLogo(raw);
-
-const ported = portArtifact(withNav, {
+const ported = portArtifact(raw, {
   canonicalAssets: CANONICAL_ASSETS,
   assetPrefix: '/assets/pages/c1',
-  appendCss: hubNavCss,
   // W7: the floating view-switch pill sits outside the hub's own <main> —
   // give it an explicit labelled region so all content is landmarked.
   rawReplaces: [

@@ -111,6 +111,32 @@ export function portArtifact(rawHtml: string, options: PortOptions): Ported {
     throw new Error('[port] Artifact has no <body>.');
   }
   let body = bodyMatch[1];
+  // The production shell owns the public header. Remove only artifact-level
+  // chrome; content headers (for example C1 hub list headers) remain intact.
+  body = body.replace(/<header\b(?=[^>]*\bclass="[^"]*\b(?:topbar|top)\b[^"]*")[^>]*>[\s\S]*?<\/header>/gi, '');
+  body = body.replace(/<div class="grid-logo">[\s\S]*?<\/div>/gi, '');
+  body = body.replace(/<a\b[^>]*href="#"[^>]*>[\s\S]*?<\/a>/gi, (anchor) =>
+    /<img\b[^>]*\balt="4DK"/i.test(anchor) ? anchor.replace('href="#"', 'href="/"') : anchor
+  );
+
+  // Strip visible planning annotations from the exported artifacts. These
+  // blocks describe SEO intent and authoring strategy, not the public page.
+  body = body
+    .replace(/<div class="(?:meta-strip|meta)">[\s\S]*?^<\/div>\n(?=\s*<section)/gm, '')
+    .replace(/<div class="gain"><b>Information gain \/ 4DK angle<\/b><p>[\s\S]*?<\/p><\/div>/g, '')
+    .replace(/\bC[123] \/ /g, '')
+    .replace(/\bStage \d+ \/ /gi, '')
+    .replaceAll('Query fan-out', 'Explore next')
+    .replaceAll('Information gain', 'Kitchen notes')
+    .replaceAll('Systems nominal / kitchen online', 'Kitchen intelligence / ready for dinner')
+    .replaceAll('Systems nominal', 'Kitchen intelligence')
+    .replaceAll('content system / nominal', 'Food intelligence / 4DK')
+    .replaceAll('food atlas / location intelligence / nominal', 'Food Atlas / Location')
+    .replaceAll('pricing system / nominal', 'Pricing / 4DK')
+    .replaceAll('recipe system / nominal', '4DK Recipe')
+    .replaceAll('evergreen intelligence / nominal', 'Food storage / freshness')
+    .replaceAll('culture signal / nominal', 'Food culture / 4DK')
+    .replaceAll('social argument / nominal', '4DK community vote');
 
   // Extract scripts from the body, then strip them from the body markup.
   const scripts: string[] = [];
@@ -160,6 +186,9 @@ export function portArtifact(rawHtml: string, options: PortOptions): Ported {
       cssRewritten = cssRewritten.replaceAll(prefixed, canonical);
     }
   }
+
+  // Replacement footer artwork is decorative; the handwritten slogan is no longer in these files.
+  body = body.replace(/(<img\b[^>]*src="\/assets\/banner\/footer-(?:left|right)\.webp"[^>]*alt=")[^"]*(")/g, '$1$2');
 
   // W4 media attributes: intrinsic dimensions, async decode, lazy loading
   // below the fold. The first image stays eager (critical hero); nothing

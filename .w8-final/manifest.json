@@ -94,7 +94,7 @@
     {
       "slug": "how-it-works",
       "route": "/how-it-works/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_How_It_Works_v7_LockedBanner_VisibleGlow/4dk_how_it_works_v7_locked_banner_visible_glow/how-it-works.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_How_It_Works_v7_LockedBanner_VisibleGlow/4dk_how_it_works_v7_locked_banner_visible_glow/how-it-works.html",
       "viewports": [
         {
           "width": 360,
@@ -185,7 +185,7 @@
     {
       "slug": "features",
       "route": "/features/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Features_Hub_v3_CokeDustTransition/4dk_features_hub_v3_cokedust/features.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Features_Hub_v3_CokeDustTransition/4dk_features_hub_v3_cokedust/features.html",
       "viewports": [
         {
           "width": 360,
@@ -276,7 +276,7 @@
     {
       "slug": "the-pass",
       "route": "/the-pass/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_The_Pass_v3_ClearArticleBoundaries/4dk_the_pass_v3_boundaries/the-pass.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_The_Pass_v3_ClearArticleBoundaries/4dk_the_pass_v3_boundaries/the-pass.html",
       "viewports": [
         {
           "width": 360,
@@ -367,7 +367,7 @@
     {
       "slug": "food-atlas",
       "route": "/food-atlas/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Stage13_Food_Atlas_v1/4dk_stage13_food_atlas_v1/food-atlas.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Stage13_Food_Atlas_v1/4dk_stage13_food_atlas_v1/food-atlas.html",
       "viewports": [
         {
           "width": 360,
@@ -458,7 +458,7 @@
     {
       "slug": "pricing",
       "route": "/pricing/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Stage12_Pricing_Beta_Get4DK_v2_Soul/4dk_stage12_pricing_beta_v2_soul/pricing-beta-get4dk.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Stage12_Pricing_Beta_Get4DK_v2_Soul/4dk_stage12_pricing_beta_v2_soul/pricing-beta-get4dk.html",
       "viewports": [
         {
           "width": 360,
@@ -549,7 +549,7 @@
     {
       "slug": "c1-hub",
       "route": "/use-cases/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/index.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/index.html",
       "viewports": [
         {
           "width": 360,
@@ -640,7 +640,7 @@
     {
       "slug": "c1-dinner",
       "route": "/what-should-i-cook-tonight/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/what-should-i-cook-tonight.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/what-should-i-cook-tonight.html",
       "viewports": [
         {
           "width": 360,
@@ -731,7 +731,7 @@
     {
       "slug": "c1-freshness",
       "route": "/use-it-before-it-goes-bad/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/use-it-before-it-goes-bad.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/use-it-before-it-goes-bad.html",
       "viewports": [
         {
           "width": 360,
@@ -822,7 +822,7 @@
     {
       "slug": "c1-scan",
       "route": "/scan-my-kitchen/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/scan-my-kitchen.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/scan-my-kitchen.html",
       "viewports": [
         {
           "width": 360,
@@ -913,7 +913,7 @@
     {
       "slug": "c1-steal",
       "route": "/steal-a-recipe/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/steal-a-recipe.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C1_Conversion_Landing_Batch_v7_Audited/4dk_c1_conversion_batch_v7_audited/steal-a-recipe.html",
       "viewports": [
         {
           "width": 360,
@@ -1004,7 +1004,7 @@
     {
       "slug": "content-cook",
       "route": "/what-can-i-cook-with-what-i-have/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-can-i-cook-with-what-i-have.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-can-i-cook-with-what-i-have.html",
       "viewports": [
         {
           "width": 360,
@@ -1095,7 +1095,7 @@
     {
       "slug": "content-spinach",
       "route": "/what-to-cook-with-spinach-before-it-goes-bad/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-to-cook-with-spinach-before-it-goes-bad.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-to-cook-with-spinach-before-it-goes-bad.html",
       "viewports": [
         {
           "width": 360,
@@ -1186,7 +1186,7 @@
     {
       "slug": "content-mealplan",
       "route": "/what-should-a-meal-planning-app-do/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-should-a-meal-planning-app-do.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-should-a-meal-planning-app-do.html",
       "viewports": [
         {
           "width": 360,
@@ -1277,7 +1277,7 @@
     {
       "slug": "content-household",
       "route": "/how-to-share-a-grocery-list-with-your-household/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/how-to-share-a-grocery-list-with-your-household.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/how-to-share-a-grocery-list-with-your-household.html",
       "viewports": [
         {
           "width": 360,
@@ -1368,7 +1368,7 @@
     {
       "slug": "content-panko",
       "route": "/what-can-i-use-instead-of-panko-in-nigeria/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-can-i-use-instead-of-panko-in-nigeria.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/what-can-i-use-instead-of-panko-in-nigeria.html",
       "viewports": [
         {
           "width": 360,
@@ -1459,7 +1459,7 @@
     {
       "slug": "content-overcrowding",
       "route": "/why-does-overcrowding-a-pan-stop-browning/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/why-does-overcrowding-a-pan-stop-browning.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/why-does-overcrowding-a-pan-stop-browning.html",
       "viewports": [
         {
           "width": 360,
@@ -1550,7 +1550,7 @@
     {
       "slug": "evergreen-jollof",
       "route": "/how-long-does-cooked-jollof-rice-last-in-the-fridge/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Stage9_Evergreen_Food_Intelligence_v1/4dk_evergreen_food_intelligence_v1/evergreen-jollof-storage.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Stage9_Evergreen_Food_Intelligence_v1/4dk_evergreen_food_intelligence_v1/evergreen-jollof-storage.html",
       "viewports": [
         {
           "width": 360,
@@ -1641,7 +1641,7 @@
     {
       "slug": "c2-jollof",
       "route": "/the-pass/nigerian-jollof-rice/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_C2_Cultural_Discovery_Stage8_v1/4dk_c2_cultural_discovery_v1/c2-nigeria-jollof.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_C2_Cultural_Discovery_Stage8_v1/4dk_c2_cultural_discovery_v1/c2-nigeria-jollof.html",
       "viewports": [
         {
           "width": 360,
@@ -1732,7 +1732,7 @@
     {
       "slug": "recipe-onepot",
       "route": "/recipes/one-pot-jollof-style-chicken-rice/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/one-pot-jollof-style-chicken-rice.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_First_Content_Program_Samples_v1/4dk_content_program_samples_v1/one-pot-jollof-style-chicken-rice.html",
       "viewports": [
         {
           "width": 360,
@@ -1823,7 +1823,7 @@
     {
       "slug": "recipe-pasta",
       "route": "/recipes/20-minute-tomato-spinach-pasta/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Stage10_Public_Recipe_Template_v1/4dk_public_recipe_template_v1/recipe-sample.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Stage10_Public_Recipe_Template_v1/4dk_public_recipe_template_v1/recipe-sample.html",
       "viewports": [
         {
           "width": 360,
@@ -1914,7 +1914,7 @@
     {
       "slug": "versus-plantain",
       "route": "/versus/fried-plantain-vs-boiled-plantain/",
-      "reference": "/home/thelostbiscuit/Desktop/Creations/WEBSITES/Get4dk/Resources/4DK_Stage11_C3_Social_Extensions_v2_FightHero/4dk_c3_social_extensions_v2_fight_hero/fried-vs-boiled-plantain.html",
+      "reference": "/home/thelostbiscuit/Desktop/Creations/Applications/4DK MAIN/website/Resources/4DK_Stage11_C3_Social_Extensions_v2_FightHero/4dk_c3_social_extensions_v2_fight_hero/fried-vs-boiled-plantain.html",
       "viewports": [
         {
           "width": 360,

@@ -8,110 +8,110 @@
   "/assets/app-screens/4dk-ask.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture ask",
-    "bytes": 90756
+    "bytes": 108402,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-home.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture home",
-    "bytes": 87326
+    "bytes": 96818,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-plan.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture plan",
-    "bytes": 91520
+    "bytes": 92336,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-pantry.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture pantry",
-    "bytes": 100538
+    "bytes": 123120,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-profile.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture profile",
-    "bytes": 75274
+    "bytes": 52712,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-tools.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture tools",
-    "bytes": 71762
+    "bytes": 94110,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/app-screens/4dk-shop.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture shop",
-    "bytes": 104212
+    "bytes": 77500,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/photo/hero-food.webp": {
-    "w": 315,
-    "h": 555,
-    "from": "approved artifact pixels",
-    "bytes": 66512
+    "w": 1024,
+    "h": 1536,
+    "bytes": 201992,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/photo/food-card-pasta.webp": {
-    "w": 1520,
-    "h": 860,
-    "from": "Wikimedia Commons: A Pasta dish with meatballs and tomato sauce.jpg (CC-BY-SA-4.0)",
-    "bytes": 194726
+    "w": 1536,
+    "h": 1024,
+    "bytes": 294162,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/photo/food-card-jollof.webp": {
-    "w": 1274,
-    "h": 721,
-    "from": "Wikimedia Commons: Jollof Rice.jpg (CC-BY-SA-4.0)",
-    "bytes": 68458
+    "w": 2432,
+    "h": 1237,
+    "bytes": 632660,
+    "from": "Wikimedia Commons licensed web derivative"
   },
   "/assets/app-screens/4dk-recipe.webp": {
     "w": 941,
     "h": 1672,
-    "from": "app capture recipe",
-    "bytes": 215514
+    "bytes": 198776,
+    "from": "Actual local application renderer, synthetic sample data, intercepted licensed/generated image responses; recaptured 2026-10-11"
   },
   "/assets/photo/food-card-tacos.webp": {
     "w": 1520,
     "h": 860,
-    "from": "Wikimedia Commons: 001 Tacos de carnitas, carne asada y al pastor.jpg (CC-BY-SA-2.0)",
-    "bytes": 319850
+    "bytes": 232264,
+    "from": "Wikimedia Commons licensed web derivative"
   },
   "/assets/photo/food-jollof-wide.webp": {
     "w": 2400,
     "h": 1033,
-    "from": "Wikimedia Commons: Jollof (Jollof- Rice).jpg (CC-BY-SA-4.0)",
-    "bytes": 756196
+    "bytes": 538548,
+    "from": "Wikimedia Commons licensed web derivative"
   },
   "/assets/photo/food-jollof-poster.webp": {
-    "w": 1875,
-    "h": 1500,
-    "from": "Wikimedia Commons: Jollof Rice and Meat.jpg (CC-BY-SA-4.0)",
-    "bytes": 260858
+    "w": 2432,
+    "h": 1237,
+    "bytes": 632660,
+    "from": "Wikimedia Commons licensed web derivative"
   },
   "/assets/photo/food-meal-strip.webp": {
-    "w": 650,
-    "h": 1388,
-    "from": "approved artifact pixels",
-    "bytes": 112532
+    "w": 1024,
+    "h": 1536,
+    "bytes": 201992,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/photo/food-jollof-clean.webp": {
     "w": 2432,
     "h": 1237,
-    "from": "Wikimedia Commons: Jollof rice 20th April 2025.jpg (CC-BY-SA-4.0)",
-    "bytes": 904978
+    "bytes": 632660,
+    "from": "Wikimedia Commons licensed web derivative"
   },
   "/assets/banner/footer-left.webp": {
-    "w": 350,
-    "h": 141,
-    "from": "locked banner pixels",
-    "bytes": 28748
+    "w": 1600,
+    "h": 533,
+    "bytes": 109026,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/banner/note-left.webp": {
-    "w": 120,
-    "h": 130,
-    "from": "locked banner pixels",
-    "bytes": 6114
+    "w": 640,
+    "h": 640,
+    "bytes": 60652,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/icons/icon2.png": {
     "w": 60,
@@ -138,21 +138,45 @@
     "bytes": 5809
   },
   "/assets/banner/footer-right.webp": {
-    "w": 442,
-    "h": 141,
-    "from": "locked banner pixels",
-    "bytes": 29942
+    "w": 1600,
+    "h": 533,
+    "bytes": 109026,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/banner/rail-right.webp": {
-    "w": 372,
-    "h": 176,
-    "from": "locked banner pixels",
-    "bytes": 15430
+    "w": 1600,
+    "h": 533,
+    "bytes": 109026,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   },
   "/assets/photo/food-plan-grid.webp": {
-    "w": 1000,
-    "h": 770,
-    "from": "approved artifact pixels",
-    "bytes": 96162
+    "w": 1536,
+    "h": 1024,
+    "bytes": 294162,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
+  },
+  "/assets/photo/hero-food-landing.webp": {
+    "w": 1024,
+    "h": 1536,
+    "bytes": 201992,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
+  },
+  "/assets/banner/mobile-tomatoes.webp": {
+    "w": 960,
+    "h": 640,
+    "bytes": 171062,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
+  },
+  "/assets/banner/note-brighter-days.webp": {
+    "w": 640,
+    "h": 640,
+    "bytes": 50016,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
+  },
+  "/assets/banner/note-make-real.webp": {
+    "w": 640,
+    "h": 640,
+    "bytes": 60652,
+    "from": "AI-generated for this website on 2026-10-11; original files and prompts retained"
   }
 }

@@ -146,12 +146,12 @@
     {
       "key": "c1-hub",
       "path": "/use-cases/",
-      "name": "C1 Conversion Hub (route selector)",
+      "name": "4DK Starting Points",
       "stage": 5,
       "family": "CONVERSION",
       "manifest_section": "conversion",
-      "title": "4DK C1 Conversion Landing System",
-      "description": "Four problem-first 4DK conversion routes: dinner decisions, freshness rescue, Kitchen Scan and STEAL IT.",
+      "title": "Find Your Starting Point — 4DK",
+      "description": "Choose a starting point with 4DK: dinner decisions, freshness, Kitchen Scan or recipe importing.",
       "schema": [],
       "indexable": false,
       "indexable_note": "W3: approved C1 batch launcher (grid + list route selector) implemented as a selector utility per explicit W3 instruction. Not one of the 29 approved indexable routes — excluded from sitemap, carries noindex. The 29-route indexable set from W0 is unchanged."

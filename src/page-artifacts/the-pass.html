@@ -15,7 +15,7 @@
 .hero-photo-main{position:absolute;right:-4%;top:9%;width:43%;height:62%;object-fit:cover;object-position:center;filter:brightness(.88) contrast(1.08) saturate(1.05);border:1px solid rgba(244,241,232,.45);box-shadow:0 40px 85px rgba(0,0,0,.55);transform:rotate(2.6deg)}
 .hero-photo-strip{position:absolute;right:24%;top:18%;width:15%;height:36%;object-fit:cover;object-position:center;filter:brightness(.62) contrast(1.12) saturate(1);border:1px solid rgba(244,241,232,.28);transform:rotate(-6deg)}
 .hero-photo-bottom{position:absolute;right:8%;bottom:9%;width:26%;height:20%;object-fit:cover;object-position:center;filter:brightness(.58) contrast(1.16);border:1px solid rgba(244,241,232,.25);transform:rotate(-1.6deg)}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#050505 0 43%,rgba(5,5,5,.22) 63%,rgba(5,5,5,.28) 72%,#050505 100%),linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.32));pointer-events:none}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,#050505 0 36%,rgba(5,5,5,.12) 52%,rgba(5,5,5,.1) 70%,rgba(5,5,5,.36) 100%),linear-gradient(180deg,rgba(5,5,5,.08),rgba(5,5,5,.32));pointer-events:none}
 .hero-grid{position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 calc(25% - .5px),rgba(244,241,232,.045) calc(25% - .5px) 25%),repeating-linear-gradient(180deg,transparent 0 calc(19% - .5px),rgba(244,241,232,.035) calc(19% - .5px) 19%);opacity:.35;pointer-events:none}
 .hero-copy{position:relative;z-index:5;padding:96px 4.1% 60px;width:60%}
 .eyebrow{font:800 13px var(--mono);letter-spacing:.15em;text-transform:uppercase;display:flex;align-items:center;gap:18px}.eyebrow:before{content:'//';font-size:28px;font-weight:400}.eyebrow b{color:var(--acid)}
@@ -30,7 +30,7 @@
 .hero-index b{color:var(--acid)}
 .hero-sticker{position:absolute;right:24%;top:61%;z-index:7;background:var(--acid);color:#050505;padding:11px 14px;font:900 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;transform:rotate(-4deg);box-shadow:0 12px 28px rgba(0,0,0,.4)}
 .hero-frame{position:absolute;left:3.2%;right:3.2%;top:78px;bottom:22px;border:1px solid rgba(244,241,232,.18);pointer-events:none}
-.filter-bar{position:sticky;top:72px;z-index:90;background:rgba(3,3,3,.97);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;padding:12px 4.1%}.filter-title{margin-right:16px;font:900 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}.filter{cursor:pointer;background:transparent;color:var(--cream);border:1px solid rgba(217,255,22,.28);padding:10px 13px;font:800 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:.2s ease;box-shadow:0 0 14px rgba(217,255,22,.08),inset 0 0 12px rgba(217,255,22,.02)}.filter.active{background:var(--acid);color:#050505;border-color:var(--acid);box-shadow:0 0 22px rgba(217,255,22,.18)}.filter:hover{border-color:rgba(217,255,22,.68);box-shadow:0 0 18px rgba(217,255,22,.15)}
+.filter-bar{position:sticky;top:var(--site-header-height,68px);z-index:90;background:rgba(3,3,3,.97);border-bottom:1px solid var(--rule);display:flex;align-items:center;gap:10px;padding:12px 4.1%}.filter-title{margin-right:16px;font:900 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}.filter{cursor:pointer;background:transparent;color:var(--cream);border:1px solid rgba(217,255,22,.28);padding:10px 13px;font:800 10px var(--mono);letter-spacing:.1em;text-transform:uppercase;transition:.2s ease;box-shadow:0 0 14px rgba(217,255,22,.08),inset 0 0 12px rgba(217,255,22,.02)}.filter.active{background:var(--acid);color:#050505;border-color:var(--acid);box-shadow:0 0 22px rgba(217,255,22,.18)}.filter:hover{border-color:rgba(217,255,22,.68);box-shadow:0 0 18px rgba(217,255,22,.15)}
 .issue-wrap{padding:38px 4.1% 18px;background:#040404;border-bottom:1px solid var(--rule)}
 .issue-strip{display:grid;grid-template-columns:1fr auto;gap:24px;border:1px solid rgba(244,241,232,.2);padding:14px 18px;background:linear-gradient(90deg,rgba(217,255,22,.06),rgba(217,255,22,0) 18%,rgba(255,255,255,.02) 100%)}
 .issue-strip strong{font:900 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid)}.issue-strip span{font:700 11px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#d4cfc5}
@@ -49,7 +49,7 @@
 .story-meta{position:absolute;left:24px;right:24px;bottom:20px;z-index:4}.story-kicker{font:900 10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--acid);margin-bottom:10px}.story h3{margin:0 0 10px;font-size:clamp(28px,2.8vw,48px);line-height:.88;letter-spacing:-.055em;text-transform:uppercase}.story h3 em{font-family:var(--serif);font-style:italic;font-weight:800}.story p{margin:0;max-width:88%;font:600 11px/1.48 var(--mono);color:#d0cbc1}
 .story-tag{position:absolute;right:20px;top:20px;z-index:5;border:1px solid rgba(217,255,22,.72);background:rgba(5,5,5,.78);color:var(--acid);padding:8px 10px;font:800 9px var(--mono);letter-spacing:.1em;text-transform:uppercase;box-shadow:0 0 12px rgba(217,255,22,.12)}
 .story-scribble{position:absolute;right:24px;bottom:120px;z-index:5;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:26px;line-height:.9;transform:rotate(-7deg);opacity:.92}
-.story.hidden{display:none}
+[data-cat].hidden{display:none}
 .editor-note{padding:74px 4.1%;border-bottom:1px solid var(--rule);display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center;position:relative;overflow:hidden}.editor-note:before{content:'';position:absolute;right:-4%;top:0;width:42%;height:100%;background:radial-gradient(circle at center,rgba(217,255,22,.11),transparent 68%);filter:blur(16px)}.editor-note h2{margin:0;font-size:clamp(62px,6.8vw,118px);line-height:.8;letter-spacing:-.075em;text-transform:uppercase;position:relative;z-index:2}.editor-note h2 em{font-family:var(--serif);font-style:italic}.editor-note p{margin:0;font:600 16px/1.68 var(--mono);color:#cbc7bd;position:relative;z-index:2}.editor-note strong{color:var(--acid)}
 .mini-rail{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--rule);border-bottom:1px solid var(--rule)}.rail-card{background:#050505;padding:28px 24px 30px;min-height:210px;position:relative;overflow:hidden}.rail-card:before{content:'';position:absolute;right:-10%;bottom:-12%;width:130px;height:130px;background:radial-gradient(circle,rgba(217,255,22,.12),transparent 70%)}.rail-card b{display:block;font:900 10px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--acid);margin-bottom:14px}.rail-card h3{margin:0 0 12px;font-size:clamp(26px,2.3vw,40px);line-height:.9;letter-spacing:-.04em;text-transform:uppercase}.rail-card p{margin:0;font:600 12px/1.56 var(--mono);color:#cecac0;max-width:92%}
 .canonical-banner{position:relative;width:100%;height:clamp(128px,8.4vw,178px);background:var(--acid);color:#030303;display:grid;grid-template-columns:22% 13% 29% 13% 23%;align-items:center;overflow:hidden;border-bottom:1px solid #050505;z-index:10}.canonical-banner .acid-art{width:100%;height:100%;object-fit:cover}.canonical-banner .acid-meta{font:800 clamp(10px,.95vw,16px)/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase}.canonical-banner .acid-brand{font-weight:950;font-size:clamp(48px,5.2vw,87px);letter-spacing:-.07em;text-align:center;white-space:nowrap}.canonical-banner .acid-brand small{font:800 clamp(9px,.9vw,15px) var(--mono);letter-spacing:.12em;margin-left:1.5vw}.canonical-banner .acid-divider{border-left:2px solid rgba(0,0,0,.7);padding-left:2vw}.canonical-banner .acid-right{width:100%;height:100%;object-fit:cover}
@@ -65,7 +65,7 @@
   <a class="logo" href="index.html">4DK<span class="dot">.</span></a>
   <nav class="nav"><a href="how-it-works.html">How it works</a><a href="features.html">Features</a><a class="active" href="the-pass.html">The Pass</a><a href="#">Pricing</a></nav>
   <div class="status"><span class="status-dot"></span>Systems nominal</div>
-  <a class="top-cta" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">Start cooking →</a>
+  <a class="top-cta" href="https://app.get4dk.com/">Start cooking →</a>
 </header>
 <section class="hero">
   <div class="hero-frame"></div>
@@ -78,7 +78,7 @@
   <div class="hero-copy">
     <div class="eyebrow">The Pass / <b>Issue 01</b> / food worth knowing</div>
     <h1>The <em>Pass.</em></h1>
-    <p class="hero-sub">Not food-media fluff. If a post does not help you cook better, understand what you're buying, use something before it dies, or see the culture around the food, it has no business being here. The Pass is where 4DK talks like it actually has taste.</p>
+    <p class="hero-sub">Stories about what food carries, how ingredients work, what to cook next, and how good food can go further.</p>
     <div class="hero-manifesto">
       <div class="manifesto-card"><div class="k">Culture</div><p>Food has a backstory. Ingredients do not appear from nowhere and recipes are not floating in empty space.</p></div>
       <div class="manifesto-card"><div class="k">Technique</div><p>Some things change the result. Some things are just noise. The useful difference is the point.</p></div>
@@ -87,9 +87,9 @@
   </div>
   <div class="hero-scribble">not a blog.<br>a kitchen paper.</div>
   <div class="hero-sticker">Culture / technique / rescue</div>
-  <div class="hero-index"><span><b>EDITORIAL SYSTEM</b><br>The Pass / not content.</span><span><b>WHAT SHOWS UP HERE</b><br>Stories. arguments. context. things that actually help.</span><span><b>READ IT THEN COOK</b><br>Everything should end up back in the kitchen somehow.</span><span><b>80s PRESSURE</b><br>big type. acid hits. grit. zero polite lifestyle nonsense.</span></div>
+  <div class="hero-index"><span><b>ISSUE 01</b><br>Current issue</span><span><b>LEAD STORY / NIGERIA</b><br>Jollof, memory, place and method.</span><a href="/the-pass/nigerian-jollof-rice/">Read the lead story →</a></div>
 </section>
-<nav class="filter-bar" aria-label="Filter The Pass"><strong class="filter-title">Filter the pass</strong><button class="filter active" data-filter="all">All</button><button class="filter" data-filter="culture">Culture</button><button class="filter" data-filter="use">Use it</button><button class="filter" data-filter="cook">Cook it</button><button class="filter" data-filter="know">Know it</button></nav>
+<nav class="filter-bar" aria-label="Filter The Pass"><strong class="filter-title">Filter the pass</strong><button class="filter active" data-filter="all" aria-pressed="true">All</button><button class="filter" data-filter="culture" aria-pressed="false">Culture</button><button class="filter" data-filter="use" aria-pressed="false">Use it</button><button class="filter" data-filter="cook" aria-pressed="false">Cook it</button><button class="filter" data-filter="know" aria-pressed="false">Know it</button></nav>
 <section class="issue-wrap">
   <div class="issue-strip"><strong>On this issue</strong><span>Jollof as culture. Rescue moves that matter. Why some ingredients are doing more than people give them credit for.</span></div>
 </section>
@@ -103,7 +103,7 @@
     <div class="issue">Culture / 001</div>
     <h2>Jollof isn't<br>just <em>rice.</em></h2>
     <p>Everybody wants the final plate. Not enough people want to talk about what the dish is carrying with it. Jollof is taste, yes. It's also region, heat management, party memory, household method, and the kind of arguments food only gets when it actually matters.</p>
-    <p>This is where 4DK earns the editorial lane. We are not flattening dishes into generic recipe cards and pretending that's enough.</p>
+    <p>Jollof carries family memory, regional pride and the small choices that make every pot its own.</p>
     <div class="lead-points">
       <div class="lead-point"><b>01</b><span>Where the dish sits culturally matters as much as the ingredient list.</span></div>
       <div class="lead-point"><b>02</b><span>Technique changes identity. Heat, tomato handling and stock choices are not background details.</span></div>
@@ -115,28 +115,18 @@
 <section>
   <div class="section-head"><h2>On the <em>pass.</em></h2><p>Useful stories only. The kind you save, quote, or remember the next time you're staring into the fridge.</p></div>
   <div class="story-grid" id="story-grid">
-    <article class="story large" data-cat="culture"><div class="frame"></div><img src="assets/food-card-tacos.jpg" alt="Tacos"><span class="story-tag">Culture</span><div class="story-scribble">more than<br>fillings.</div><div class="story-meta"><div class="story-kicker">Mexico / Food culture</div><h3>Tacos were never<br>supposed to be <em>boring.</em></h3><p>The wrappers and fillings are the easy part. Texture, acidity, heat balance and the actual reason the thing works are where the conversation starts.</p></div></article>
-    <article class="story tall" data-cat="use"><div class="frame"></div><img src="assets/food-plan-grid.jpg" alt="Meal planning"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Freshness / Rescue</div><h3>Cook the chicken<br><em>first.</em></h3><p>Novelty should not outrank urgency. If one ingredient is about to go, it gets first say in dinner.</p></div></article>
-    <article class="story med" data-cat="know"><div class="frame"></div><img src="assets/food-card-pasta.jpg" alt="Pasta"><span class="story-tag">Know it</span><div class="story-meta"><div class="story-kicker">Technique / Ingredient</div><h3>Panko is not<br>just <em>breadcrumbs.</em></h3><p>Texture, crunch, airflow and why the swap is sometimes fine and sometimes lazy.</p></div></article>
-    <article class="story med" data-cat="cook"><div class="frame"></div><img src="assets/food-jollof-clean.jpg" alt="Jollof rice"><span class="story-tag">Cook it</span><div class="story-meta"><div class="story-kicker">Technique / Heat</div><h3>Stop crowding<br>the <em>pan.</em></h3><p>Sometimes your recipe is fine. Your heat management is just ruining the ending.</p></div></article>
-    <article class="story med" data-cat="use"><div class="frame"></div><img src="assets/food-card-jollof.jpg" alt="Food rescue"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Storage / Leftovers</div><h3>Leftovers are<br>still <em>food.</em></h3><p>Store it like you plan to eat it. Not like you're hoping it disappears quietly.</p></div></article>
-    <article class="story wide" data-cat="know"><div class="frame"></div><img src="assets/food-jollof-poster.jpg" alt="Scotch bonnet"><span class="story-tag">Know it</span><div class="story-scribble">heat with a<br>point.</div><div class="story-meta"><div class="story-kicker">Ingredient intelligence</div><h3>Scotch bonnet.<br>Not just <em>heat.</em></h3><p>Flavour, aroma, substitutes and why replacing chilli with chilli is not the same as understanding the ingredient.</p></div></article>
-    <article class="story wide" data-cat="culture"><div class="frame"></div><img src="assets/food-card-pasta.jpg" alt="Carbonara"><span class="story-tag">Culture</span><div class="story-meta"><div class="story-kicker">Italy / Technique</div><h3>Carbonara has<br>opinions <em>too.</em></h3><p>What the dish is, what people fight about, and what actually changes the result versus what is just internet theatre.</p></div></article>
+    <a class="story large" href="/what-to-cook-with-spinach-before-it-goes-bad/" data-cat="use"><div class="frame"></div><img src="assets/food-plan-grid.jpg" alt="Fresh ingredients ready to cook"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Freshness / Rescue</div><h3>Use spinach before<br>it goes <em>bad.</em></h3><p>A few practical ways to turn spinach that needs using into dinner.</p></div></a>
+    <a class="story tall" href="/what-can-i-use-instead-of-panko-in-nigeria/" data-cat="know"><div class="frame"></div><img src="assets/food-card-pasta.jpg" alt="Crisp-coated food"><span class="story-tag">Know it</span><div class="story-meta"><div class="story-kicker">Technique / Ingredient</div><h3>What can replace<br><em>panko?</em></h3><p>Local alternatives for crunch, and when each one works.</p></div></a>
+    <a class="story med" href="/why-does-overcrowding-a-pan-stop-browning/" data-cat="cook"><div class="frame"></div><img src="assets/food-jollof-clean.jpg" alt="Food cooking in a pan"><span class="story-tag">Cook it</span><div class="story-meta"><div class="story-kicker">Technique / Heat</div><h3>Why crowding stops<br>the pan from <em>browning.</em></h3><p>How moisture and heat change what happens in the pan.</p></div></a>
+    <a class="story med" href="/how-long-does-cooked-jollof-rice-last-in-the-fridge/" data-cat="use"><div class="frame"></div><img src="assets/food-card-jollof.jpg" alt="Stored Jollof rice"><span class="story-tag">Use it</span><div class="story-meta"><div class="story-kicker">Storage / Leftovers</div><h3>How long does cooked<br>Jollof <em>last?</em></h3><p>Storage guidance for the rice you want to enjoy again.</p></div></a>
+    <a class="story wide" href="/what-can-i-cook-with-what-i-have/" data-cat="cook"><div class="frame"></div><img src="assets/food-jollof-poster.jpg" alt="Ingredients for a home-cooked meal"><span class="story-tag">Cook it</span><div class="story-scribble">start where<br>you are.</div><div class="story-meta"><div class="story-kicker">Kitchen intelligence</div><h3>What can I cook with<br>what I <em>have?</em></h3><p>Start with the ingredients already in your kitchen and find a useful next meal.</p></div></a>
   </div>
 </section>
-<section class="editor-note">
-  <h2>Good food deserves<br>better than <em>content.</em></h2>
-  <p><strong>The Pass should earn the click.</strong><br><br>If a story does not help you understand food, use something before it dies, cook it better, or see where it came from, it should not make the cut. That is the rule. Everything else is decoration.</p>
-</section>
-<section class="mini-rail">
-  <article class="rail-card"><b>Lane 01</b><h3>Culture with<br>teeth.</h3><p>Not postcard culture. The real stuff. Migration, habit, arguments, memory, and how dishes actually live with people.</p></article>
-  <article class="rail-card"><b>Lane 02</b><h3>Kitchen rescue<br>moves.</h3><p>The parts of cooking that save money, save food, and save you from doing dumb things twice.</p></article>
-  <article class="rail-card"><b>Lane 03</b><h3>Ingredient<br>intelligence.</h3><p>Why something works, what it changes, what you can swap, and what should absolutely be left alone.</p></article>
-</section>
+
 <section class="canonical-banner closing-banner" id="closing-banner">
   <img class="acid-art" src="assets/footer_left.png" alt="">
   <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
-  <a class="acid-brand" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></a>
+  <a class="acid-brand" href="https://app.get4dk.com/">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></a>
   <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
   <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
 </section>
@@ -144,8 +134,8 @@
 const filters=[...document.querySelectorAll('.filter')];
 const items=[...document.querySelectorAll('[data-cat]')];
 filters.forEach(btn=>btn.addEventListener('click',()=>{
-  filters.forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
+  filters.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-pressed','false');});
+  btn.classList.add('active');btn.setAttribute('aria-pressed','true');
   const f=btn.dataset.filter;
   items.forEach(item=>{
     const ok=f==='all'||item.dataset.cat===f;

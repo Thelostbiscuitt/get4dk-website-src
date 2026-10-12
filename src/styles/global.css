@@ -99,12 +99,32 @@
   padding: var(--space-section) var(--space-gutter);
 }
 .w1-shell__card {
+  box-sizing: border-box;
+  min-inline-size: 0;
   border: 1px solid var(--rule);
   background: var(--ink);
   padding: 34px;
   max-width: 640px;
   width: 100%;
 }
+
+/* Source citations stay distinct, reachable touch targets when their text wraps. */
+.sources a {
+  display: flex;
+  align-items: center;
+  min-block-size: 44px;
+  overflow-wrap: anywhere;
+}
+.sources br { display: none; }
+
+html { scroll-padding-block-start: calc(var(--site-header-height, 68px) + 12px); }
+
+/* These artifact grids must shrink below the longest heading's intrinsic width. */
+#main-content :is(.head, .section-head, .hero, .product, .recipe-layout, .recipe, .house-flow, .swap-grid, .states, .cause) > * {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+#main-content .system-board { min-inline-size: 0; overflow-wrap: anywhere; }
 .w1-shell__kicker {
   color: var(--acid);
   font: 900 10px/1.4 var(--mono);

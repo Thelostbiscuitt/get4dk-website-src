@@ -47,7 +47,7 @@ npx wrangler deploy         # uploads dist-held assets + attaches get4dk.com
 - After W9-R2 asset/rights closure is cleared by the owner:
   1. copy `deploy/cloudflare/_headers` OUT of the deploy set (do not ship
      noindex headers on the public build),
-  2. in `site/wrangler.jsonc` change `assets.directory` to `"../../dist"`,
+  2. in `site/wrangler.jsonc` change `assets.directory` to `"../../../dist"`,
   3. `npx wrangler deploy` again.
 - Static assets are cached at the edge by default; HTML changes propagate on
   redeploy.

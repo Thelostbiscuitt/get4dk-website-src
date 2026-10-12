@@ -1,12 +1,6 @@
-/**
- * Asset path conventions.
- *
- * Production assets live under /assets/** in `public/`. Identity assets come
- * from the approved Identity Round 3 fixed system; banner strips are the
- * locked literal acid-banner blocks. W0 asset classifications still apply
- * (low-res previews / missing @2x photography resolved in a later stage —
- * never by upscaling).
- */
+/** Canonical production asset paths. Provenance and source hashes live in
+ * src/data/asset-manifest.json; current release workflow is documented in
+ * docs/MEDIA_RELEASE_2026-10-11.md. */
 
 export const ASSET_BASE = '/assets';
 
@@ -29,13 +23,8 @@ export const bannerAssets = {
   footerRight: `${ASSET_BASE}/banner/footer-right.webp`,
 } as const;
 
-/**
- * W4 canonical media — one production file per asset (no per-batch pool
- * copies). appScreens are the CURRENT 4DK application UI captured from the
- * real app in W4 (replacing the outdated Chef4Me-branded prototype screens);
- * photography is the approved artifact pixels, format-optimized (no
- * upscaling — dimensions unchanged).
- */
+/** Real application UI rendered with sample data and traceable replacement
+ * media for marketing. These captures are not live-account verification. */
 export const appScreens = {
   home: `${ASSET_BASE}/app-screens/4dk-home.webp`,
   pantry: `${ASSET_BASE}/app-screens/4dk-pantry.webp`,

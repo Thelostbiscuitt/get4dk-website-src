@@ -15,7 +15,8 @@ export const GET: APIRoute = () => {
     'The following photographs ship as derivatives of Wikimedia Commons',
     'files. Each is credited per its Creative Commons license terms',
     '(Title / Author / Source / License). Crops are center-crop web',
-    'derivatives of the originals; no other modification was made.',
+    'derivatives of the originals. Embedded photos are cropped by the',
+    'product interface in screenshots made with synthetic sample data.',
     '',
   ];
   for (const c of credits.images) {
@@ -27,8 +28,14 @@ export const GET: APIRoute = () => {
     lines.push(`Note:    ${c.note}`);
     lines.push('');
   }
-  lines.push('All other imagery on this site (4DK identity system, application');
-  lines.push('screenshots, banner art) is project-owned.');
+  lines.push('The hero, meal-strip and tomato-spinach pasta images, banner artwork and');
+  lines.push('handwritten notes were generated for 4DK using OpenAI image generation');
+  lines.push('on 2026-10-11. They are editorial illustrations, not exact recipe results.');
+  lines.push('Originals and generation records are retained with the release evidence.');
+  lines.push('The 4DK identity and interface are project-owned. Product screenshots');
+  lines.push('show the actual local interface with sample data and replacement media.');
+  lines.push('Embedded tomato and garlic photos retain their CC-BY-SA-4.0 license;');
+  lines.push('other embedded food photographs are credited above under their files.');
   return new Response(lines.join('\n'), {
     headers: { 'Content-Type': 'text/plain; charset=utf-8' },
   });

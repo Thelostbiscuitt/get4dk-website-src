@@ -30,6 +30,7 @@ export const CTA = {
   /** Generic "Start cooking →" bridges → app welcome (logged-out: the app's
    *  own Guard presents register/sign-in; logged-in: home). */
   startCooking: { href: `${APP_ORIGIN}/`, label: 'Start cooking' },
+  signIn: { href: `${APP_ORIGIN}/login`, label: 'Sign in' },
   /** Signup-intent CTAs ("Get 4DK", "Try 4DK", "Request beta access") → the
    *  app's register form via its native conversion deep link. */
   get4dk: { href: `${APP_ORIGIN}/login?intent=save-kitchen`, label: 'Get 4DK' },

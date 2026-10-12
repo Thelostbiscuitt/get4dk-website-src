@@ -102,11 +102,10 @@ export function explodeFeatureHtml(raw: string, key: string): string {
       .map((x, i) => `<div class="detail-point"><b>0${i + 1}</b><span>${escapeReplace(x)}</span></div>`)
       .join('')}</div>`
   );
-  // detail-route: the approved placeholder stub ("Future route … →") becomes
-  // the feature route's primary CTA (W0: "Start cooking →"). The href uses the
+  // detail-route becomes the feature route's primary CTA (W0: "Start cooking →"). The href uses the
   // marketing literal the page's ctaHrefs maps through the central CTA config.
   html = html.replace(
-    /<a class="detail-route" id="detail-route" href="#feature-detail">[^<]*<\/a>/,
+    /<a class="detail-route" id="detail-route" href="[^"]*">[^<]*<\/a>/,
     '<a class="detail-route" id="detail-route" href="https://get4dk.com/">Start cooking →</a>'
   );
   html = html.replace(

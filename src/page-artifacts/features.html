@@ -58,7 +58,7 @@
         <h3 id="detail-title">Know what's<br>actually <em>there.</em></h3>
         <p id="detail-body">Scan it, add it, move on. Pantry should be the kitchen's current state, not another list you have to babysit.</p>
         <div class="detail-points" id="detail-points"></div>
-        <a class="detail-route" id="detail-route" href="#feature-detail">Future route /features/pantry/ →</a>
+        <a class="detail-route" id="detail-route" href="/features/pantry/">Explore Pantry →</a>
       </div>
     </div>
     <div class="detail-annotation" id="detail-annotation">start with what's real.</div>
@@ -88,7 +88,7 @@ memory:{img:'assets/profile.png',kick:'08 / Memory',title:"Next time should<br>s
 };
 const buttons=[...document.querySelectorAll('.feature-button')];
 const points=document.getElementById('detail-points');
-function showFeature(key){const f=features[key];const shell=document.querySelector('.detail-shell');shell.classList.remove('swap');void shell.offsetWidth;shell.classList.add('swap');buttons.forEach(b=>b.classList.toggle('active',b.dataset.feature===key));document.getElementById('detail-image').src=f.img;document.getElementById('detail-image').alt=key+' screen';document.getElementById('detail-kicker').textContent=f.kick;document.getElementById('detail-title').innerHTML=f.title;document.getElementById('detail-body').textContent=f.body;points.innerHTML=f.points.map((x,i)=>`<div class="detail-point"><b>0${i+1}</b><span>${x}</span></div>`).join('');const route=document.getElementById('detail-route');route.textContent='Future route '+f.route+' →';route.dataset.route=f.route;document.getElementById('detail-annotation').textContent=f.note;}
+function showFeature(key){const f=features[key];const shell=document.querySelector('.detail-shell');shell.classList.remove('swap');void shell.offsetWidth;shell.classList.add('swap');buttons.forEach(b=>b.classList.toggle('active',b.dataset.feature===key));document.getElementById('detail-image').src=f.img;document.getElementById('detail-image').alt=key+' screen';document.getElementById('detail-kicker').textContent=f.kick;document.getElementById('detail-title').innerHTML=f.title;document.getElementById('detail-body').textContent=f.body;points.innerHTML=f.points.map((x,i)=>`<div class="detail-point"><b>0${i+1}</b><span>${x}</span></div>`).join('');const route=document.getElementById('detail-route');route.textContent='Explore '+buttons.find(b=>b.dataset.feature===key).querySelector('b').textContent+' →';route.href=f.route;document.getElementById('detail-annotation').textContent=f.note;}
 buttons.forEach(b=>b.addEventListener('click',()=>showFeature(b.dataset.feature)));showFeature('pantry');
 const closing=document.getElementById('closing-banner');if(closing){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){closing.classList.remove('hit');void closing.offsetWidth;closing.classList.add('hit')}}),{threshold:.45});io.observe(closing)}
 </script>

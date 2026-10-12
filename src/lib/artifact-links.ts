@@ -52,20 +52,8 @@ export const MARKETING_CTA_HREF: Record<string, string> = {
   'https://get4dk.com/': CTA.startCooking.href,
 };
 
-/**
- * W4 canonical production assets — every artifact-referenced raster resolves
- * to one production file instead of per-batch pool copies.
- *
- *   app-screens/  the CURRENT 4DK application UI, captured W4 from the real
- *                 app (registered user, seeded pantry, real flows) — replaces
- *                 the outdated Chef4Me-branded prototype screens
- *   photo/        approved editorial photography, same pixels, webp
- *   banner/       locked acid banner + marginal notes, same pixels, webp
- *   icons/        icon1–5, canonical png copies
- *   identity/     shared identity marks (pool copies retired)
- *
- * No image is upscaled; dimensions are unchanged everywhere.
- */
+/** One production file per artifact asset. Source/rights metadata and the
+ * 2026-10-11 replacements are recorded in src/data/asset-manifest.json. */
 export const CANONICAL_ASSETS: Record<string, string> = {
   // Product UI — outdated prototype screens → current 4DK captures
   'home.png': '/assets/app-screens/4dk-home.webp',
@@ -77,7 +65,7 @@ export const CANONICAL_ASSETS: Record<string, string> = {
   'shop.png': '/assets/app-screens/4dk-shop.webp',
   'tools.png': '/assets/app-screens/4dk-tools.webp',
   'profile.png': '/assets/app-screens/4dk-profile.webp',
-  // Editorial photography (approved pixels, format-optimized)
+  // Licensed or generated editorial photography
   'hero_food_clean.png': '/assets/photo/hero-food.webp',
   'food-card-jollof.jpg': '/assets/photo/food-card-jollof.webp',
   'food-card-pasta.jpg': '/assets/photo/food-card-pasta.webp',
@@ -87,7 +75,7 @@ export const CANONICAL_ASSETS: Record<string, string> = {
   'food-jollof-wide.jpg': '/assets/photo/food-jollof-wide.webp',
   'food-meal-strip.jpg': '/assets/photo/food-meal-strip.webp',
   'food-plan-grid.jpg': '/assets/photo/food-plan-grid.webp',
-  // Locked banner + marginal notes (approved pixels, format-optimized)
+  // Original replacement banner artwork and marginal notes
   'footer_left.png': '/assets/banner/footer-left.webp',
   'footer_right.png': '/assets/banner/footer-right.webp',
   'note_left.png': '/assets/banner/note-left.webp',
