@@ -12,7 +12,7 @@
 /* canonical brand banner: literal reuse of the approved landing-page acid strip */
 .canonical-banner{position:relative;width:100%;height:clamp(128px,8.4vw,178px);background:var(--acid);color:#030303;display:grid;grid-template-columns:22% 13% 29% 13% 23%;align-items:center;overflow:hidden;border-bottom:1px solid #050505;z-index:10}.canonical-banner .acid-art{width:100%;height:100%;object-fit:cover}.canonical-banner .acid-meta{font:800 clamp(10px,.95vw,16px)/1.45 var(--mono);letter-spacing:.12em;text-transform:uppercase}.canonical-banner .acid-brand{font-weight:950;font-size:clamp(48px,5.2vw,87px);letter-spacing:-.07em;text-align:center;white-space:nowrap}.canonical-banner .acid-brand small{font:800 clamp(9px,.9vw,15px) var(--mono);letter-spacing:.12em;margin-left:1.5vw}.canonical-banner .acid-divider{border-left:2px solid rgba(0,0,0,.7);padding-left:2vw}.canonical-banner .acid-right{width:100%;height:100%;object-fit:cover}
 
-.stage{position:relative;min-height:800px;border-bottom:1px solid var(--rule);overflow:hidden}.stage-inner{min-height:800px;display:grid;grid-template-columns:42% 58%;position:relative;z-index:4}.stage.alt .stage-inner{grid-template-columns:58% 42%}.stage-copy{padding:75px 7vw 60px 4.1%;display:flex;flex-direction:column;justify-content:center}.stage.alt .stage-copy{grid-column:2;padding:75px 4.1vw 60px 4vw}.num{font:900 15px var(--mono);letter-spacing:.16em;color:var(--acid);text-transform:uppercase;margin-bottom:22px}.stage h2{font-size:clamp(58px,6.1vw,104px);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;margin:0 0 28px}.stage h2 em{font-family:var(--serif);font-style:italic;font-weight:800}.stage .body{font:500 clamp(16px,1.2vw,20px)/1.55 var(--mono);letter-spacing:.02em;color:#d2cec4;max-width:650px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--rule);padding:9px 12px;font:700 11px var(--mono);letter-spacing:.09em;text-transform:uppercase}.chip.acid{background:var(--acid);color:#050505;border-color:var(--acid)}.visual{position:relative;display:grid;place-items:center;padding:55px 4.1vw}.stage.alt .visual{grid-column:1;grid-row:1}.annotation{position:absolute;z-index:12;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:clamp(27px,2.35vw,42px);line-height:.95;transform:rotate(-7deg);right:4%;bottom:10%;max-width:250px}.stage.alt .annotation{right:auto;left:4%;transform:rotate(6deg)}
+.stage{position:relative;min-height:800px;border-bottom:1px solid var(--rule);overflow:hidden}.stage-inner{min-height:800px;display:grid;grid-template-columns:42% 58%;position:relative;z-index:4}.stage.alt .stage-inner{grid-template-columns:58% 42%}.stage-copy{padding:75px 7vw 60px 4.1%;display:flex;flex-direction:column;justify-content:center}.stage.alt .stage-copy{grid-column:2;padding:75px 4.1vw 60px 4vw}.num{font:900 15px var(--mono);letter-spacing:.16em;color:var(--acid);text-transform:uppercase;margin-bottom:22px}.stage h2{font-size:clamp(58px,6.1vw,104px);line-height:.82;letter-spacing:-.07em;text-transform:uppercase;margin:0 0 28px}.stage h2 em{font-family:var(--serif);font-style:italic;font-weight:800}.stage .body{font:500 clamp(16px,1.2vw,20px)/1.55 var(--mono);letter-spacing:.02em;color:#d2cec4;max-width:650px}.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}.chip{border:1px solid var(--rule);padding:9px 12px;font:700 11px var(--mono);letter-spacing:.09em;text-transform:uppercase}.chip.acid{background:var(--acid);color:#050505;border-color:var(--acid)}a.chip,button.chip{cursor:pointer;background:transparent;color:inherit}a.chip:hover,button.chip:hover{border-color:var(--acid);color:var(--acid)}button.chip[aria-pressed="true"]{background:var(--acid);color:#050505;border-color:var(--acid)}.meal-card:focus-visible,.ctx-btn:focus-visible,.cook-toggle button:focus-visible,.memory-row:focus-visible,a.chip:focus-visible,button.chip:focus-visible{outline:2px solid var(--acid);outline-offset:2px}.visual{position:relative;display:grid;place-items:center;padding:55px 4.1vw}.stage.alt .visual{grid-column:1;grid-row:1}.annotation{position:absolute;z-index:12;font-family:var(--serif);font-style:italic;color:var(--acid);font-size:clamp(27px,2.35vw,42px);line-height:.95;transform:rotate(-7deg);right:4%;bottom:10%;max-width:250px}.stage.alt .annotation{right:auto;left:4%;transform:rotate(6deg)}
 /* 01 — scan interaction */
 .scan-machine{position:relative;width:min(560px,86%);aspect-ratio:941/1672;border:1px solid rgba(244,241,232,.7);box-shadow:0 32px 90px rgba(0,0,0,.72);overflow:hidden;background:#060606;transform:rotate(-1.6deg)}.scan-machine>img{width:100%;height:100%;object-fit:cover}.scanline{position:absolute;left:0;right:0;height:2px;top:8%;background:var(--acid);box-shadow:0 0 15px var(--acid),0 0 32px rgba(217,255,22,.6);animation:scan 3.5s ease-in-out infinite alternate}.scanline:after{content:'READING KITCHEN STATE';position:absolute;right:12px;top:8px;background:#050505;color:var(--acid);font:800 9px var(--mono);letter-spacing:.1em;padding:5px 7px;border:1px solid var(--acid)}@keyframes scan{from{top:10%}to{top:86%}}.scan-stamps{position:absolute;left:-6%;bottom:10%;display:grid;gap:8px}.scan-stamps span{background:var(--acid);color:#050505;padding:7px 9px;font:900 10px var(--mono);letter-spacing:.09em;text-transform:uppercase;box-shadow:6px 6px 0 #050505}
 /* 02 — context board */
@@ -51,25 +51,24 @@
 </header>
 
 <section class="hero">
-  <img class="hero-food" src="assets/food-jollof-clean.jpg" alt="Jollof rice and grilled chicken">
+  <img class="hero-food" src="/assets/photo/food-prep-4dk.webp" alt="Tomatoes, peppers, garlic and greens around a simmering pan">
+  <div class="print-dots" aria-hidden="true"></div>
   <div class="hero-copywrap">
     <div class="eyebrow">How 4DK works / 001</div>
     <h1>The kitchen<br>doesn't <em>reset.</em></h1>
     <p>You cook. You use things. You change recipes. People change their minds. The kitchen moves. 4DK moves with it.</p>
   </div>
-  <img class="hero-note" src="assets/footer_right.png" alt="Make something real">
+  <img class="hero-note" src="/assets/banner/note-make-real.webp" alt="Make something real">
   <div class="hero-footer">
     <div class="loop"><b>SCAN</b> → UNDERSTAND → DECIDE → COOK → REMEMBER ↺</div>
     <div class="line">The meal isn't the end of the loop.</div>
   </div>
 </section>
 
-<section class="canonical-banner" aria-label="4DK brand banner">
-  <img class="acid-art" src="assets/footer_left.png" alt="">
-  <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
-  <div class="acid-brand">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></div>
-  <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
-  <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
+<section class="canonical-banner approved-banner" aria-label="Good food. Brighter days.">
+  <strong class="approved-banner__statement">GOOD FOOD.<br>BRIGHTER DAYS.</strong>
+  <span class="approved-banner__principles">REAL FOOD.<br>REAL PEOPLE.<br>REAL SOLUTIONS.</span>
+  <span class="approved-banner__art" aria-hidden="true"></span>
 </section>
 
 <section class="stage" id="see">
@@ -127,7 +126,7 @@
     <div class="visual">
       <div class="meal-console">
         <div class="meal-grid">
-          <button class="meal-card active" data-meal="jollof"><img src="assets/food-card-jollof.jpg" alt="Jollof rice"><div class="meal-info"><b>Jollof + chicken</b><small>Uses priority chicken · 35 min</small></div></button>
+          <button class="meal-card active" data-meal="jollof"><img src="assets/food-jollof-wide.jpg" alt="Jollof rice with chicken"><div class="meal-info"><b>Jollof + chicken</b><small>Uses priority chicken · 35 min</small></div></button>
           <button class="meal-card" data-meal="pasta"><img src="assets/food-card-pasta.jpg" alt="Pasta"><div class="meal-info"><b>Tomato pasta</b><small>Fast · pantry heavy · 20 min</small></div></button>
           <button class="meal-card" data-meal="tacos"><img src="assets/food-card-tacos.jpg" alt="Tacos"><div class="meal-info"><b>Tacos</b><small>House fit 82% · 25 min</small></div></button>
         </div>
@@ -144,13 +143,13 @@
       <div class="num">04 / COOK</div>
       <h2>Make it.<br>Change it if you <em>want.</em></h2>
       <div class="body">Swap panko for breadcrumbs. Air fry it. Add more pepper. If it worked, 4DK shouldn't act brand new the next time you make it.</div>
-      <div class="chips"><span class="chip acid">Cook Mode</span><span class="chip">STEAL IT</span><span class="chip">Recipe adaptation</span></div>
+      <div class="chips"><span class="chip acid">Cook Mode</span><a class="chip" href="/features/steal-it/">STEAL IT</a><button type="button" class="chip" id="adapt-chip" aria-pressed="false" aria-controls="cook-details">Recipe adaptation</button></div>
     </div>
     <div class="visual">
       <div class="cook-panel">
-        <div class="cook-photo"><img src="assets/food-jollof-clean.jpg" alt="Cooked meal"></div>
+        <div class="cook-photo"><img id="cook-photo" src="/assets/photo/food-jollof-wide.webp" alt="Jollof rice with chicken, plated and ready to serve"></div>
         <div class="cook-toggle"><button class="active" data-version="original">Original</button><button data-version="mine">My version</button></div>
-        <div class="cook-details"><h3 id="cook-title">Original recipe</h3><ul id="cook-list"><li>Standard heat + timing</li><li>Original ingredient list</li><li>No personal adjustment yet</li></ul></div>
+        <div class="cook-details" id="cook-details"><h3 id="cook-title">Jollof + chicken / original</h3><ul id="cook-list"><li>One-pot tomato rice base, chicken browned then braised</li><li>35 min covered, rested before serving</li><li>No personal adjustment yet</li></ul></div>
       </div>
       <div class="annotation">make it yours.</div>
     </div>
@@ -181,7 +180,7 @@
 </section>
 
 <section class="loop-end" id="loop">
-  <img class="bg" src="assets/food-jollof-clean.jpg" alt="Food photography">
+  <img class="bg" src="/assets/photo/food-prep-4dk.webp" alt="Ingredients and cooked vegetables in a kitchen">
   <div class="loop-inner">
     <div class="eyebrow">The loop / always on</div>
     <h2>The meal isn't<br>the end of the <em>loop.</em></h2>
@@ -189,20 +188,22 @@
     <div class="loop-diagram"><div class="loop-node"><b>01</b>See</div><div class="loop-node"><b>02</b>Understand</div><div class="loop-node"><b>03</b>Decide</div><div class="loop-node"><b>04</b>Cook</div><div class="loop-node"><b>05</b>Remember ↺</div></div>
   </div>
 </section>
-<section class="canonical-banner closing-banner" id="closing-banner">
-  <img class="acid-art" src="assets/footer_left.png" alt="">
-  <div class="acid-meta">Food<br>intelligence<br>for real life.</div>
-  <a class="acid-brand closing-brand" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">4DK<span style="font-size:.28em;vertical-align:.2em">.</span><small>FOR D KITCHEN.</small></a>
-  <div class="acid-meta acid-divider">Kitchens<br>happier<br>people.</div>
-  <img class="acid-right" src="assets/footer_right.png" alt="Make something real">
+<section class="canonical-banner closing-banner approved-banner" id="closing-banner" aria-label="Good food. Brighter days.">
+  <a class="approved-banner__statement" href="mailto:hello@get4dk.com?subject=4DK%20Beta%20Access">GOOD FOOD.<br>BRIGHTER DAYS.</a>
+  <span class="approved-banner__principles">REAL FOOD.<br>REAL PEOPLE.<br>REAL SOLUTIONS.</span>
+  <span class="approved-banner__art" aria-hidden="true"></span>
 </section>
 <script>
 const contexts={fresh:['Chicken = PRIORITY','It needs using first. That changes what 4DK should recommend before taste or novelty even enters the room.'],people:['Four people. Four opinions.','One person hates mushrooms. Another wants something light. 4DK should know that before it recommends dinner.'],recent:['You had rice twice this week.','Liking something does not mean you want it again tonight. Recent meals should suppress repetition without rewriting your taste profile.'],location:['You are here. The recipe lives there.','4DK uses location to make ingredients, naming and substitutions realistic without trapping you inside local cuisine.']};
 document.querySelectorAll('.ctx-btn').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.ctx-btn').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const [t,c]=contexts[btn.dataset.key];document.getElementById('ctx-title').textContent=t;document.getElementById('ctx-copy').textContent=c;}));
 const meals={jollof:'Chicken is priority, tomatoes are already in the pantry, and you haven\'t had rice in the last few meals. It wins without needing a speech.',pasta:'Fast, heavy pantry coverage, and the tomatoes need using soon. Good answer when time matters more than novelty.',tacos:'Still realistic, but it asks for more missing ingredients. 4DK can show it without pretending it is the best answer right now.'};
-document.querySelectorAll('.meal-card').forEach(card=>card.addEventListener('click',()=>{document.querySelectorAll('.meal-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');document.getElementById('why-copy').textContent=meals[card.dataset.meal];}));
-const cook={original:['Original recipe',['Standard heat + timing','Original ingredient list','No personal adjustment yet']],mine:['Your version',['More pepper — kept','Air fryer instead of deep fry','Successful variation saved for next time']]};
-document.querySelectorAll('.cook-toggle button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.cook-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const [t,items]=cook[btn.dataset.version];document.getElementById('cook-title').textContent=t;document.getElementById('cook-list').innerHTML=items.map(x=>`<li>${x}</li>`).join('');}));
+document.querySelectorAll('.meal-card').forEach(card=>card.addEventListener('click',()=>{document.querySelectorAll('.meal-card').forEach(c=>c.classList.remove('active'));card.classList.add('active');cookMeal=card.dataset.meal;document.getElementById('why-copy').textContent=meals[cookMeal];renderCook();}));
+const cookMeals={jollof:{photo:'/assets/photo/food-jollof-wide.webp',alt:'Jollof rice with chicken, plated and ready to serve',original:['Jollof + chicken / original',['One-pot tomato rice base, chicken browned then braised','35 min covered, rested before serving','No personal adjustment yet']],mine:['Jollof + chicken / your version',['Less chilli — flavour carried by stock and browning','Firm vegetables in early, greens at the end','Variation kept for next time']]},pasta:{photo:'/assets/photo/food-card-pasta.webp',alt:'Tomato and spinach pasta, plated and ready to serve',original:['Tomato pasta / original',['350 g pasta · 300 g tomatoes · 120 g spinach','Garlic + tomato base, 20 minutes total','Cheese optional finish']],mine:['Tomato pasta / your version',['Spinach swapped for kale — given more time','Tinned tomatoes, reduced a little further','Cheese skipped — pasta water still binds the sauce']]},tacos:{photo:'/assets/photo/food-card-tacos.webp',alt:'Tacos plated and ready to serve',original:['Tacos / original',['Corn tortillas, double-stacked','One main filling, slaw and lime','25 minutes, house fit 82%']],mine:['Tacos / your version',['Flour tortillas — softer, structure kept','Extra lime and raw onion on top','Saved as your taco-night base']]}};
+let cookMeal='jollof',cookVersion='original';
+function renderCook(){const m=cookMeals[cookMeal],v=m[cookVersion],img=document.getElementById('cook-photo'),chip=document.getElementById('adapt-chip');if(img){img.src=m.photo;img.alt=m.alt}document.getElementById('cook-title').textContent=v[0];document.getElementById('cook-list').innerHTML=v[1].map(x=>`<li>${x}</li>`).join('');if(chip)chip.setAttribute('aria-pressed',cookVersion==='mine'?'true':'false')}
+document.querySelectorAll('.cook-toggle button').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.cook-toggle button').forEach(b=>b.classList.remove('active'));btn.classList.add('active');cookVersion=btn.dataset.version;renderCook();}));
+const adaptChipBtn=document.getElementById('adapt-chip');
+if(adaptChipBtn)adaptChipBtn.addEventListener('click',()=>{cookVersion=cookVersion==='mine'?'original':'mine';document.querySelectorAll('.cook-toggle button').forEach(b=>b.classList.toggle('active',b.dataset.version===cookVersion));renderCook();});
 const memory={cook:'4DK knows this meal happened. Tomorrow it does not need to pretend the chicken is still there or suggest the same dinner again.',pantry:'The kitchen state changes after cooking. Quantities move with the meal instead of waiting for you to manually fix them later.',leftover:'The extra servings become their own food state with storage and freshness context. Leftovers are not an afterthought.',preference:'The successful change is remembered as your version. It can be retrieved next time instead of solving the same problem again.'};
 document.querySelectorAll('.memory-row').forEach(row=>row.addEventListener('click',()=>{document.querySelectorAll('.memory-row').forEach(r=>r.classList.remove('active'));row.classList.add('active');document.getElementById('memory-detail').textContent=memory[row.dataset.memory];}));
 
